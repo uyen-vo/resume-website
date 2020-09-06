@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, keyframes, style, animate, transition } from '@angular/animations';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,7 @@ import { trigger, keyframes, style, animate, transition } from '@angular/animati
           ':enter',
           [
             style({ height: 0, opacity: 0 }),
-            animate('4s ease-in-out',
+            animate('2s ease-in',
                     style({ height: 300, opacity: 1 }))
           ]
         )
@@ -71,13 +72,21 @@ export class HomeComponent implements OnInit {
   time = new Date();
   currentPage = '';
 
-  constructor() {
+  constructor(private router: Router) {
+
+    router.events.subscribe(event => {
+      if (event instanceof NavigationStart){
+        this.currentPage = event.url.substring(1);
+      }
+    });
   }
 
-  ngOnInit() {
-      setInterval(() => {
-        this.time = new Date();
-      }, 1000);
+  ngOnInit(): void {
+    //timer
+    setInterval(() => {
+      this.time = new Date();
+    }, 1000);
+
   }
 
 
