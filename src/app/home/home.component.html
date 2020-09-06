@@ -1,4 +1,4 @@
-<div id="home">
+<div id="home" *ngIf="currentPage===''" [@blur]>
   <div class="content">
     <div class="time">
       <p>{{ time | date: 'hh:mm:ss a' }}</p>
@@ -9,8 +9,8 @@
       <img class="bg-img" src="../../assets/bg-1.jpg"/>
       <img class="logo-white" src="../../assets/bg-1.jpg"/>
       <div class="links">
-        <a [routerLink]="['/creative']">[creative]</a>
-        <a [routerLink]="['/developer']">[developer]</a>
+        <a [routerLink]="['/creative']" (click)="currentPage='creative'">[creative]</a>
+        <a [routerLink]="['/developer']"(click)="currentPage='developer'">[developer]</a>
       </div>
     </div>
     
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div id="main" hidden>
+<div id="main" *ngIf="currentPage!==''" [@inOutAnimation]>
   <nav>
     <a [routerLink]="['/']" (click)="currentPage=''"><img id="logo" src="../../assets/logo-world-sekai-chan-art.JPG"/><img src="../../assets/logo-sekai-chan-art.svg"/></a>
     <a [routerLink]="['/creative']" (click)="currentPage='creative'">creative</a>
