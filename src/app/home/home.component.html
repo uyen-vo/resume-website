@@ -1,0 +1,35 @@
+<div id="home">
+  <div class="content">
+    <div class="time">
+      <p>{{ time | date: 'hh:mm:ss a' }}</p>
+      <p>memento mori</p>
+    </div>
+
+    <div class="bg">
+      <img class="bg-img" src="../../assets/bg-1.jpg"/>
+      <img class="logo-white" src="../../assets/bg-1.jpg"/>
+      <div class="links">
+        <a [routerLink]="['/creative']">[creative]</a>
+        <a [routerLink]="['/developer']">[developer]</a>
+      </div>
+    </div>
+    
+    <div class="music"><img id="music-img" src='../../assets/music-icon.png'/><span>  Cardi B - WAP</span></div>
+  </div>
+</div>
+
+<div id="main" hidden>
+  <nav>
+    <a [routerLink]="['/']" (click)="currentPage=''"><img id="logo" src="../../assets/logo-world-sekai-chan-art.JPG"/><img src="../../assets/logo-sekai-chan-art.svg"/></a>
+    <a [routerLink]="['/creative']" (click)="currentPage='creative'">creative</a>
+    <a [routerLink]="['/developer']" (click)="currentPage='developer'">developer</a>
+    <a href="">resume</a>
+  </nav>
+
+  <div id="profile">
+    <div class="pfp" *ngIf="currentPage==='creative'">c<img src="../../assets/face-creative.jpg"/></div>
+    <div class="pfp" *ngIf="currentPage==='developer'">d<img src="../../assets/face-developer.jpg"/></div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

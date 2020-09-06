@@ -1,0 +1,100 @@
+#home {
+  font-weight: 300;
+}
+.pfp {
+  border: 2px solid red;
+  width: 100%;
+  
+}
+
+#logo {
+  width: 75px;
+  height: 75px;
+}
+
+#home {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.content {
+  width: 500px;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid red;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.music {
+  margin-bottom: 15px;
+}
+
+.time {
+  margin-top: 15px;
+}
+
+#music-img {
+  width:15px;
+  vertical-align: middle;
+}
+
+.bg-img {
+  width: 100%;
+  vertical-align: middle;
+  position: relative;
+  top: 0; left: 0;
+}
+
+.links {
+  position: absolute;
+  z-index: 999;
+  bottom: 15px;;
+  width: 100%;
+  text-align: center;
+
+  a {
+    color: white;
+    font-weight: 400;
+  }
+
+  a:last-child {
+    margin-left: 15px;
+  }
+}
+
+.bg {
+  position: relative;
+  margin: 30px 0px;
+}
+
+.logo-white {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+}
+
+.time {
+  width: 100%;
+  position: relative;
+  p {
+    padding: 0; margin: 0;
+  }
+
+  p:last-child {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
