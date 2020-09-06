@@ -18,18 +18,40 @@
   </div>
 </div>
 
-<div id="main" *ngIf="currentPage!==''" [@blur]>
-  <nav>
-    <a [routerLink]="['/']"><img id="logo" src="../../assets/logo-world-sekai-chan-art.JPG"/><img src="../../assets/logo-sekai-chan-art.svg"/></a>
-    <a [routerLink]="['/creative']">creative</a>
-    <a [routerLink]="['/developer']">developer</a>
-    <a href="">resume</a>
-  </nav>
 
-  <div id="profile">
-    <div class="pfp" *ngIf="currentPage==='creative'">c<img src="../../assets/face-creative.jpg"/></div>
-    <div class="pfp" *ngIf="currentPage==='developer'">d<img src="../../assets/face-developer.jpg"/></div>
+
+
+<div id="main" *ngIf="currentPage!==''" [@slowIn]>
+  <!-- <header>
+    <a [routerLink]="['/']"><img id="logo" src="../../assets/logo-world-sekai-chan-art.JPG"/><img id="letter-logo" src="../../assets/uyen-vo-logo.png"/></a>
+
+    <nav>
+      <a [routerLink]="['/creative']">creative</a>
+      <a [routerLink]="['/developer']">developer</a>
+      <a href="">resume</a>
+    </nav>
+  </header> -->
+
+  <div class="flex-container" fxLayoutAlign="center start" fxLayout="row" fxLayoutGap="20px" fxFlexFill>
+    <div fxFlex="300px" class="profile">
+      <div ><a [routerLink]="['/']"><img id="logo" src="../../assets/logo-world-sekai-chan-art.JPG"/><img id="letter-logo" src="../../assets/uyen-vo-logo.png"/></a></div>
+
+      <div class="pfp" *ngIf="currentPage==='creative'" ><img src="../../assets/bg-1.jpg"/></div>
+      <div class="pfp" *ngIf="currentPage==='developer'" ><img src="../../assets/bg-1.jpg"/></div>
+    </div>
+
+    <!-- <div class="router-container" [@routerFade]="o.isActivated ? o.activatedRoute : ''"> -->
+     <div fxFlex="grow" [@routerFade]="o.isActivated ? o.activatedRoute : ''">
+      <nav>
+        <a [routerLink]="['/creative']">creative</a>
+        <a [routerLink]="['/developer']">developer</a>
+        <a href="">resume</a>
+      </nav>
+      
+      <div class="router-container">
+        <router-outlet #o="outlet"></router-outlet>
+      </div>
+    </div> 
+    <!-- </div> -->
   </div>
-
-  <router-outlet></router-outlet>
 </div>

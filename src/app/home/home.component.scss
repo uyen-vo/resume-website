@@ -1,17 +1,61 @@
-#home {
-  font-weight: 300;
-  background-color: white;
+#main {
+  margin: 0; padding: 0;
+  height: 100vh;
 }
+
+.flex-container{
+  max-height: 100vh;
+}
+
 .pfp {
-  border: 2px solid red;
+  border: 1px solid red;
   width: 100%;
+  margin-top:10px;
+  
+  img{
+    display:block;
+    width: 100%;
+  }
+}
+
+.router-container{
+ border: 1px solid red;
+ margin-top: 10px;
+}
+
+.profile {
+  width: 300px;
   
 }
 
 #logo {
-  width: 75px;
-  height: 75px;
+  width: 45px;
+  height: 45px;
 }
+
+#letter-logo {
+  height: 45px;
+}
+
+nav {
+  height: 48px;
+  font-size: 30px;
+  border: 1px solid green;
+  // flex-grow: 2;
+  // display: flex;
+
+  a {
+    font-family: 'Work Sans', sans-serif;
+    margin-right: 20px;
+    // display:inline-flex;
+  }
+
+  a:last-child{
+  }
+}
+
+
+
 
 #home {
   position: fixed;
@@ -20,6 +64,8 @@
   bottom: 0;
   left: 0;
   z-index: 999;
+  font-weight: 300;
+  background-color: white;
 }
 
 .content {
@@ -64,6 +110,11 @@
   a {
     color: white;
     font-weight: 400;
+
+    &:hover {
+      text-shadow: 0 0 3px white;
+      transition: text-shadow .1s ease-in;
+    }
   }
 
   a:last-child {

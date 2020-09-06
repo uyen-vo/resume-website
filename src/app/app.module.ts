@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { CreativeComponent } from './creative/creative.component';
 import { DeveloperComponent } from './developer/developer.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { DeveloperComponent } from './developer/developer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

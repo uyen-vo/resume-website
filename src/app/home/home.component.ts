@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, keyframes, style, animate, transition } from '@angular/animations';
+import { trigger, keyframes, style, animate, transition, query } from '@angular/animations';
 import { Router, NavigationStart } from '@angular/router';
 
 @Component({
@@ -34,9 +34,17 @@ import { Router, NavigationStart } from '@angular/router';
         transition(
           ':enter',
           [
-            style({ height: 0, opacity: 0 }),
-            animate('2s ease-in',
-                    style({ height: 300, opacity: 1 }))
+            style({ opacity: 0 }),
+            animate('1s ease-out',
+                    style({ opacity: 1 }))
+          ]
+        ),
+        transition(
+          ':leave',
+          [
+            style({ opacity: 1 }),
+            animate('1s ease-out',
+                    style({ opacity: 0 }))
           ]
         )
       ]
@@ -65,7 +73,26 @@ import { Router, NavigationStart } from '@angular/router';
       ]))
     ])
   ]),
-  ]
+  trigger('routerFade', [
+    transition('* => *', [
+      query(
+        ':enter',
+        [style({ opacity: 0 })],
+        { optional: true }
+      ),
+      query(
+        ':leave',
+         [style({ opacity: 1 }), animate('1s', style({ opacity: 0 }))],
+        { optional: true }
+      ),
+      query(
+        ':enter',
+        [style({ opacity: 0 }), animate('1s', style({ opacity: 1 }))],
+        { optional: true }
+      )
+    ])
+  ]),
+  ],
 })
 export class HomeComponent implements OnInit {
 
@@ -73,10 +100,11 @@ export class HomeComponent implements OnInit {
   currentPage = '';
 
   constructor(private router: Router) {
-
+    this.currentPage = this.router.url.substring(1);
     router.events.subscribe(event => {
       if (event instanceof NavigationStart){
         this.currentPage = event.url.substring(1);
+        console.log(this.currentPage);
       }
     });
   }
@@ -88,6 +116,8 @@ export class HomeComponent implements OnInit {
     }, 1000);
 
   }
+
+  
 
 
 }
