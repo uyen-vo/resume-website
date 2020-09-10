@@ -2,12 +2,12 @@
   <div class="content">
     <div class="time">
       <p>{{ time | date: 'hh:mm:ss a' }}</p>
-      <p>memento mori</p>
+      <p>{{ quote }}</p>
     </div>
 
     <div class="bg">
       <img class="bg-img" src="../../assets/bg-1.jpg"/>
-      <img class="logo-white" src="../../assets/bg-1.jpg"/>
+      <img class="logo-white" src="../../assets/logo-white-04.svg"/>
       <div class="links">
         <a [routerLink]="['/creative']">[creative]</a>
         <a [routerLink]="['/developer']">[developer]</a>
@@ -21,7 +21,7 @@
 
 
 
-<div id="main" *ngIf="currentPage!==''" [@slowIn]>
+<div id="main" *ngIf="currentPage!==''" >
   <!-- <header>
     <a [routerLink]="['/']"><img id="logo" src="../../assets/logo-world-sekai-chan-art.JPG"/><img id="letter-logo" src="../../assets/uyen-vo-logo.png"/></a>
 
@@ -34,22 +34,32 @@
 
   <div class="flex-container" fxLayoutAlign="center start" fxLayout="row" fxLayoutGap="20px" fxFlexFill>
     <div fxFlex="300px" class="profile">
-      <div ><a [routerLink]="['/']"><img id="logo" src="../../assets/logo-world-sekai-chan-art.JPG"/><img id="letter-logo" src="../../assets/uyen-vo-logo.png"/></a></div>
+      <a [routerLink]="['/']">
+        <div id="logo-nav">
+          <div><img id="logo" src="../../assets/logo-color.png"/></div>
+          <div><img id="letter-logo" src="../../assets/logo-text-02.svg"/></div>
+        </div>
+      </a>
 
-      <div class="pfp" *ngIf="currentPage==='creative'" ><img src="../../assets/bg-1.jpg"/></div>
-      <div class="pfp" *ngIf="currentPage==='developer'" ><img src="../../assets/bg-1.jpg"/></div>
+
+      <div class="pfp">
+        <img #crePfp src="../../assets/cartoon-pfp.jpg"/>
+        <img #devPfp class="pfps developer" src="../../assets/irl-pfp.jpg"/>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut congue nisl. Cras id justo ut lorem sollicitudin sagittis. Phasellus a cursus erat. Donec convallis, nibh sodales eleifend viverra, nibh elit pretium urna, sit amet tincidunt risus lectus quis mauris. Aenean vitae pellentesque sapien. Nunc porttitor accumsan erat vel imperdiet. Vivamus ac orci vel arcu lacinia ultricies. Etiam sed aliquet nisi, pharetra pharetra metus. Nullam odio arcu, consectetur eu maximus a, convallis in lectus. Etiam sapien tortor, dapibus auctor varius vitae, aliquam vel ipsum. Donec ex quam, euismod a vestibulum in, lobortis eu lectus. Mauris tristique leo vel ipsum ultrices, volutpat varius nisi vehicula. Vivamus metus justo, efficitur vel elit a, placerat elementum massa. Morbi fermentum gravida iaculis. Nam dignissim erat orci, sit amet fringilla orci scelerisque ac. Nam non imperdiet mi. Morbi laoreet, arcu et congue dictum, enim velit viverra orci, at fringilla metus mi at nibh. Ut in consectetur ante. Aenean posuere dui nec mattis dignissim. Nulla rhoncus blandit urna, quis pulvinar sem egestas et. Proin non nisl eu velit semper accumsan. Praesent non commodo metus. Mauris et lorem elit. Proin gravida massa vitae elit ultrices lacinia. Integer sit amet leo condimentum est dignissim lobortis. Nulla molestie est urna, non tincidunt mauris pharetra vitae. Morbi a rhoncus quam, et consequat quam. Sed ac diam pulvinar, vehicula lectus in, rutrum lectus. Suspendisse potenti. Proin consectetur sodales velit, a tincidunt purus vehicula et. Duis felis enim, vehicula ut dignissim vel, tincidunt vitae nisi </p>
     </div>
 
     <!-- <div class="router-container" [@routerFade]="o.isActivated ? o.activatedRoute : ''"> -->
-     <div fxFlex="grow" [@routerFade]="o.isActivated ? o.activatedRoute : ''">
+     <div fxFlex="grow">
       <nav>
-        <a [routerLink]="['/creative']">creative</a>
-        <a [routerLink]="['/developer']">developer</a>
-        <a href="">resume</a>
+        <a [routerLink]="['/creative']" routerLinkActive="active" >creative</a>
+        <a [routerLink]="['/developer']" routerLinkActive="active">developer</a>
+        <a href="../../assets/resume.pdf">resume</a>
       </nav>
       
       <div class="router-container">
-        <router-outlet #o="outlet"></router-outlet>
+        <router-outlet></router-outlet>
       </div>
     </div> 
     <!-- </div> -->

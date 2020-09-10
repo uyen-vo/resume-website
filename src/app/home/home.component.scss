@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap');
+
+body {
+  display: flex; 
+  min-height: 100vh;
+}
+
 #main {
-  margin: 0; padding: 0;
-  height: 100vh;
+  margin: 0; padding:0;
+  display: flex;
+  padding: 50px 200px;
 }
 
 .flex-container{
@@ -10,11 +19,28 @@
 .pfp {
   border: 1px solid red;
   width: 100%;
+  height: 300px;
+  margin: 0 auto;
   margin-top:10px;
+  position: relative;
   
   img{
-    display:block;
     width: 100%;
+    position:absolute;
+    left:0;
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -o-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+
+  img.opaque {
+    opacity:1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=1);
   }
 }
 
@@ -34,27 +60,47 @@
 }
 
 #letter-logo {
-  height: 45px;
+  height: 32px;
+  margin-left: 20px;
+  margin-top:5px;
+}
+
+#logo-nav {
+  display: table;
+
+  div {
+    display:table-cell;
+    text-align:center;
+    vertical-align:middle;
+  }
 }
 
 nav {
   height: 48px;
-  font-size: 30px;
+  font-size: 25px;
   border: 1px solid green;
+  
   // flex-grow: 2;
   // display: flex;
 
   a {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Be Vietnam', sans-serif;
     margin-right: 20px;
+    color: #808080;
+    transition: .2s color ease-in;
     // display:inline-flex;
   }
 
+  a:hover{
+    color: black;
+  }
   a:last-child{
   }
 }
 
-
+nav .active {
+  color: black;
+}
 
 
 #home {
@@ -64,7 +110,6 @@ nav {
   bottom: 0;
   left: 0;
   z-index: 999;
-  font-weight: 300;
   background-color: white;
 }
 
@@ -133,14 +178,14 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 250px;
+  width: 125px;
 }
 
 .time {
-  width: 100%;
   position: relative;
   p {
     padding: 0; margin: 0;
+    width: 100%;
   }
 
   p:last-child {

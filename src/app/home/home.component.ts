@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { trigger, keyframes, style, animate, transition, query } from '@angular/animations';
 import { Router, NavigationStart } from '@angular/router';
 
@@ -98,15 +98,34 @@ export class HomeComponent implements OnInit {
 
   time = new Date();
   currentPage = '';
+  quote = "";
+  quotes = [
+    "memento mori",
+    "I felt the unconventional.",
+    "Anguish shapes integrity.",
+    "I love myself, always.",
+    "perfect timing",
+    "Today is the first day of the rest of your life.",
+    "Reconsider your self-set limitations.",
+    "Slow motion better than no motion."
+  ];
+
+  @ViewChild('crePfp') crePfp: ElementRef;
+  @ViewChild('devPfp') devPfp: ElementRef;
+
 
   constructor(private router: Router) {
     this.currentPage = this.router.url.substring(1);
+
     router.events.subscribe(event => {
       if (event instanceof NavigationStart){
         this.currentPage = event.url.substring(1);
+        this.togglePfp();
         console.log(this.currentPage);
       }
     });
+
+    this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
   }
 
   ngOnInit(): void {
@@ -115,9 +134,33 @@ export class HomeComponent implements OnInit {
       this.time = new Date();
     }, 1000);
 
+    this.togglePfp();
   }
 
-  
+  togglePfp() : void {
+    if (this.currentPage !== '') {
+      setTimeout(() => {
+        const elCre: HTMLElement = this.crePfp.nativeElement;
+        const elDev: HTMLElement = this.devPfp.nativeElement;
+
+        elCre.classList.remove("opaque");
+        elDev.classList.remove("opaque");
+
+        if (this.currentPage === "creative") {
+          elCre.classList.add("opaque");
+        } else if (this.currentPage === "developer") {
+          elDev.classList.add("opaque");
+        }
+      });
+    }
+    
+
+    // document.getElementsByClassName("pfps")[0].classList.remove("opaque");
+    // document.getElementsByClassName("pfps")[1].classList.remove("opaque");
+
+    // document.getElementsByClassName(this.currentPage)[0].classList.add("opaque");
+    
+  }
 
 
 }
