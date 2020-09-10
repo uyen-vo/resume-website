@@ -9,13 +9,15 @@ import { CreativeComponent } from './creative/creative.component';
 import { DeveloperComponent } from './developer/developer.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DevItemComponent } from './dev-item/dev-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CreativeComponent,
-    DeveloperComponent
+    DeveloperComponent,
+    DevItemComponent
   ],
   imports: [
     BrowserModule,

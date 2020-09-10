@@ -96,7 +96,7 @@ import { Router, NavigationStart } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  time = new Date();
+  date = new Date();
   currentPage = '';
   quote = "";
   quotes = [
@@ -131,7 +131,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     //timer
     setInterval(() => {
-      this.time = new Date();
+      this.date = new Date();
     }, 1000);
 
     this.togglePfp();

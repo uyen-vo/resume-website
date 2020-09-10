@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap');
 
+$lightblue: #c4e1fb;
+
 body {
   display: flex; 
   min-height: 100vh;
 }
 
+// main page
 #main {
   margin: 0; padding:0;
   display: flex;
@@ -14,6 +17,11 @@ body {
 
 .flex-container{
   max-height: 100vh;
+}
+
+.profile {
+  width: 300px;
+  font-size: 14px;
 }
 
 .pfp {
@@ -44,14 +52,50 @@ body {
   }
 }
 
+#loc-img {
+  width:20px;
+  vertical-align: middle;
+}
+
+.location {
+  display: table;
+  font-weight: 700;
+
+  span {
+    background-color: $lightblue;
+    margin-left: 10px;
+  }
+}
+
+#social {
+  p {
+    font-weight: 700;
+    padding:0; margin:0;
+
+    a {
+      color: black;
+      
+      a:visited {
+        color:black;
+      }
+
+      span {
+        margin-left: 10px;
+        &:hover {
+          background-color: $lightblue;
+        }
+      }
+    }
+  }
+  img {
+    width:20px;
+    vertical-align: middle;
+  }
+}
+
 .router-container{
  border: 1px solid red;
  margin-top: 10px;
-}
-
-.profile {
-  width: 300px;
-  
 }
 
 #logo {
@@ -103,6 +147,22 @@ nav .active {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// home page
 #home {
   position: fixed;
   top: 0;
@@ -111,6 +171,11 @@ nav .active {
   left: 0;
   z-index: 999;
   background-color: white;
+}
+
+#home p {
+  padding: 0; margin: 0;
+  width: 100%;
 }
 
 .content {
@@ -125,12 +190,31 @@ nav .active {
   justify-content: space-between;
 }
 
-.music {
-  margin-bottom: 15px;
+.bottom {
+  margin-bottom: 30px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  // border: 1px solid black;
 }
 
-.time {
-  margin-top: 15px;
+#home .date {
+  margin-bottom: 20px;
+}
+
+.top {
+  margin-top: 20px;
+  height: 300px;
+  // border: 1px solid black;
+  position: relative;
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 #music-img {
@@ -154,7 +238,6 @@ nav .active {
 
   a {
     color: white;
-    font-weight: 400;
 
     &:hover {
       text-shadow: 0 0 3px white;
@@ -181,17 +264,3 @@ nav .active {
   width: 125px;
 }
 
-.time {
-  position: relative;
-  p {
-    padding: 0; margin: 0;
-    width: 100%;
-  }
-
-  p:last-child {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-}

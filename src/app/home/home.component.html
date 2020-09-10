@@ -1,7 +1,6 @@
 <div id="home" *ngIf="currentPage===''" [@slowIn]>
   <div class="content">
-    <div class="time">
-      <p>{{ time | date: 'hh:mm:ss a' }}</p>
+    <div class="top">
       <p>{{ quote }}</p>
     </div>
 
@@ -14,14 +13,18 @@
       </div>
     </div>
     
-    <div class="music"><img id="music-img" src='../../assets/music-icon.png'/><span>  Cardi B - WAP</span></div>
+    <div class="bottom">
+      <p>{{ date | date: 'hh:mm:ss a' }}</p>
+      <p class="date">{{ date | date: 'MM.dd.yyyy' }}</p>
+      <p><img id="music-img" src='../../assets/music-icon.png'/><span>  Cardi B - WAP</span></p>
+    </div>
   </div>
 </div>
 
 
 
 
-<div id="main" *ngIf="currentPage!==''" >
+<div id="main" *ngIf="currentPage!==''" [@slowIn]>
   <!-- <header>
     <a [routerLink]="['/']"><img id="logo" src="../../assets/logo-world-sekai-chan-art.JPG"/><img id="letter-logo" src="../../assets/uyen-vo-logo.png"/></a>
 
@@ -46,8 +49,17 @@
         <img #crePfp src="../../assets/cartoon-pfp.jpg"/>
         <img #devPfp class="pfps developer" src="../../assets/irl-pfp.jpg"/>
       </div>
+      <p class="location"><img id="loc-img" src='../../assets/location-icon.png'/><span>Dallas, TX</span></p>
+      <p>Passionate about front end technologies, particularly Angular. Also love to draw and study graphic design. If you're hiring and find me to be a good fit, please shoot me an email. :)</p>
+      <div id="social">
+        <p><a href="mailto:uyend.vo@gmail.com"><img src='../../assets/location-icon.png'/><span>uyend.vo@gmail.com</span></a></p>
+        <p><a href="https://www.instagram.com/sekaichan.art/"><img src='../../assets/location-icon.png'/><span>sekaichan.art</span></a></p>
+        <p><a href="https://github.com/uyen-vo"><img src='../../assets/location-icon.png'/><span>uyen-vo</span></a></p>
+        <p><a href="https://www.linkedin.com/in/uyen-dung-vo"><img src='../../assets/location-icon.png'/><span>uyen-dung-vo</span></a></p>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut congue nisl. Cras id justo ut lorem sollicitudin sagittis. Phasellus a cursus erat. Donec convallis, nibh sodales eleifend viverra, nibh elit pretium urna, sit amet tincidunt risus lectus quis mauris. Aenean vitae pellentesque sapien. Nunc porttitor accumsan erat vel imperdiet. Vivamus ac orci vel arcu lacinia ultricies. Etiam sed aliquet nisi, pharetra pharetra metus. Nullam odio arcu, consectetur eu maximus a, convallis in lectus. Etiam sapien tortor, dapibus auctor varius vitae, aliquam vel ipsum. Donec ex quam, euismod a vestibulum in, lobortis eu lectus. Mauris tristique leo vel ipsum ultrices, volutpat varius nisi vehicula. Vivamus metus justo, efficitur vel elit a, placerat elementum massa. Morbi fermentum gravida iaculis. Nam dignissim erat orci, sit amet fringilla orci scelerisque ac. Nam non imperdiet mi. Morbi laoreet, arcu et congue dictum, enim velit viverra orci, at fringilla metus mi at nibh. Ut in consectetur ante. Aenean posuere dui nec mattis dignissim. Nulla rhoncus blandit urna, quis pulvinar sem egestas et. Proin non nisl eu velit semper accumsan. Praesent non commodo metus. Mauris et lorem elit. Proin gravida massa vitae elit ultrices lacinia. Integer sit amet leo condimentum est dignissim lobortis. Nulla molestie est urna, non tincidunt mauris pharetra vitae. Morbi a rhoncus quam, et consequat quam. Sed ac diam pulvinar, vehicula lectus in, rutrum lectus. Suspendisse potenti. Proin consectetur sodales velit, a tincidunt purus vehicula et. Duis felis enim, vehicula ut dignissim vel, tincidunt vitae nisi </p>
+
+      </div>
+    
     </div>
 
     <!-- <div class="router-container" [@routerFade]="o.isActivated ? o.activatedRoute : ''"> -->
