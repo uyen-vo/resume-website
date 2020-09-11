@@ -114,7 +114,8 @@ export class HomeComponent implements OnInit {
     "perfect timing",
     "Today is the first day of the rest of your life.",
     "Reconsider your self-set limitations.",
-    "Slow motion better than no motion."
+    "Slow motion better than no motion.",
+    "Every passing moment is a chance to turn it all around."
   ];
 
   constructor(private router: Router) {

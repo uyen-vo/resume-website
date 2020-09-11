@@ -15,8 +15,8 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
       state('*, out', style({
         opacity: '0',
         overflow: 'hidden',
-        height: '0px',
-        width: '0px'
+        height: '0',
+        width: '0'
       })),
       transition('* => *', animate('.3s ease-in-out'))
     ])

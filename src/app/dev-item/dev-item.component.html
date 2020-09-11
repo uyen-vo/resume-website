@@ -27,11 +27,7 @@
             <span>View more</span>
         </p>
         <div [@slideInOut]="toggleState" class="prev-container">
-            <div *ngFor="let prevImage of devItem.preview">
-                <div class="prev-img">
-                    <img [src]="prevImage" />
-                </div>
-            </div>
+            <app-lightbox [previews]="devItem.preview"></app-lightbox>
         </div>
     </div>
     <div><img [src]="devItem.image" /></div>

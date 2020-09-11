@@ -12,6 +12,7 @@ import { DeveloperComponent } from './developer/developer.component';
 import { DevItemComponent } from './dev-item/dev-item.component';
 
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { LightboxComponent } from './lightbox/lightbox.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     HomeComponent,
     CreativeComponent,
     DeveloperComponent,
-    DevItemComponent
+    DevItemComponent,
+    LightboxComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +29,10 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     BrowserAnimationsModule,
     FlexLayoutModule,
     HttpClientModule,
-    NgScrollbarModule.withConfig({
-      // 'viewClass': 'custom-scroll'
-      'visibility': 'hover'
-    })
+    // NgScrollbarModule.withConfig({
+    //   // 'viewClass': 'custom-scroll'
+    //   'visibility': 'hover'
+    // })
   ],
   providers: [],
   bootstrap: [AppComponent]

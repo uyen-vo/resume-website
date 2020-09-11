@@ -1,7 +1,11 @@
-<div class="container" fxLayout="row wrap" fxLayoutAlign="start start" fxLayout.xs="column">
-    <div *ngFor="let creaItem of creaItems$ | async" class="item" fxFlex="25%">
-        <img [src]="creaItem.image" />
-        <p>{{ creaItem.title }}</p>
-        <p style="font-style: italic">{{ creaItem.subtitle }}</p>
+<ng-container *ngIf='creaItems$ | async as itemsFromContainer'>
+    <div [@listStaggerCreative]="itemsFromContainer.length" class="container" fxLayout="row wrap"
+        fxLayoutAlign="start start" fxLayoutGap="16px grid">
+        <div *ngFor="let creaItem of itemsFromContainer" class="item" fxFlex="25%" fxFlex.md="33%" fxFlex.sm="50%"
+            fxFlex.xs="100%">
+            <div class="creative-img"><img [src]="creaItem.image" /></div>
+            <p>{{ creaItem.title }}</p>
+            <p style="font-style: italic">{{ creaItem.subtitle }}</p>
+        </div>
     </div>
-</div>
+</ng-container>

@@ -1,6 +1,8 @@
-<div class="container">
-    <div *ngFor="let devItem of devItems$ | async" class="item">
-        <app-dev-item  [devItem]="devItem">
-        </app-dev-item>
+<ng-container *ngIf='devItems$ | async as itemsFromContainer'>
+    <div class="container" [@listStaggerDev]="itemsFromContainer.length">
+        <div *ngFor="let devItem of itemsFromContainer" class="item ">
+            <app-dev-item [devItem]="devItem">
+            </app-dev-item>
+        </div>
     </div>
-</div>
+</ng-container>

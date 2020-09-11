@@ -5,21 +5,21 @@ body {
   min-height: 100vh;
 }
 
-::ng-deep {
-  ng-scrollbar.custom-scroll {
-    // --scrollbar-size: 8px;
-    // --scrollbar-thumb-color: #808080;
-    // --scrollbar-hover-size: 8px;
-    // --scrollbar-track-color: white;
-    // --scrollbar-border-radius: 8px;
-    // margin: 0; padding: 0;
+// ::ng-deep {
+//   ng-scrollbar.custom-scroll {
+//     // --scrollbar-size: 8px;
+//     // --scrollbar-thumb-color: #808080;
+//     // --scrollbar-hover-size: 8px;
+//     // --scrollbar-track-color: white;
+//     // --scrollbar-border-radius: 8px;
+//     // margin: 0; padding: 0;
 
-    // --scrollbar-viewport-margin: 0;
+//     // --scrollbar-viewport-margin: 0;
     
-  //   --scrollbar-thumb-transition: none;
-  // --scrollbar-track-transition: none;
-  }
-}
+//     --scrollbar-thumb-transition: height ease-out .3ms, visibility ease-out .3ms;
+//     --scrollbar-track-transition: height ease-out .3ms, width ease-out .3ms;
+//   }
+// }
 
 
 // main page
@@ -55,20 +55,22 @@ body {
     width: 100%;
     position:absolute;
     left:0;
-    -webkit-transition: opacity .3s ease-in-out;
-    -moz-transition: opacity .3s ease-in-out;
-    -o-transition: opacity .3s ease-in-out;
-    transition: opacity .3s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    transform: translateY(-15px);
     opacity:0;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);  
-    border: 1px solid #808080;
+    // border: 1px solid #808080;
   }
 
   img.opaque {
     opacity:1;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=1);
+    transform: translateY(0px);
   }
 }
 
@@ -114,18 +116,24 @@ body {
 }
 
 .desc { 
-  letter-spacing: .2px;
+  letter-spacing: .15px;
 }
 
 .router-container{
-  border: 2px solid blue;
+  // border: 2px solid blue;
   margin-top:50px;
   flex-grow: 1;
   // height: 500px;
-  // overflow: auto;
-  overflow-x: none;
+  overflow: hidden;
   overflow-y: auto;
-  
+
+
+  //scroll hover appear
+    // &:hover {
+    //   &::-webkit-scrollbar-thumb {
+    //     // background-color: lightgray;
+    //   }
+    // }
 }
 
 #logo {
@@ -169,7 +177,7 @@ nav {
   a:last-child{
     float: right;
     float: clear;
-    margin-right:0;
+    margin-right:10px;
   }
 }
 

@@ -3,48 +3,72 @@
         "title": "BERY",
         "image": "/assets/c-bery.jpg",
         "subtitle": "branding",
-        "preview": ["", ""]
+        "preview": [
+            "",
+            ""
+        ]
     },
     {
         "title": "Starry Avenue",
         "image": "/assets/c-starry.jpg",
         "subtitle": "card game",
-        "preview": ["", ""]
+        "preview": [
+            "",
+            ""
+        ]
     },
     {
         "title": "Code Literate",
         "image": "/assets/c-code-lit.jpg",
         "subtitle": "branding",
-        "preview": ["", ""]
+        "preview": [
+            "",
+            ""
+        ]
     },
     {
         "title": "Wireframes",
         "image": "/assets/c-wireframe.jpg",
         "subtitle": "my process",
-        "preview": ["", ""]
+        "preview": [
+            "",
+            ""
+        ]
     },
     {
         "title": "Neutraface",
         "image": "/assets/c-neutra.jpg",
         "subtitle": "bifold print",
-        "preview": ["", ""]
+        "preview": [
+            "",
+            ""
+        ]
     },
     {
         "title": "The Flowers of Evil",
         "image": "/assets/c-flowers.jpg",
         "subtitle": "book cover",
-        "preview": ["", ""]
+        "preview": [
+            "",
+            ""
+        ]
     },
     {
         "title": "filament",
         "image": "/assets/c-filament.jpg",
         "subtitle": "custom typeface",
-        "preview": ["", ""]
+        "preview": [
+            "",
+            ""
+        ]
     },
     {
-        "title": "logo graveyard",
+        "title": "design graveyard",
         "image": "/assets/c-trash.jpg",
         "subtitle": "[RIP]",
-        "preview": ["", ""]
+        "preview": [
+            "",
+            ""
+        ]
     }
 ]
