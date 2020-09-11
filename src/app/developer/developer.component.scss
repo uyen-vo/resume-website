@@ -1,5 +1,5 @@
 .container {
-  font-size: 14px;
+  padding-right: 20px;
 }
 
 .item {
@@ -8,5 +8,9 @@
 
   &:first-child {
     padding-top: 0;
+  }
+
+  &:last-child {
+    border: none;
   }
 }

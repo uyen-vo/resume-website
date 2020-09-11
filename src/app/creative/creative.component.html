@@ -1,4 +1,4 @@
-<div class="container" fxLayout="row wrap" fxLayoutGap="16px grid" >
+<div class="container" fxLayout="row wrap" fxLayoutAlign="start start" fxLayout.xs="column">
     <div *ngFor="let creaItem of creaItems$ | async" class="item" fxFlex="25%">
         <img [src]="creaItem.image" />
         <p>{{ creaItem.title }}</p>

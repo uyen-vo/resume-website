@@ -1,6 +1,10 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { trigger, keyframes, style, animate, transition, query } from '@angular/animations';
 import { Router, NavigationStart } from '@angular/router';
+
+
+import { disableBodyScroll } from 'body-scroll-lock';
+import type { BodyScrollOptions } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-home',
@@ -134,6 +138,12 @@ export class HomeComponent implements OnInit {
     }, 1000);
 
     this.togglePfp();
+
+    const options: BodyScrollOptions = {
+      reserveScrollBarGap: true,
+    };
+    
+    disableBodyScroll(document.getElementsByClassName('router-container')[0], options);
   }
 
   togglePfp() : void {

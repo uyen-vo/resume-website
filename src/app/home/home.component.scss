@@ -5,15 +5,38 @@ body {
   min-height: 100vh;
 }
 
+::ng-deep {
+  ng-scrollbar.custom-scroll {
+    // --scrollbar-size: 8px;
+    // --scrollbar-thumb-color: #808080;
+    // --scrollbar-hover-size: 8px;
+    // --scrollbar-track-color: white;
+    // --scrollbar-border-radius: 8px;
+    // margin: 0; padding: 0;
+
+    // --scrollbar-viewport-margin: 0;
+    
+  //   --scrollbar-thumb-transition: none;
+  // --scrollbar-track-transition: none;
+  }
+}
+
+
 // main page
 #main {
   margin: 0; padding:0;
   display: flex;
-  padding: 70px 200px 0px 200px;
+  padding: 0px 200px;
+  height: 100vh;
 }
 
 .flex-container{
-  max-height: 100vh;
+  height: 100vh;
+
+  .flex-child {
+    padding-top: 70px;
+    height: 100vh;
+  }
 }
 
 .profile {
@@ -95,8 +118,14 @@ body {
 }
 
 .router-container{
-  // border: 1px solid darkorchid;
+  border: 2px solid blue;
   margin-top:50px;
+  flex-grow: 1;
+  // height: 500px;
+  // overflow: auto;
+  overflow-x: none;
+  overflow-y: auto;
+  
 }
 
 #logo {
