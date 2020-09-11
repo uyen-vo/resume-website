@@ -10,10 +10,9 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
     trigger('slideInOut', [
       state('in', style({
         overflow: 'hidden',
-        height: '*',
-        width: '300px'
+        height: '*'
       })),
-      state('out', style({
+      state('*, out', style({
         opacity: '0',
         overflow: 'hidden',
         height: '0px',
@@ -28,17 +27,14 @@ export class DevItemComponent implements OnInit {
   @ViewChild('toggleRef') toggleElem: ElementRef;
   @Input() devItem: DevItem;
 
-  viewMoreToggled : string;
+  toggleState : string;
 
   constructor() { }
 
-  ngOnInit(): void {
-    
-    this.viewMoreToggled = 'out';
-  }
+  ngOnInit(): void { }
 
   toggleViewMore() : void {
     <HTMLElement>(this.toggleElem.nativeElement).classList.toggle("toggle-active");
-    this.viewMoreToggled = this.viewMoreToggled === 'in' ? 'out' : 'in';
+    this.toggleState = this.toggleState === 'in' ? 'out' : 'in';
   }
 }

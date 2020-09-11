@@ -26,7 +26,7 @@
             </svg>
             <span>View more</span>
         </p>
-        <div [@slideInOut]="viewMoreToggled" class="prev-container">
+        <div [@slideInOut]="toggleState" class="prev-container">
             <div *ngFor="let prevImage of devItem.preview">
                 <div class="prev-img">
                     <img [src]="prevImage" />
