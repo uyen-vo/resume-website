@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CreativeComponent } from './creative/creative.component';
 import { DeveloperComponent } from './developer/developer.component';
+import { DevItemComponent } from './dev-item/dev-item.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { DevItemComponent } from './dev-item/dev-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DevItemComponent } from './dev-item/dev-item.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

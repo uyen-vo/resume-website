@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Harmattan&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap');
-
 $lightblue: #c4e1fb;
 
 body {
@@ -12,7 +9,7 @@ body {
 #main {
   margin: 0; padding:0;
   display: flex;
-  padding: 50px 200px;
+  padding: 70px 200px 0px 200px;
 }
 
 .flex-container{
@@ -25,11 +22,10 @@ body {
 }
 
 .pfp {
-  border: 1px solid red;
   width: 100%;
   height: 300px;
   margin: 0 auto;
-  margin-top:10px;
+  margin-top:50px;
   position: relative;
   
   img{
@@ -42,7 +38,8 @@ body {
     transition: opacity .3s ease-in-out;
     opacity:0;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
+    filter: alpha(opacity=0);  
+    border: 1px solid #808080;
   }
 
   img.opaque {
@@ -93,9 +90,13 @@ body {
   }
 }
 
+.desc { 
+  letter-spacing: .2px;
+}
+
 .router-container{
- border: 1px solid red;
- margin-top: 10px;
+  // border: 1px solid darkorchid;
+  margin-top:50px;
 }
 
 #logo {
@@ -120,16 +121,14 @@ body {
 }
 
 nav {
-  height: 48px;
-  font-size: 25px;
-  border: 1px solid green;
+  font-size: 30px;
   
   // flex-grow: 2;
   // display: flex;
 
   a {
-    font-family: 'Be Vietnam', sans-serif;
-    margin-right: 20px;
+    font-family: 'Reem Kufi', sans-serif;
+    margin-right: 40px;
     color: #808080;
     transition: .2s color ease-in;
     // display:inline-flex;
@@ -139,6 +138,9 @@ nav {
     color: black;
   }
   a:last-child{
+    float: right;
+    float: clear;
+    margin-right:0;
   }
 }
 

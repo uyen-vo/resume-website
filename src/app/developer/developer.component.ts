@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DevItem, ItemService } from '../item.service';
 
 @Component({
   selector: 'app-developer',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeveloperComponent implements OnInit {
 
-  constructor() { }
+  devItems$: Observable<DevItem[]>;
+
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
+    this.devItems$ = this.itemService.getDevItems();
+    console.log(this.devItems$)
   }
 
 }

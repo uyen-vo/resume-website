@@ -1,14 +1,6 @@
 <div class="container">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut congue nisl. Cras id justo ut lorem sollicitudin sagittis. Phasellus a cursus erat. Donec convallis, nibh sodales eleifend viverra, nibh elit pretium urna, sit amet tincidunt risus lectus quis mauris. Aenean vitae pellentesque sapien. Nunc porttitor accumsan erat vel imperdiet. Vivamus ac orci vel arcu lacinia ultricies.
-
-Etiam sed aliquet nisi, pharetra pharetra metus. Nullam odio arcu, consectetur eu maximus a, convallis in lectus. Etiam sapien tortor, dapibus auctor varius vitae, aliquam vel ipsum. Donec ex quam, euismod a vestibulum in, lobortis eu lectus. Mauris tristique leo vel ipsum ultrices, volutpat varius nisi vehicula. Vivamus metus justo, efficitur vel elit a, placerat elementum massa. Morbi fermentum gravida iaculis. Nam dignissim erat orci, sit amet fringilla orci scelerisque ac. Nam non imperdiet mi. Morbi laoreet, arcu et congue dictum, enim velit viverra orci, at fringilla metus mi at nibh. Ut in consectetur ante. Aenean posuere dui nec mattis dignissim.
-
-Nulla rhoncus blandit urna, quis pulvinar sem egestas et. Proin non nisl eu velit semper accumsan. Praesent non commodo metus. Mauris et lorem elit. Proin gravida massa vitae elit ultrices lacinia. Integer sit amet leo condimentum est dignissim lobortis. Nulla molestie est urna, non tincidunt mauris pharetra vitae. Morbi a rhoncus quam, et consequat quam. Sed ac diam pulvinar, vehicula lectus in, rutrum lectus. Suspendisse potenti. Proin consectetur sodales velit, a tincidunt purus vehicula et. Duis felis enim, vehicula ut dignissim vel, tincidunt vitae nisi.
-
-Praesent sit amet erat non magna cursus vulputate vel a arcu. In fermentum risus purus, vitae porta urna rhoncus a. Nunc fermentum id metus a malesuada. Aliquam sed eleifend massa. Quisque id erat justo. Etiam risus nulla, dignissim pretium sapien et, elementum maximus libero. Mauris aliquam mattis erat et commodo.
-
-Morbi vitae lacinia odio. Maecenas est tellus, varius dapibus ornare id, venenatis a nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eget vehicula eros, eu laoreet lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In eu augue vitae risus ullamcorper rutrum.
-
-Mauris nisl tellus, molestie ut viverra at, porta vel tortor. Etiam pulvinar fringilla nibh, vitae sollicitudin sem efficitur feugiat. Suspendisse volutpat tristique facilisis. Maecenas pulvinar posuere neque, a luctus justo sodales et. Praesent eget lectus tempor, aliquam justo vel, porta tortor. Ut id magna elit. Nam sed ligula condimentum, sodales ipsum sit amet, sodales nisl. Aenean nec maximus ligula, ac vestibulum diam. Praesent at urna suscipit erat faucibus commodo a et elit. Praesent ullamcorper erat id elit viverra, ut placerat massa pulvinar. Donec egestas condimentum pulvinar. Ut tempor eros ac efficitur hendrerit. Suspendisse augue leo, condimentum eu pellentesque id, gravida non sapien. Donec in lectus quis orci tincidunt mattis ut quis augue. Nunc interdum ornare elit, vel dapibus nunc dignissim sed. Nullam eleifend nibh ut semper sollicitudin.
-
+    <div *ngFor="let devItem of devItems$ | async" class="item">
+        <app-dev-item  [devItem]="devItem">
+        </app-dev-item>
+    </div>
 </div>

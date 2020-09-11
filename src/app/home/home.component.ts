@@ -43,7 +43,7 @@ import { Router, NavigationStart } from '@angular/router';
           ':leave',
           [
             style({ opacity: 1 }),
-            animate('1s ease-out',
+            animate('.5s ease-out',
                     style({ opacity: 0 }))
           ]
         )
