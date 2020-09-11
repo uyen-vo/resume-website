@@ -42,14 +42,8 @@
         "preview": ["", ""]
     },
     {
-        "title": "User Interface",
-        "image": "/assets/c-wireframe.jpg",
-        "subtitle": "wireframes",
-        "preview": ["", ""]
-    },
-    {
         "title": "logo graveyard",
-        "image": "/assets/c-xxx.jpg",
+        "image": "/assets/c-trash.jpg",
         "subtitle": "[RIP]",
         "preview": ["", ""]
     }

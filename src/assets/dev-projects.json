@@ -2,7 +2,7 @@
     {
         "title": "smartATM",
         "tags": ["Hardware", "JavaScript", "API", "UI/UX"],
-        "description": "Touchless ATM interface during the Capital One corporate hackathon that could allow users to make deposits, withdraw money, and view account data with hand gestures. Used a Leap Motion Controller for the motion sensor, HTML/CSS/JavaScript for the interface, and the Capital One Nessie API for sample bank data.",
+        "description": "Touchless ATM interface built during the Capital One corporate hackathon that could allow users to make deposits, withdraw money, and view account data with hand gestures. Used a Leap Motion Controller for the motion sensor, HTML/CSS/JavaScript for the interface, and the Capital One Nessie API for sample bank data.",
         "image":"/assets/d-smart-atm.png",
         "github":"https://github.com/uyen-vo/smartATM"
     },
@@ -17,7 +17,7 @@
     {
         "title": "Mood Network",
         "tags": ["Java", "Android Studio", "MongoDB", "UI/UX"],
-        "description": "Android app that monitors the user's mood through use of active and passive data collection. With the user's consent, the app would record statistics such as the daily amount of physical activity and store it in a MongoDB database for researchers to analyze over time.",
+        "description": "Android app that monitors the user's mood through use of active and passive data collection. With the user's consent, the app records daily statistics such as location and microphone activity and store it in a MongoDB database for researchers to analyze over time.",
         "image":"/assets/d-mood-network.png",
         "github":"https://github.com/uyen-vo/moodnetwork",
         "preview": ["/assets/mood-network-1.jpg", "/assets/mood-network-interface.jpg"]

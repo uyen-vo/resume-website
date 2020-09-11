@@ -15,7 +15,6 @@ export class DeveloperComponent implements OnInit {
 
   ngOnInit(): void {
     this.devItems$ = this.itemService.getDevItems();
-    console.log(this.devItems$)
   }
 
 }

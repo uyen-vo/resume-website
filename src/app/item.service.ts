@@ -9,6 +9,14 @@ export interface DevItem {
   image: string;
   description: string;
   github: string;
+  preview?: string[];
+}
+
+export interface CreaItem {
+  title: string;
+  image: string;
+  subtitle: string;
+  preview?: string[];
 }
 
 @Injectable({
@@ -20,5 +28,9 @@ export class ItemService {
 
   getDevItems() {
     return this.http.get<DevItem[]>('../assets/dev-projects.json');
+  }
+
+  getCreaItems() {
+    return this.http.get<CreaItem[]>('../assets/crea-projects.json');
   }
 }
