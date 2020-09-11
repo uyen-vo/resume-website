@@ -96,6 +96,9 @@ import { Router, NavigationStart } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('crePfpRef') crePfpElem: ElementRef;
+  @ViewChild('devPfpRef') devPfpElem: ElementRef;
+
   date = new Date();
   currentPage = '';
   quote = "";
@@ -109,10 +112,6 @@ export class HomeComponent implements OnInit {
     "Reconsider your self-set limitations.",
     "Slow motion better than no motion."
   ];
-
-  @ViewChild('crePfp') crePfp: ElementRef;
-  @ViewChild('devPfp') devPfp: ElementRef;
-
 
   constructor(private router: Router) {
     this.currentPage = this.router.url.substring(1);
@@ -140,26 +139,19 @@ export class HomeComponent implements OnInit {
   togglePfp() : void {
     if (this.currentPage !== '') {
       setTimeout(() => {
-        const elCre: HTMLElement = this.crePfp.nativeElement;
-        const elDev: HTMLElement = this.devPfp.nativeElement;
+        const creElem: HTMLElement = this.crePfpElem.nativeElement;
+        const devElem: HTMLElement = this.devPfpElem.nativeElement;
 
-        elCre.classList.remove("opaque");
-        elDev.classList.remove("opaque");
+        creElem.classList.remove("opaque");
+        devElem.classList.remove("opaque");
 
         if (this.currentPage === "creative") {
-          elCre.classList.add("opaque");
+          creElem.classList.add("opaque");
         } else if (this.currentPage === "developer") {
-          elDev.classList.add("opaque");
+          devElem.classList.add("opaque");
         }
       });
     }
-    
-
-    // document.getElementsByClassName("pfps")[0].classList.remove("opaque");
-    // document.getElementsByClassName("pfps")[1].classList.remove("opaque");
-
-    // document.getElementsByClassName(this.currentPage)[0].classList.add("opaque");
-    
   }
 
 
