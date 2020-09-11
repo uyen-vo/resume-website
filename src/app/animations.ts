@@ -20,7 +20,7 @@ export const listStaggerCreative =
             query(
                 ':enter',
                 [
-                    style({ opacity: 0, transform: 'translateY(-15px)' }),
+                    style({ opacity: 0, transform: 'translateY(-30px)' }),
                     stagger(
                         '.1s',
                         animate(

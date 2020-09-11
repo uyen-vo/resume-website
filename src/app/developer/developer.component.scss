@@ -4,7 +4,7 @@
 
 .item {
   padding: 35px 0px;
-  border-bottom: 1px solid #808080;
+  border-bottom: 1px solid #a4a4a4;
 
   &:first-child {
     padding-top: 0;
@@ -12,5 +12,6 @@
 
   &:last-child {
     border: none;
+    padding-bottom: 150px;
   }
 }

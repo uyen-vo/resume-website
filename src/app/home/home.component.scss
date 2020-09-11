@@ -26,7 +26,7 @@ body {
 #main {
   margin: 0; padding:0;
   display: flex;
-  padding: 0px 200px;
+  padding: 0px 300px;
   height: 100vh;
 }
 
@@ -34,13 +34,13 @@ body {
   height: 100vh;
 
   .flex-child {
-    padding-top: 70px;
+    padding-top: 60px;
     height: 100vh;
   }
 }
 
 .profile {
-  width: 300px;
+  // width: 300px;
   font-size: 14px;
 }
 
@@ -137,8 +137,8 @@ body {
 }
 
 #logo {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
 }
 
 #letter-logo {
@@ -166,7 +166,7 @@ nav {
   a {
     font-family: 'Reem Kufi', sans-serif;
     margin-right: 40px;
-    color: #808080;
+    color: #a4a4a4;
     transition: .2s color ease-in;
     // display:inline-flex;
   }

@@ -19,7 +19,7 @@ import type { BodyScrollOptions } from 'body-scroll-lock';
           [
             style({ height: 0, opacity: 0 }),
             animate('.3s ease-out',
-                    style({ height: 300, opacity: 1 }))
+              style({ height: 300, opacity: 1 }))
           ]
         ),
         transition(
@@ -27,7 +27,7 @@ import type { BodyScrollOptions } from 'body-scroll-lock';
           [
             style({ height: 300, opacity: 1 }),
             animate('.3s ease-in',
-                    style({ height: 0, opacity: 0 }))
+              style({ height: 0, opacity: 0 }))
           ]
         )
       ]
@@ -39,16 +39,16 @@ import type { BodyScrollOptions } from 'body-scroll-lock';
           ':enter',
           [
             style({ opacity: 0 }),
-            animate('1s ease-out',
-                    style({ opacity: 1 }))
+            animate('.7s ease-out',
+              style({ opacity: 1 }))
           ]
         ),
         transition(
           ':leave',
           [
             style({ opacity: 1 }),
-            animate('.5s ease-out',
-                    style({ opacity: 0 }))
+            animate('.3s ease-out',
+              style({ opacity: 0 }))
           ]
         )
       ]
@@ -73,32 +73,33 @@ import type { BodyScrollOptions } from 'body-scroll-lock';
           }),
           style({
             filter: 'blur(100px)',
-        })
-      ]))
-    ])
-  ]),
-  trigger('routerFade', [
-    transition('* => *', [
-      query(
-        ':enter',
-        [style({ opacity: 0 })],
-        { optional: true }
-      ),
-      query(
-        ':leave',
-         [style({ opacity: 1 }), animate('1s', style({ opacity: 0 }))],
-        { optional: true }
-      ),
-      query(
-        ':enter',
-        [style({ opacity: 0 }), animate('1s', style({ opacity: 1 }))],
-        { optional: true }
-      )
-    ])
-  ]),
+          })
+        ]))
+      ])
+    ]),
+    trigger('routerFade', [
+      transition('* => *', [
+        query(
+          ':enter',
+          [style({ opacity: 0 })],
+          { optional: true }
+        ),
+        query(
+          ':leave',
+          [style({ opacity: 1 }), animate('1s', style({ opacity: 0 }))],
+          { optional: true }
+        ),
+        query(
+          ':enter',
+          [style({ opacity: 0 }), animate('1s', style({ opacity: 1 }))],
+          { optional: true }
+        )
+      ])
+    ]),
   ],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit
+{
 
   @ViewChild('crePfpRef') crePfpElem: ElementRef;
   @ViewChild('devPfpRef') devPfpElem: ElementRef;
@@ -118,11 +119,14 @@ export class HomeComponent implements OnInit {
     "Every passing moment is a chance to turn it all around."
   ];
 
-  constructor(private router: Router) {
+  constructor(private router: Router)
+  {
     this.currentPage = this.router.url.substring(1);
 
-    router.events.subscribe(event => {
-      if (event instanceof NavigationStart){
+    router.events.subscribe(event =>
+    {
+      if (event instanceof NavigationStart)
+      {
         this.currentPage = event.url.substring(1);
         this.togglePfp();
         console.log(this.currentPage);
@@ -132,9 +136,11 @@ export class HomeComponent implements OnInit {
     this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     //timer
-    setInterval(() => {
+    setInterval(() =>
+    {
       this.date = new Date();
     }, 1000);
 
@@ -143,22 +149,27 @@ export class HomeComponent implements OnInit {
     const options: BodyScrollOptions = {
       reserveScrollBarGap: true,
     };
-    
+
     disableBodyScroll(document.getElementsByClassName('router-container')[0], options);
   }
 
-  togglePfp() : void {
-    if (this.currentPage !== '') {
-      setTimeout(() => {
+  togglePfp(): void
+  {
+    if (this.currentPage !== '')
+    {
+      setTimeout(() =>
+      {
         const creElem: HTMLElement = this.crePfpElem.nativeElement;
         const devElem: HTMLElement = this.devPfpElem.nativeElement;
 
         creElem.classList.remove("opaque");
         devElem.classList.remove("opaque");
 
-        if (this.currentPage === "creative") {
+        if (this.currentPage === "creative")
+        {
           creElem.classList.add("opaque");
-        } else if (this.currentPage === "developer") {
+        } else if (this.currentPage === "developer")
+        {
           devElem.classList.add("opaque");
         }
       });

@@ -5,13 +5,15 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './lightbox.component.html',
   styleUrls: ['./lightbox.component.scss']
 })
-export class LightboxComponent implements OnInit {
+export class LightboxComponent implements OnInit
+{
 
   @Input() previews: string[];
-  
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
   }
 
 }

@@ -6,11 +6,11 @@
             <span *ngFor="let tag of devItem.tags" class="tag">{{ tag }}</span>
         </h3>
         <p>{{ devItem.description }}</p>
-        <p #toggleRef class="toggle" *ngIf="devItem.preview" (click)="toggleViewMore()">
+        <p #toggleRef class="toggle" *ngIf="devItem.preview" (click)="togglePreview()">
             <!-- <img src="../../assets/arrow.svg"/> -->
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 321.878 186.071" enable-background="new 0 0 321.878 186.071"
-                xml:space="preserve">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 321.878 186.071"
+                enable-background="new 0 0 321.878 186.071" xml:space="preserve">
                 <g>
                     <path fill-rule="evenodd" clip-rule="evenodd" fill="#23a9e1" d="M24.902,0c2.863,2.985,5.686,6.013,8.824,8.721
                         c0.29,0.25,0.549,0.537,0.82,0.809c41.762,41.761,83.526,83.52,125.263,125.306c0.86,0.861,1.24,0.788,2.06-0.033
@@ -21,12 +21,12 @@
                         c-0.303-0.342-0.589-0.699-0.912-1.021c-49.14-49.146-98.285-98.285-147.411-147.445c-1.39-1.391-2.743-2.825-4.034-4.332
                         C5.636,30.369,2.731,27.825,0,25.132c0-0.076,0-0.153,0-0.23c0.287-0.248,0.593-0.477,0.857-0.747
                         c2.84-2.899,5.713-5.766,8.524-8.695c4.729-4.928,9.633-9.687,14.46-14.521C24.136,0.644,24.396,0.313,24.671,0
-                        C24.748,0,24.825,0,24.902,0z"/>
+                        C24.748,0,24.825,0,24.902,0z" />
                 </g>
             </svg>
             <span>View more</span>
         </p>
-        <div [@slideInOut]="toggleState" class="prev-container">
+        <div *ngIf="toggleViewMore==='true'" [@slideInOut]="toggleViewMore" class="prev-container">
             <app-lightbox [previews]="devItem.preview"></app-lightbox>
         </div>
     </div>

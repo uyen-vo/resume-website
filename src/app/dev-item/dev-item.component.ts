@@ -8,33 +8,35 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
   styleUrls: ['./dev-item.component.scss'],
   animations: [
     trigger('slideInOut', [
-      state('in', style({
-        overflow: 'hidden',
+      state('true, *', style({
         height: '*'
       })),
-      state('*, out', style({
-        opacity: '0',
-        overflow: 'hidden',
-        height: '0',
-        width: '0'
+      state('false, void', style({
+        height: '0'
       })),
       transition('* => *', animate('.3s ease-in-out'))
     ])
   ]
 })
-export class DevItemComponent implements OnInit {
+export class DevItemComponent implements OnInit
+{
 
   @ViewChild('toggleRef') toggleElem: ElementRef;
   @Input() devItem: DevItem;
 
-  toggleState : string;
+  toggleViewMore: string;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void
+  {
+    this.toggleViewMore = "false";
+  }
 
-  toggleViewMore() : void {
+  togglePreview(): void
+  {
     <HTMLElement>(this.toggleElem.nativeElement).classList.toggle("toggle-active");
-    this.toggleState = this.toggleState === 'in' ? 'out' : 'in';
+    this.toggleViewMore = this.toggleViewMore === 'true' ? 'false' : 'true';
+    console.log(this.toggleViewMore)
   }
 }
