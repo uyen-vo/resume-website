@@ -98,11 +98,11 @@ import type { BodyScrollOptions } from 'body-scroll-lock';
     ]),
   ],
 })
-export class HomeComponent implements OnInit
-{
+export class HomeComponent implements OnInit {
 
   @ViewChild('crePfpRef') crePfpElem: ElementRef;
   @ViewChild('devPfpRef') devPfpElem: ElementRef;
+  @ViewChild('quoteRef') quoteElem: ElementRef;
 
   date = new Date();
   currentPage = '';
@@ -116,31 +116,26 @@ export class HomeComponent implements OnInit
     "Today is the first day of the rest of your life.",
     "Reconsider your self-set limitations.",
     "Slow motion better than no motion.",
-    "Every passing moment is a chance to turn it all around."
+    "Every passing moment is a chance to turn it all around.",
+    "&#9698;&#9700;"
   ];
 
-  constructor(private router: Router)
-  {
+  constructor(private router: Router) {
     this.currentPage = this.router.url.substring(1);
 
-    router.events.subscribe(event =>
-    {
-      if (event instanceof NavigationStart)
-      {
+    router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
         this.currentPage = event.url.substring(1);
         this.togglePfp();
         console.log(this.currentPage);
       }
     });
 
-    this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
   }
 
-  ngOnInit(): void
-  {
+  ngOnInit(): void {
     //timer
-    setInterval(() =>
-    {
+    setInterval(() => {
       this.date = new Date();
     }, 1000);
 
@@ -151,30 +146,39 @@ export class HomeComponent implements OnInit
     };
 
     disableBodyScroll(document.getElementsByClassName('router-container')[0], options);
+
+    setTimeout(() => {
+      this.getQuote();
+    }, 200);
+
   }
 
-  togglePfp(): void
-  {
-    if (this.currentPage !== '')
-    {
-      setTimeout(() =>
-      {
+  togglePfp(): void {
+    if (this.currentPage !== '') {
+      setTimeout(() => {
         const creElem: HTMLElement = this.crePfpElem.nativeElement;
         const devElem: HTMLElement = this.devPfpElem.nativeElement;
 
         creElem.classList.remove("opaque");
         devElem.classList.remove("opaque");
 
-        if (this.currentPage === "creative")
-        {
+        if (this.currentPage === "creative") {
           creElem.classList.add("opaque");
-        } else if (this.currentPage === "developer")
-        {
+        } else if (this.currentPage === "developer") {
           devElem.classList.add("opaque");
         }
       });
     }
   }
 
+  getQuote(): void {
+    this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
 
+    if (this.quote === '&#9698;&#9700;') {
+      const quoElem: HTMLElement = this.quoteElem.nativeElement;
+      quoElem.style.fontSize = "35px"
+      quoElem.innerHTML = this.quote;
+      this.quote = '';
+    }
+  }
 }

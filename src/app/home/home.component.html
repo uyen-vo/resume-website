@@ -1,7 +1,7 @@
 <div id="home" *ngIf="currentPage===''" [@slowIn]>
   <div class="content">
     <div class="top">
-      <p>{{ quote }}</p>
+      <p #quoteRef>{{ quote }}</p>
     </div>
 
     <div class="bg">
@@ -36,33 +36,32 @@
   </header> -->
 
   <div class="flex-container" fxLayoutAlign="start space-between" fxLayout="row" fxLayoutGap="80px" fxFlexFill>
-    <div class="profile flex-child" fxFlex="275px">
+    <div class="profile flex-child" fxFlex="283px">
       <a [routerLink]="['/']">
         <div id="logo-nav">
-          <div><img id="logo" src="../../assets/logo-color.png" /></div>
-          <div><img id="letter-logo" src="../../assets/logo-text-02.svg" /></div>
+          <div><img id="logo" src="../../assets/logo-color.png" draggable="false" /></div>
+          <div><img id="letter-logo" src="../../assets/logo-text-02.svg" draggable="false" /></div>
         </div>
       </a>
 
 
       <div class="pfp">
-        <img #crePfpRef src="../../assets/temp.jpg" />
-        <img #devPfpRef class="pfps developer" src="../../assets/irl-pfp.jpg" />
+        <img #crePfpRef src="../../assets/temp.jpg" draggable="false" />
+        <img #devPfpRef src="../../assets/irl-pfp.jpg" draggable="false" />
       </div>
       <p class="location"><img id="loc-img" src='../../assets/location-icon.png' /><span>Dallas, TX</span></p>
       <p class="desc">Passionate about front end technologies, particularly Angular. Also love to draw and dabble in
         graphic design. If you're hiring and find me to be a good fit, please let me know. :)</p>
-      <div id="social">
-        <p><a href="mailto:uyend.vo@gmail.com"><img
-              src='../../assets/location-icon.png' /><span>uyend.vo@gmail.com</span></a></p>
-        <p><a href="https://www.instagram.com/sekaichan.art/"><img
-              src='../../assets/location-icon.png' /><span>sekaichan.art</span></a></p>
-        <p><a href="https://github.com/uyen-vo"><img src='../../assets/location-icon.png' /><span>uyen-vo</span></a></p>
-        <p><a href="https://www.linkedin.com/in/uyen-dung-vo"><img
-              src='../../assets/location-icon.png' /><span>uyen-dung-vo</span></a></p>
-
-
-      </div>
+      <ul id="social">
+        <li><a href="mailto:uyend.vo@gmail.com"><img
+              src='../../assets/social-email.svg' /><span>uyend.vo@gmail.com</span></a></li>
+        <li><a href="https://www.instagram.com/sekaichan.art/"><img
+              src='../../assets/social-insta.svg' /><span>sekaichan.art</span></a></li>
+        <li><a href="https://github.com/uyen-vo"><img src='../../assets/social-git.svg' /><span>uyen-vo</span></a>
+        </li>
+        <li><a href="https://www.linkedin.com/in/uyen-dung-vo"><img src='../../assets/social-linkedin.svg'
+              id="linkedin" /><span>uyen-dung-vo</span></a></li>
+      </ul>
 
     </div>
 

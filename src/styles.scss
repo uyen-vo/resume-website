@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+@import 'shared.scss';
 
 * {
   font-family: 'Roboto Mono', monospace;
@@ -22,7 +23,7 @@
   &::-webkit-scrollbar-thumb {
     // background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgb(189, 189, 189) 50%, rgba(0,0,0,0) 100%);
     // border: 1px solid gray;
-    background: lightgray;
+    background: transparent;
     transition: all .3s ease-in-out;
   }
 
@@ -42,4 +43,8 @@ a {
 body {
   margin: 0;
   padding: 0;
+}
+
+img, svg {
+    @extend .no-select;
 }

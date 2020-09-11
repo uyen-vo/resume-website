@@ -46,7 +46,8 @@ body {
 
 .pfp {
   width: 100%;
-  height: 300px;
+  height: 283px;
+  //TODO: change height based on viewport
   margin: 0 auto;
   margin-top:50px;
   position: relative;
@@ -82,6 +83,8 @@ body {
 .location {
   display: table;
   font-weight: 700;
+  padding: 0;
+  margin: 12px 0px 18px 0px;
 
   span {
     background-color: $lightblue;
@@ -90,10 +93,15 @@ body {
 }
 
 #social {
-  p {
+  list-style-type: none;
+  margin:0; padding: 0;
+  font-size: 14px;
+  margin-top: 18px;
+
+  li {
     font-weight: 700;
     padding:0; margin:0;
-
+    padding-bottom: 2px;
     a {
       color: black;
       
@@ -109,14 +117,22 @@ body {
       }
     }
   }
+
   img {
-    width:20px;
+    width:18px;
     vertical-align: middle;
+    
+  }
+
+  #linkedin {
+    width: 15px;
   }
 }
 
 .desc { 
   letter-spacing: .15px;
+  line-height: 18px;
+  padding: 0; margin: 0;
 }
 
 .router-container{

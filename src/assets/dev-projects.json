@@ -65,7 +65,7 @@
             "UI/UX",
             "Jamstack"
         ],
-        "description": "eCommerce site to sell my watercolor paintings. Used SnipCart API for the shopping cart integration and Scully.io, a new static site generator made for Angular projects, to best optimize SEO and site performance.",
+        "description": "eCommerce site to sell my watercolor paintings. Incporporated SnipCart for the shopping cart/payment collection integration and Scully.io, a new static site generator made for Angular projects, to best optimize SEO and site performance.",
         "image": "/assets/d-sekai.png",
         "github": "https://github.com/uyen-vo/art-ecommerce-site"
     }
