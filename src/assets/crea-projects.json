@@ -1,0 +1,56 @@
+[
+    {
+        "title": "BERY",
+        "image": "/assets/c-bery.jpg",
+        "subtitle": "branding",
+        "preview": ["", ""]
+    },
+    {
+        "title": "Starry Avenue",
+        "image": "/assets/c-starry.jpg",
+        "subtitle": "card game",
+        "preview": ["", ""]
+    },
+    {
+        "title": "Code Literate",
+        "image": "/assets/c-code-lit.jpg",
+        "subtitle": "branding",
+        "preview": ["", ""]
+    },
+    {
+        "title": "User Interface",
+        "image": "/assets/c-wireframe.jpg",
+        "subtitle": "wireframes",
+        "preview": ["", ""]
+    },
+    {
+        "title": "Neutraface",
+        "image": "/assets/c-neutra.jpg",
+        "subtitle": "bifold print",
+        "preview": ["", ""]
+    },
+    {
+        "title": "The Flowers of Evil",
+        "image": "/assets/c-flowers.jpg",
+        "subtitle": "book cover",
+        "preview": ["", ""]
+    },
+    {
+        "title": "filament",
+        "image": "/assets/c-filament.jpg",
+        "subtitle": "custom typeface",
+        "preview": ["", ""]
+    },
+    {
+        "title": "User Interface",
+        "image": "/assets/c-wireframe.jpg",
+        "subtitle": "wireframes",
+        "preview": ["", ""]
+    },
+    {
+        "title": "logo graveyard",
+        "image": "/assets/c-xxx.jpg",
+        "subtitle": "[RIP]",
+        "preview": ["", ""]
+    }
+]

@@ -1,0 +1,18 @@
+<div class="container" fxLayoutAlign="center start" fxLayout="row" fxLayoutGap="100px" fxFlexFill>
+    <div class="content">
+        <h1>{{ devItem.title }}</h1>
+        <h3>
+            <span class="git"><a [href]="devItem.github">GitHub</a></span>
+            <span *ngFor="let tag of devItem.tags" class="tag">{{ tag }}</span>
+        </h3>
+        <p>{{ devItem.description }}</p>
+        <p class="toggle"><a>View more</a></p>
+    </div>
+    <div><img [src]="devItem.image" /></div>
+</div>
+
+<!-- 
+<div *ngFor="let devItem of devItems$ | async" class="">
+    <app-dev-item  [devItem]="devItem">
+    </app-dev-item>
+</div> -->

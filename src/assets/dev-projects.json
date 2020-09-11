@@ -1,0 +1,40 @@
+[
+    {
+        "title": "smartATM",
+        "tags": ["Hardware", "JavaScript", "API", "UI/UX"],
+        "description": "Touchless ATM interface during the Capital One corporate hackathon that could allow users to make deposits, withdraw money, and view account data with hand gestures. Used a Leap Motion Controller for the motion sensor, HTML/CSS/JavaScript for the interface, and the Capital One Nessie API for sample bank data.",
+        "image":"/assets/d-smart-atm.png",
+        "github":"https://github.com/uyen-vo/smartATM"
+    },
+    {
+        "title": "America Feels",
+        "tags": ["JavaScript", "AWS", "Data Visualization", "API", "UI/UX"],
+        "description": "Web application that visually displays how America feels about a topic based on Twitter posts. Used the Twitter Streaming API to pull live data, Microsoft Cognitive API to analyze the Tweets, and d3.js to dynamically display the data on a U.S. map.",
+        "image":"/assets/d-america-feels.png",
+        "github":"https://github.com/uyen-vo/AmericaFeels.github.io",
+        "preview": ["/assets/america-1.jpg"]
+    },
+    {
+        "title": "Mood Network",
+        "tags": ["Java", "Android Studio", "MongoDB", "UI/UX"],
+        "description": "Android app that monitors the user's mood through use of active and passive data collection. With the user's consent, the app would record statistics such as the daily amount of physical activity and store it in a MongoDB database for researchers to analyze over time.",
+        "image":"/assets/d-mood-network.png",
+        "github":"https://github.com/uyen-vo/moodnetwork",
+        "preview": ["/assets/mood-network-1.jpg", "/assets/mood-network-interface.jpg"]
+    },
+    {
+        "title": "Kanye Ipsum",
+        "tags": ["Java", "Android Studio", "Material Design"],
+        "description": "Lorem Ipsum generator based on Kanye West quotes & lyrics; incorporated multithreading in the text generator algorithm to increase app speed and efficiency.",
+        "image":"/assets/d-kanye.png",
+        "github":"https://github.com/uyen-vo/Kanye-Ipsum"
+    },
+    {
+        "title": "Sekai Chan Art",
+        "tags": ["TypeScript", "API", "UI/UX", "Jamstack"],
+        "description": "eCommerce site to sell my watercolor paintings. Used SnipCart API for the shopping cart integration and Scully.io, a new static site generator made for Angular projects, to best optimize SEO and site performance.",
+        "image":"/assets/logo-color.png",
+        "github":"https://github.com/uyen-vo/Kanye-Ipsum"
+    }
+      
+]
