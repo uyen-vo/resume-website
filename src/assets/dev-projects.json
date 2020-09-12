@@ -7,9 +7,15 @@
             "API",
             "UI/UX"
         ],
-        "description": "Touchless ATM interface built during the Capital One corporate hackathon that could allow users to make deposits, withdraw money, and view account data with hand gestures. Used a Leap Motion Controller for the motion sensor, HTML/CSS/JavaScript for the interface, and the Capital One Nessie API for sample bank data.",
+        "description": "Touchless ATM interface built during the Capital One corporate hackathon that would allow users to make deposits, withdraw money, and view account data with hand gestures. Used a Leap Motion Controller for the motion sensor, HTML/CSS/JavaScript for the interface, and the Capital One Nessie API for sample bank data.",
         "image": "/assets/d-smart-atm.png",
-        "github": "https://github.com/uyen-vo/smartATM"
+        "github": "https://github.com/uyen-vo/smartATM",
+        "preview": [
+            "/assets/smart-atm-1.JPG",
+            "/assets/smart-atm-2.JPG",
+            "/assets/smart-atm-3.JPG",
+            "/assets/smart-atm-4.JPG"
+        ]
     },
     {
         "title": "America Feels",

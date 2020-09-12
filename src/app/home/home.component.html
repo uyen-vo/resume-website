@@ -1,22 +1,22 @@
-<div id="home" *ngIf="currentPage===''" [@slowIn]>
+<div id="home" *ngIf="currentPage===''" [@slowIn] (click)="enterSite()">
   <div class="content">
     <div class="top">
       <p #quoteRef>{{ quote }}</p>
     </div>
 
     <div class="bg">
-      <img class="bg-img" src="../../assets/bg-1.jpg" />
+      <img class="bg-img" [src]="bgImg" />
       <img class="logo-white" src="../../assets/logo-white-04.svg" />
-      <div class="links">
+      <!-- <div class="links">
         <a [routerLink]="['/creative']">[creative]</a>
         <a [routerLink]="['/developer']">[developer]</a>
-      </div>
+      </div> -->
     </div>
 
     <div class="bottom">
       <p>{{ date | date: 'MM.dd.yyyy' }}</p>
       <p class="date">{{ date | date: 'hh:mm:ss a' }}</p>
-      <p><img id="music-img" src='../../assets/music-icon.png' /><span> Cardi B - WAP</span></p>
+      <p><img id="music-img" src='../../assets/music-icon.png' /><span> <a [href]="songLink">{{ song }}</a></span></p>
     </div>
   </div>
 </div>

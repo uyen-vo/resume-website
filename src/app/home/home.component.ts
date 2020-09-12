@@ -103,9 +103,22 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('quoteRef') quoteElem: ElementRef;
 
+  bgImg: string;
   date = new Date();
   currentPage = '';
   quote = "";
+  song = "";
+
+  songs = [
+    'Avicii - Enough is Enough',
+    'Kanye West - Everything We Need',
+    ['Yandhi', 'https://youtu.be/B9IiqCQH9qM?list=FLW3yzOi3Bl2wCJ1dJwnl44A'],
+    ['Frank Ocean - Strawberry Swing', 'https://youtu.be/G7wcRZWRDdw'],
+    ['', 'https://youtu.be/KvA1cmT2TYc'],
+    ''
+
+  ]
+
   quotes = [
     "memento mori",
     "I felt the unconventional.",
@@ -115,8 +128,12 @@ export class HomeComponent implements OnInit {
     "Today is the first day of the rest of your life.",
     "Reconsider your self-set limitations.",
     "Slow motion better than no motion.",
-    "Every passing moment is a chance to turn it all around.",
-    "&#9698;&#9700;"
+    "Remember...every passing moment is a chance to turn it all around.",
+    "&#9698;&#9700;",
+    "money ain't real, time ain't real",
+    "woke up and felt the vibe",
+    "without you it's a waste of time"
+
   ];
 
   pfpWidth: number;
@@ -152,10 +169,17 @@ export class HomeComponent implements OnInit {
       }, 200);
     }
 
+    this.bgImg = "../../assets/bg-" + (this.getRandomNumber(3) + 1) + ".jpg";
+
+  }
+
+  // [0, num)
+  getRandomNumber(num: number): number {
+    return Math.floor(Math.random() * num);
   }
 
   getQuote(): void {
-    this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+    this.quote = this.quotes[this.getRandomNumber(this.quotes.length)];
 
     if (this.quote === '&#9698;&#9700;') {
       const quoElem: HTMLElement = this.quoteElem.nativeElement;
@@ -165,8 +189,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  onResized(event: ResizedEvent) {
+  onResized(event: ResizedEvent): void {
     this.pfpWidth = event.newWidth;
     console.log(this.pfpWidth)
+  }
+
+  enterSite(): void {
+    this.router.navigateByUrl('/creative');
   }
 }
