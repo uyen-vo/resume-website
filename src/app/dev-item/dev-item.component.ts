@@ -18,25 +18,24 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class DevItemComponent implements OnInit
-{
+export class DevItemComponent implements OnInit {
 
   @ViewChild('toggleRef') toggleElem: ElementRef;
   @Input() devItem: DevItem;
 
-  toggleViewMore: string;
+  toggleViewMore: boolean;
 
   constructor() { }
 
-  ngOnInit(): void
-  {
-    this.toggleViewMore = "false";
+  ngOnInit(): void {
+    this.toggleViewMore = false;
   }
 
-  togglePreview(): void
-  {
-    <HTMLElement>(this.toggleElem.nativeElement).classList.toggle("toggle-active");
-    this.toggleViewMore = this.toggleViewMore === 'true' ? 'false' : 'true';
-    console.log(this.toggleViewMore)
+  togglePreview(): void {
+    //   <HTMLElement>(this.toggleElem.nativeElement).classList.toggle("toggle-active");
+    //   this.toggleViewMore = this.toggleViewMore === 'true' ? 'false' : 'true';
+    //   console.log(this.toggleViewMore)
+
+    // this.toggleViewMore = true ? false : true
   }
 }

@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { trigger, keyframes, style, animate, transition, query } from '@angular/animations';
 import { Router, NavigationStart } from '@angular/router';
+import { ResizedEvent } from 'angular-resize-event';
 
 
-import { disableBodyScroll } from 'body-scroll-lock';
-import type { BodyScrollOptions } from 'body-scroll-lock';
+// import { disableBodyScroll } from 'body-scroll-lock';
+// import type { BodyScrollOptions } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-home',
@@ -100,8 +101,6 @@ import type { BodyScrollOptions } from 'body-scroll-lock';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('crePfpRef') crePfpElem: ElementRef;
-  @ViewChild('devPfpRef') devPfpElem: ElementRef;
   @ViewChild('quoteRef') quoteElem: ElementRef;
 
   date = new Date();
@@ -120,13 +119,15 @@ export class HomeComponent implements OnInit {
     "&#9698;&#9700;"
   ];
 
+  pfpWidth: number;
+
   constructor(private router: Router) {
     this.currentPage = this.router.url.substring(1);
 
     router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.currentPage = event.url.substring(1);
-        this.togglePfp();
+        // this.togglePfp();
         console.log(this.currentPage);
       }
     });
@@ -139,36 +140,18 @@ export class HomeComponent implements OnInit {
       this.date = new Date();
     }, 1000);
 
-    this.togglePfp();
+    // const options: BodyScrollOptions = {
+    //   reserveScrollBarGap: true,
+    // };
 
-    const options: BodyScrollOptions = {
-      reserveScrollBarGap: true,
-    };
+    // disableBodyScroll(document.getElementsByClassName('router-container')[0], options);
 
-    disableBodyScroll(document.getElementsByClassName('router-container')[0], options);
-
-    setTimeout(() => {
-      this.getQuote();
-    }, 200);
-
-  }
-
-  togglePfp(): void {
-    if (this.currentPage !== '') {
+    if (this.currentPage === '') {
       setTimeout(() => {
-        const creElem: HTMLElement = this.crePfpElem.nativeElement;
-        const devElem: HTMLElement = this.devPfpElem.nativeElement;
-
-        creElem.classList.remove("opaque");
-        devElem.classList.remove("opaque");
-
-        if (this.currentPage === "creative") {
-          creElem.classList.add("opaque");
-        } else if (this.currentPage === "developer") {
-          devElem.classList.add("opaque");
-        }
-      });
+        this.getQuote();
+      }, 200);
     }
+
   }
 
   getQuote(): void {
@@ -180,5 +163,10 @@ export class HomeComponent implements OnInit {
       quoElem.innerHTML = this.quote;
       this.quote = '';
     }
+  }
+
+  onResized(event: ResizedEvent) {
+    this.pfpWidth = event.newWidth;
+    console.log(this.pfpWidth)
   }
 }

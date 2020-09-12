@@ -2,13 +2,15 @@
   --gap: 12px;
   display: inline-flex;
   flex-wrap: wrap;
+  
+  // justify-content: space-between;
   margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
-  width: calc(100% + var(--gap));
-
+  // width: calc(100% + var(--gap));
+  // background-color: red;
   
   font-size: 14px;
   // border: 1px solid red;
-  padding-right: 10px;
+  // padding-right: 10px;
 }
 
 .container > * {
@@ -18,9 +20,8 @@
 .item {
   // border: 1px solid blue;
   position: relative;
-  border: 1px solid blue;
-  height: 200px;
-  width: 200px;
+  // border: 1px solid blue;
+  width: calc(25% - 12px);
 }
 
 p {

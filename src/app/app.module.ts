@@ -11,8 +11,8 @@ import { CreativeComponent } from './creative/creative.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { DevItemComponent } from './dev-item/dev-item.component';
 
-import { NgScrollbarModule } from 'ngx-scrollbar';
 import { LightboxComponent } from './lightbox/lightbox.component';
+import { AngularResizedEventModule } from 'angular-resize-event';
 
 @NgModule({
   declarations: [
@@ -29,10 +29,7 @@ import { LightboxComponent } from './lightbox/lightbox.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     HttpClientModule,
-    // NgScrollbarModule.withConfig({
-    //   // 'viewClass': 'custom-scroll'
-    //   'visibility': 'hover'
-    // })
+    AngularResizedEventModule
   ],
   providers: [],
   bootstrap: [AppComponent]

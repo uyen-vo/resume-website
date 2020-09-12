@@ -1,5 +1,9 @@
-<div class="lightbox-container">
-    <div *ngFor="let prevImage of previews" class="prev-img">
-        <img [src]="prevImage" />
+<div class="container">
+    <div *ngFor="let prevImage of previews" class="preview">
+        <img [src]="prevImage" (click)="openGallery($event.target)" />
     </div>
+</div>
+
+<div *ngIf="galleryToggle" class="gallery" (click)="galleryToggle = false">
+
 </div>

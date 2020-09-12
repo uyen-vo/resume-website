@@ -35,8 +35,8 @@
     </nav>
   </header> -->
 
-  <div class="flex-container" fxLayoutAlign="start space-between" fxLayout="row" fxLayoutGap="80px" fxFlexFill>
-    <div class="profile flex-child" fxFlex="283px">
+  <div class="flex-container" fxLayoutAlign="start space-between" fxLayout="row" fxLayoutGap="5%" fxFlexFill>
+    <div fxFlex="20" class="profile flex-child" (resized)="onResized($event)">
       <a [routerLink]="['/']">
         <div id="logo-nav">
           <div><img id="logo" src="../../assets/logo-color.png" draggable="false" /></div>
@@ -45,9 +45,9 @@
       </a>
 
 
-      <div class="pfp">
-        <img #crePfpRef src="../../assets/temp.jpg" draggable="false" />
-        <img #devPfpRef src="../../assets/irl-pfp.jpg" draggable="false" />
+      <div class="pfp" [style.height.px]="pfpWidth">
+        <img [ngClass]="{'opaque': currentPage=='creative'}"src="../../assets/temp.jpg" draggable="false" />
+        <img [ngClass]="{'opaque': currentPage=='developer'}" src="../../assets/irl-pfp.jpg" draggable="false" />
       </div>
       <p class="location"><img id="loc-img" src='../../assets/location-icon.png' /><span>Dallas, TX</span></p>
       <p class="desc">Passionate about front end technologies, particularly Angular. Also love to draw and dabble in
@@ -66,7 +66,7 @@
     </div>
 
     <!-- <div class="router-container" [@routerFade]="o.isActivated ? o.activatedRoute : ''"> -->
-    <div class="flex-child" fxFlex="grow" fxLayout="column">
+    <div class="flex-child"  fxLayout="column">
       <nav>
         <a [routerLink]="['/creative']" routerLinkActive="active">creative</a>
         <a [routerLink]="['/developer']" routerLinkActive="active">developer</a>
