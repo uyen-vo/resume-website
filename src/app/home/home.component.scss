@@ -269,7 +269,7 @@ nav .active {
 }
 
 .top {
-  margin-top: 20px;
+  margin-top: 10px;
   height: 300px;
   // border: 1px solid black;
   position: relative;
@@ -304,8 +304,9 @@ nav .active {
   a {
     color: white;
 
+    text-shadow: 0 0 7px black;
     &:hover {
-      text-shadow: 0 0 3px white;
+      text-shadow: 0 0 5px black;
       transition: text-shadow .1s ease-in;
     }
   }

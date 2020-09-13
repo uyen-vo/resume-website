@@ -22,17 +22,18 @@
         "image": "/assets/c-code-lit.jpg",
         "subtitle": "branding",
         "preview": [
-            "",
-            ""
+            "/assets/code-lit-1.jpg",
+            "/assets/code-lit-2.jpg",
+            "/assets/code-lit-3.jpg"
         ]
     },
     {
         "title": "Wireframes",
         "image": "/assets/c-wireframe.jpg",
-        "subtitle": "my process",
+        "subtitle": "creative process",
         "preview": [
-            "",
-            ""
+            "/assets/cc-wireframe-1.jpg",
+            "/assets/cc-wireframe-2.jpg"
         ]
     },
     {
@@ -40,8 +41,8 @@
         "image": "/assets/c-neutra.jpg",
         "subtitle": "bifold print",
         "preview": [
-            "",
-            ""
+            "/assets/bifold-2.jpg",
+            "/assets/bifold-1.jpg"
         ]
     },
     {
@@ -65,7 +66,7 @@
     {
         "title": "design graveyard",
         "image": "/assets/c-trash.jpg",
-        "subtitle": "[RIP]",
+        "subtitle": "RIP",
         "preview": [
             "",
             ""

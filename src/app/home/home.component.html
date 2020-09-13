@@ -7,16 +7,17 @@
     <div class="bg">
       <img class="bg-img" [src]="bgImg" />
       <img class="logo-white" src="../../assets/logo-white-04.svg" />
-      <!-- <div class="links">
-        <a [routerLink]="['/creative']">[creative]</a>
-        <a [routerLink]="['/developer']">[developer]</a>
-      </div> -->
+      <div class="links">
+        <!-- <a [routerLink]="['/creative']">[creative]</a>
+        <a [routerLink]="['/developer']">[developer]</a> -->
+          <a>(enter site)</a>
+      </div>
     </div>
 
     <div class="bottom">
       <p>{{ date | date: 'MM.dd.yyyy' }}</p>
       <p class="date">{{ date | date: 'hh:mm:ss a' }}</p>
-      <p><img id="music-img" src='../../assets/music-icon.png' /><span> <a [href]="songLink">{{ song }}</a></span></p>
+      <p><img id="music-img" src='../../assets/music-icon.png' /><span> <a href="{{songLink}}">{{ song }}</a></span></p>
     </div>
   </div>
 </div>
@@ -37,7 +38,7 @@
 
   <div class="flex-container" fxLayoutAlign="start space-between" fxLayout="row" fxLayoutGap="5%" fxFlexFill>
     <div fxFlex="20" class="profile flex-child" (resized)="onResized($event)">
-      <a [routerLink]="['/']">
+      <a [routerLink]="['/']"  (click)="loadLandingPage()">
         <div id="logo-nav">
           <div><img id="logo" src="../../assets/logo-color.png" draggable="false" /></div>
           <div><img id="letter-logo" src="../../assets/logo-text-02.svg" draggable="false" /></div>

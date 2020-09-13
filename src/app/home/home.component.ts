@@ -106,17 +106,17 @@ export class HomeComponent implements OnInit {
   bgImg: string;
   date = new Date();
   currentPage = '';
-  quote = "";
-  song = "";
+  quote: string;
+  song: string;
+  songLink: string;
+  pfpWidth: number;
 
   songs = [
     'Avicii - Enough is Enough',
     'Kanye West - Everything We Need',
     ['Yandhi', 'https://youtu.be/B9IiqCQH9qM?list=FLW3yzOi3Bl2wCJ1dJwnl44A'],
     ['Frank Ocean - Strawberry Swing', 'https://youtu.be/G7wcRZWRDdw'],
-    ['', 'https://youtu.be/KvA1cmT2TYc'],
-    ''
-
+    ['', 'https://youtu.be/KvA1cmT2TYc']
   ]
 
   quotes = [
@@ -136,8 +136,6 @@ export class HomeComponent implements OnInit {
 
   ];
 
-  pfpWidth: number;
-
   constructor(private router: Router) {
     this.currentPage = this.router.url.substring(1);
 
@@ -145,6 +143,10 @@ export class HomeComponent implements OnInit {
       if (event instanceof NavigationStart) {
         this.currentPage = event.url.substring(1);
         // this.togglePfp();
+
+        if (this.currentPage === '') {
+          this.loadLandingPage();
+        }
         console.log(this.currentPage);
       }
     });
@@ -152,6 +154,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.song = '';
+    this.quote = '';
+    this.songLink = '';
+
     //timer
     setInterval(() => {
       this.date = new Date();
@@ -164,12 +170,32 @@ export class HomeComponent implements OnInit {
     // disableBodyScroll(document.getElementsByClassName('router-container')[0], options);
 
     if (this.currentPage === '') {
-      setTimeout(() => {
-        this.getQuote();
-      }, 200);
+      this.loadLandingPage();
     }
 
+  }
+
+  loadLandingPage(): void {
+    setTimeout(() => {
+      this.getQuote();
+    }, 200);
+
     this.bgImg = "../../assets/bg-" + (this.getRandomNumber(3) + 1) + ".jpg";
+
+    const randomSong = this.songs[this.getRandomNumber(this.songs.length)];
+    this.songLink = '';
+
+    if (randomSong instanceof Array) {
+      if (randomSong[0] == '') {
+        this.song = "  " + randomSong[1];
+      } else {
+        this.song = "  " + randomSong[0];
+      }
+
+      this.songLink = randomSong[1];
+    } else {
+      this.song = randomSong;
+    }
 
   }
 
