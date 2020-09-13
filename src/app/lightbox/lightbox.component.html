@@ -7,20 +7,27 @@
 <div [ngClass]="{'show-gallery': galleryToggle==true}" class="gallery" (click)="closeGallery()"
     fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
     <div fxFlex="50" class="img-container gallery-child" >
-        <img id="main-img" [src]="curImageSrc" (click)="onImageClick($event)" usemap="#prevmap"/>
-        <map name="prevmap">
+        <div class="img-container"
+            fxLayout="row" fxLayoutAlign="center none" fxLayoutGap="10px">
+            <div  [ngClass]="{'hide-arr':curIndex===0}"
+                class="arr left"><img (click)="swapCurImage('left', $event)" src="../../assets/arrow.svg"></div>
+            <img id="main-img" [src]="curImageSrc" (click)="onMainImageClick($event)"/>
+            <div  [ngClass]="{'hide-arr':curIndex===previews.length-1}"
+                class="arr right"><img (click)="swapCurImage('right', $event)" src="../../assets/arrow.svg"></div>
+        </div>
+        <!-- <map name="prevmap">
             <area shape="rect" coords="0,0,0,0" (click)="navigate('left')">
             <area shape="rect" coords="0,0,0,0" (click)="navigate('right')">
-        </map>
+        </map> -->
     </div>
     <div fxFlex="20" class="gallery-child">
         <div class="prev-container"
-            fxLayout="row" fxLayoutAlign="center none" fxLayoutGap="10px">
+            fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
             <!-- <div *ngFor="let prevImage of previews" class="gallery-preview">
                 <img [src]="prevImage"/>
             </div> -->
 
-            <img *ngFor="let prevImage of previews" class="gallery-preview" [src]="prevImage">
+            <img *ngFor="let prevImage of previews; index as i" (click)="onImageClick($event, i)" class="gallery-preview" [src]="prevImage">
         </div>
     </div>
 </div>

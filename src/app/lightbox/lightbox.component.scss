@@ -1,3 +1,5 @@
+@import '../../shared.scss';
+
 .container{
     display: flex;
 }
@@ -44,21 +46,41 @@
 }
 
 .img-container {
-    // width: 80%;
     // border: 1px solid red;
-    margin:0 auto;
-    
-    
+    height: 100%;
+
+    .arr img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .arr {
+        align-self:center;
+        &.left img{
+            transform: rotate(90deg);
+        }
+
+        &.right img{
+            transform: rotate(-90deg);
+        }
+
+        img {
+            // margin: 0;
+            // position: absolute;
+            // top: 50%;
+            // -ms-transform: translateY(-50%);
+            // transform: translateY(-50%);
+        }
+    }
+
     img {
-        object-fit: scale-down;
         height: 100%;
         display: block;
-        margin: 0 auto;
     }
 }
 
 .prev-container {
-    border: 1px solid red;
+    // border: 1px solid red;
     height: 100%;
 
     img {
@@ -76,4 +98,16 @@
 
 .gallery-child {
     // background-color: yellow;
+    width:100%;
+}
+
+area {
+    cursor: pointer;
+}
+
+.hide-arr {
+    width: 50px;
+    img {
+        display: none;
+    }
 }

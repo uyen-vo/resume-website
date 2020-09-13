@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-lightbox',
@@ -25,7 +25,8 @@ export class LightboxComponent implements OnInit {
     this.curImageSrc = imgSrc;
     this.curIndex = index;
 
-    this.swapCurImage();
+    console.log(index)
+    this.swapCurImage('');
   }
 
   closeGallery(): void {
@@ -33,25 +34,72 @@ export class LightboxComponent implements OnInit {
     this.galleryToggle = false;
   }
 
-  swapCurImage(): void {
-    this.curImage = <HTMLImageElement>document.getElementsByClassName("gallery-preview")[this.curIndex];
-
-    this.setMapCoords();
-    this.curImage.style.filter = 'brightness(100%)';
-  }
-
-  onImageClick(event: MouseEvent): void {
+  onMainImageClick(event: MouseEvent): void {
     event.stopPropagation();
   }
 
-  setMapCoords(): void {
-    const areas = document.getElementsByTagName('area');
-    const w = document.getElementById('main-img').clientWidth;
-    const h = document.getElementById('main-img').clientHeight;
+  onImageClick(event: MouseEvent, index: number): void {
+    event.stopPropagation();
 
-    areas[0].coords = "0, 0, 40," + h;
-    areas[1].coords = (w - 40) + ",0," + w + "," + h;
+    this.curIndex = index;
+    this.swapCurImage('');
+
+    // console.log(index)
   }
 
+  // setMapCoords(): void {
+  //   const areas = document.getElementsByTagName('area');
+  //   const w = document.getElementById('main-img').clientWidth;
+  //   const h = document.getElementById('main-img').clientHeight;
 
+  //   areas[0].coords = "0, 0, 40," + h;
+  //   areas[1].coords = (w - 40) + ",0," + w + "," + h;
+  // }
+
+  navigate(dir: string, event: MouseEvent) {
+    event.stopPropagation();
+
+    // if (dir === 'right') {
+    //   this.curIndex++;
+    // } else {
+    //   this.curIndex--;
+    // }
+
+    // this.swapCurImage();
+  }
+
+  swapCurImage(dir: string, event?: MouseEvent): void {
+
+    if (this.curImage) {
+      this.curImage.style.filter = 'brightness(50%)';
+    }
+    if (dir === 'right') {
+      this.curIndex++;
+    } else if (dir === 'left') {
+      this.curIndex--;
+    }
+
+    if (event) {
+      event.stopPropagation();
+    }
+
+    this.curImage = <HTMLImageElement>document.getElementsByClassName("gallery-preview")[this.curIndex];
+    this.curImage.style.filter = 'brightness(100%)';
+    this.curImageSrc = this.curImage.src;
+
+  }
+
+  @HostListener('window:keydown.arrowleft', ['$event'])
+  handleKeyboardLeft(event: KeyboardEvent) {
+    if (this.curIndex != 0) {
+      this.swapCurImage('left');
+    }
+  }
+
+  @HostListener('window:keydown.arrowright', ['$event'])
+  handleKeyboardRight(event: KeyboardEvent) {
+    if (this.curIndex != this.previews.length - 1) {
+      this.swapCurImage('right');
+    }
+  }
 }
