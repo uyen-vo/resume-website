@@ -17,7 +17,7 @@ export class LightboxComponent implements OnInit {
 
   ngOnInit(): void {
     this.galleryToggle = false;
-    this.curImageSrc = '/assets/smart-atm-1.JPG';
+    this.curImageSrc = '';
   }
 
   openGallery(imgSrc: string, index: number): void {
@@ -25,17 +25,17 @@ export class LightboxComponent implements OnInit {
     this.curImageSrc = imgSrc;
     this.curIndex = index;
 
-    console.log(index)
-    this.swapCurImage('');
+    console.log(index + " " + imgSrc);
+    // this.swapCurImage('');
   }
 
   closeGallery(): void {
-    this.curImage.style.filter = 'brightness(50%)';
     this.galleryToggle = false;
   }
 
   onMainImageClick(event: MouseEvent): void {
     event.stopPropagation();
+    console.log("why?")
   }
 
   onImageClick(event: MouseEvent, index: number): void {
@@ -71,7 +71,7 @@ export class LightboxComponent implements OnInit {
   swapCurImage(dir: string, event?: MouseEvent): void {
 
     if (this.curImage) {
-      this.curImage.style.filter = 'brightness(50%)';
+      this.curImage.style.filter = 'brightness(30%) grayscale(100%)';
     }
     if (dir === 'right') {
       this.curIndex++;
@@ -85,6 +85,8 @@ export class LightboxComponent implements OnInit {
 
     this.curImage = <HTMLImageElement>document.getElementsByClassName("gallery-preview")[this.curIndex];
     this.curImage.style.filter = 'brightness(100%)';
+    this.curImage.style.border = '1px solid white';
+    // this.curImage.style.transform = 'scale(1.2)';
     this.curImageSrc = this.curImage.src;
 
   }
@@ -101,5 +103,10 @@ export class LightboxComponent implements OnInit {
     if (this.curIndex != this.previews.length - 1) {
       this.swapCurImage('right');
     }
+  }
+
+  @HostListener('document:keydown.escape', ['$event'])
+  onKeydownHandler(event: KeyboardEvent) {
+    this.closeGallery();
   }
 }

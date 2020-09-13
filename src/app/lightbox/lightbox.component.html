@@ -4,14 +4,16 @@
     </div>
 </div>
 
-<div [ngClass]="{'show-gallery': galleryToggle==true}" class="gallery" (click)="closeGallery()"
+<div *ngIf="galleryToggle" class="gallery" (click)="closeGallery()"
     fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-    <div fxFlex="50" class="img-container gallery-child" >
+    <div fxFlex="70" class="img-container gallery-child" >
         <div class="img-container"
-            fxLayout="row" fxLayoutAlign="center none" fxLayoutGap="10px">
+            fxLayout="row" fxLayoutAlign="center center">
             <div  [ngClass]="{'hide-arr':curIndex===0}"
                 class="arr left"><img (click)="swapCurImage('left', $event)" src="../../assets/arrow.svg"></div>
-            <img id="main-img" [src]="curImageSrc" (click)="onMainImageClick($event)"/>
+            <div class="main-container">
+                <img id="main-img" [src]="curImageSrc" (click)="onMainImageClick($event)"/>
+            </div>
             <div  [ngClass]="{'hide-arr':curIndex===previews.length-1}"
                 class="arr right"><img (click)="swapCurImage('right', $event)" src="../../assets/arrow.svg"></div>
         </div>
@@ -20,14 +22,14 @@
             <area shape="rect" coords="0,0,0,0" (click)="navigate('right')">
         </map> -->
     </div>
-    <div fxFlex="20" class="gallery-child">
+    <div fxFlex="10" class="gallery-child" >
         <div class="prev-container"
-            fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+            fxLayout="row" fxLayoutAlign="center center">
             <!-- <div *ngFor="let prevImage of previews" class="gallery-preview">
                 <img [src]="prevImage"/>
             </div> -->
 
-            <img *ngFor="let prevImage of previews; index as i" (click)="onImageClick($event, i)" class="gallery-preview" [src]="prevImage">
+            <img [ngClass]="{'glow':i===curIndex}" *ngFor="let prevImage of previews; index as i" (click)="onImageClick($event, i)" class="gallery-preview" [src]="prevImage">
         </div>
     </div>
 </div>
