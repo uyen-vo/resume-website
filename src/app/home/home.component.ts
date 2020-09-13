@@ -130,10 +130,11 @@ export class HomeComponent implements OnInit {
     "Slow motion better than no motion.",
     "Remember...every passing moment is a chance to turn it all around.",
     "&#9698;&#9700;",
-    "money ain't real, time ain't real",
     "woke up and felt the vibe",
-    "without you it's a waste of time"
-
+    "Too weird to live. To rare to die.",
+    "Lost a part of me, but I am still here.",
+    "we are one",
+    "looking up, there's always sky"
   ];
 
   constructor(private router: Router) {

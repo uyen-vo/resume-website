@@ -1,6 +1,6 @@
 <ng-container *ngIf='creaItems$ | async as itemsFromContainer'>
     <div [@listStaggerCreative]="itemsFromContainer.length" class="container">
-        <div *ngFor="let creaItem of itemsFromContainer" class="item" [ngClass]="creaItem.title.substring(3)">
+        <div *ngFor="let creaItem of itemsFromContainer" class="item" [ngClass]="creaItem.title.substring(0,3)">
             <div class="creative-img">
                 <img [src]="creaItem.image" draggable="false" />
                 <div class="subtitle">
@@ -8,11 +8,11 @@
                 </div>
             
             </div>
-            
+<!--             
             <div class="name">
                 <p>{{ creaItem.title }}</p>
-                <!-- <p style="font-style: italic">{{ creaItem.subtitle }}</p> -->
-            </div>
+                <p style="font-style: italic">{{ creaItem.subtitle }}</p>
+            </div> -->
 
             <!-- <div class="subtitle">
                 <p>{{ creaItem.subtitle }}</p>
