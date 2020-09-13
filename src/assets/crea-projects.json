@@ -9,7 +9,7 @@
         ]
     },
     {
-        "title": "Starry Avenue",
+        "title": "starry avenue",
         "image": "/assets/c-starry.jpg",
         "subtitle": "card game",
         "preview": [
@@ -18,7 +18,7 @@
         ]
     },
     {
-        "title": "Code Literate",
+        "title": "code literate",
         "image": "/assets/c-code-lit.jpg",
         "subtitle": "branding",
         "preview": [
@@ -28,7 +28,7 @@
         ]
     },
     {
-        "title": "Wireframes",
+        "title": "wireframes",
         "image": "/assets/c-wireframe.jpg",
         "subtitle": "creative process",
         "preview": [
@@ -37,7 +37,7 @@
         ]
     },
     {
-        "title": "Neutraface",
+        "title": "neutraface",
         "image": "/assets/c-neutra.jpg",
         "subtitle": "bifold print",
         "preview": [
@@ -46,7 +46,7 @@
         ]
     },
     {
-        "title": "The Flowers of Evil",
+        "title": "the flowers of evil",
         "image": "/assets/c-flowers.jpg",
         "subtitle": "book cover",
         "preview": [

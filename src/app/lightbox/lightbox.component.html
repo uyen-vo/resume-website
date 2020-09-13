@@ -1,9 +1,22 @@
 <div class="container">
-    <div *ngFor="let prevImage of previews" class="preview">
-        <img [src]="prevImage" (click)="openGallery($event.target)" />
+    <div *ngFor="let prevImage of previews; index as i" class="preview">
+        <img [src]="prevImage" (click)="openGallery(prevImage, i)" />
     </div>
 </div>
 
-<div *ngIf="galleryToggle" class="gallery" (click)="galleryToggle = false">
+<div [ngClass]="{'show-gallery': galleryToggle==true}" class="gallery" (click)="closeGallery()"
+    fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <div fxFlex="50" class="img-container gallery-child" >
+        <img [src]="curImageSrc" (click)="onImageClick($event)" usemap="#prevmap"/>
+    </div>
+    <div fxFlex="20" class="gallery-child">
+        <div class="prev-container"
+            fxLayout="row" fxLayoutAlign="center none" fxLayoutGap="10px">
+            <!-- <div *ngFor="let prevImage of previews" class="gallery-preview">
+                <img [src]="prevImage"/>
+            </div> -->
 
+            <img *ngFor="let prevImage of previews" class="gallery-preview" [src]="prevImage">
+        </div>
+    </div>
 </div>

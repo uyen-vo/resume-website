@@ -72,7 +72,7 @@
             "Jamstack"
         ],
         "description": "eCommerce site to sell my watercolor paintings. Incporporated SnipCart for the shopping cart/payment collection integration and Scully.io, a new static site generator made for Angular projects, to best optimize SEO and site performance.",
-        "image": "/assets/logo-color-thin.png",
+        "image": "/assets/thin-world-01.png",
         "github": "https://github.com/uyen-vo/art-ecommerce-site"
     }
 ]
