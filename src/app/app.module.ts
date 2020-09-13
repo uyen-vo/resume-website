@@ -29,7 +29,7 @@ import { AngularResizedEventModule } from 'angular-resize-event';
     BrowserAnimationsModule,
     FlexLayoutModule,
     HttpClientModule,
-    AngularResizedEventModule
+    AngularResizedEventModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
