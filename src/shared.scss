@@ -9,3 +9,18 @@ $darkblue: #23a9e1;
     -ms-user-select: none;
     user-select: none;
 }
+
+.prevent-img-blur {
+    filter: none; 
+    -webkit-filter: blur(0px); 
+    -moz-filter: blur(0px); 
+    -ms-filter: blur(0px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+    image-rendering: crisp-edges;
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    -webkit-font-smoothing: antialised;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.0, 1.0);
+    -webkit-font-smoothing: subpixel-antialiased;
+}

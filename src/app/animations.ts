@@ -1,5 +1,4 @@
-import
-{
+import {
     animation, trigger, animateChild, group,
     transition, animate, style, query, stagger
 } from '@angular/animations';
@@ -20,7 +19,7 @@ export const listStaggerCreative =
             query(
                 ':enter',
                 [
-                    style({ opacity: 0, transform: 'translateY(-30px)' }),
+                    style({ opacity: 0, transform: 'translateY(-15px)' }),
                     stagger(
                         '.1s',
                         animate(

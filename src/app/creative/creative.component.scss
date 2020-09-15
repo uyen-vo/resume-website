@@ -34,29 +34,17 @@ p {
 }
 
 img {
+  @extend.prevent-img-blur;
   width: 100%;
   display: block;
-  cursor: pointer;
+  // cursor: pointer;
   // border: 1px solid red;
   transition: .3s all ease-in-out;
   transform-origin: middle;
-
-  //prevent scale blurring
-  filter: none; 
-  -webkit-filter: blur(0px); 
-  -moz-filter: blur(0px); 
-  -ms-filter: blur(0px);
-  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
-  image-rendering: crisp-edges;
-  -ms-transform: translateZ(0); /* IE 9 */
-  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
-  -webkit-font-smoothing: antialised;
-  backface-visibility: hidden;
-  transform: translateZ(0) scale(1.0, 1.0);
-  -webkit-font-smoothing: subpixel-antialiased;
+  border-radius: 50%;
   // transform: scale(2) translate3d(0, 0, 0);
 
-
+  filter: blur(0px);
   -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
   -o-filter: blur(0px);
@@ -86,6 +74,7 @@ img {
   overflow: hidden;
   transition: .3s all ease-in-out;
   border-radius: 50%;
+  cursor: pointer;
   // border: 1px solid blue;
   // background-color: #ef74d7;
     // border:2px solid white;

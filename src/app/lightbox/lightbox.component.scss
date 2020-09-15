@@ -8,36 +8,37 @@
     height: 50px;
     // border-radius: 50%;
     overflow: hidden;
-    margin-right: 10px;
-    background-color: #a4a4a4;
+    margin-right: 5px;
+    background-color: #ff00ff;
     text-align: center;
+    // border: 1px solid fuchsia;
 
     // position:relative;
 
-    &:hover {
-        background-color: #ff00ff;
-        transition: background-color .2s ease-in-out;
-    }
-
     img {
+        @extend.prevent-img-blur;
         height:50px;
         max-width:none;
         width: auto;
         margin:0 -100%;
-        opacity: 40%;
+        opacity: .6;
         transition: all .2s ease-in-out;
         cursor: pointer;
+
+        &:hover{
+            opacity: 1;
+        }
     }
 
 }
 
 
-.gallery {
+#gallery {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0; left: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.97);
     transition: .3s all ease-in;
     z-index: 999 !important;
     // height: 0;
@@ -117,14 +118,30 @@ area {
 }
 
 .hide-arr {
-    width: 50px;
     img {
-        display: none;
+        opacity:0;
+        pointer-events: none;
     }
 }
 
+.enlarged, .enlarged * {
+    margin: 0 !important;
+    height:100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+}
+
+.prev-enlarged {
+    display:none !important;
+}
+
+.main-enlarged {
+    height: 100% !important;
+    width: 100% !important;
+}
+
 .main-container {
-    width: 60%;
+    // width: 60%;
     height: 80%;
 }
 #main-img {

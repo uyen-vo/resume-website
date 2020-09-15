@@ -1,5 +1,24 @@
 [
     {
+        "title": "Sekai Chan Art",
+        "tags": [
+            "TypeScript",
+            "API",
+            "UI/UX",
+            "Jamstack"
+        ],
+        "description": "eCommerce site to sell my watercolor paintings. Integrating the shopping cart/payment collection via Snipcart and using Scully.io to generate as a static site to best optimize SEO and site performance. Still in development, but you are welcome to check out the final designs. :)",
+        "image": "/assets/thin-world-01.png",
+        "github": "https://github.com/uyen-vo/art-ecommerce-site",
+        "preview": [
+            "/assets/sekai-1.jpg",
+            "/assets/sekai-2.jpg",
+            "/assets/sekai-3.jpg",
+            "/assets/sekai-4.jpg",
+            "/assets/sekai-5.jpg"
+        ]
+    },
+    {
         "title": "smartATM",
         "tags": [
             "Hardware",
@@ -62,17 +81,5 @@
             "/assets/kanye-1.jpg",
             "/assets/kanye-2.jpg"
         ]
-    },
-    {
-        "title": "Sekai Chan Art",
-        "tags": [
-            "TypeScript",
-            "API",
-            "UI/UX",
-            "Jamstack"
-        ],
-        "description": "eCommerce site to sell my watercolor paintings. Incporporated SnipCart for the shopping cart/payment collection integration and Scully.io, a new static site generator made for Angular projects, to best optimize SEO and site performance.",
-        "image": "/assets/thin-world-01.png",
-        "github": "https://github.com/uyen-vo/art-ecommerce-site"
     }
 ]

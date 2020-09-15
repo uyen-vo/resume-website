@@ -28,7 +28,7 @@ export class DevItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.toggleViewMore = false;
+    this.toggleViewMore = true;
   }
 
   togglePreview(): void {

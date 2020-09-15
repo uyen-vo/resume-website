@@ -13,11 +13,14 @@ export class LightboxComponent implements OnInit {
   curIndex: number;
   curImage: HTMLImageElement;
 
+  isEnlarged: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
     this.galleryToggle = false;
     this.curImageSrc = '';
+    this.isEnlarged = false;
   }
 
   openGallery(imgSrc: string, index: number): void {
@@ -35,7 +38,6 @@ export class LightboxComponent implements OnInit {
 
   onMainImageClick(event: MouseEvent): void {
     event.stopPropagation();
-    console.log("why?")
   }
 
   onImageClick(event: MouseEvent, index: number): void {
@@ -89,6 +91,19 @@ export class LightboxComponent implements OnInit {
     // this.curImage.style.transform = 'scale(1.2)';
     this.curImageSrc = this.curImage.src;
 
+  }
+
+  enlarge(mainImage: HTMLElement): void {
+    this.isEnlarged = this.isEnlarged === false ? true : false;
+    const prevList = document.getElementsByClassName('prev-list')[0] as HTMLElement;
+    const imgContainer = document.getElementsByClassName('img-container-outer')[0] as HTMLElement;
+    // const mainContainer = document.getElementsByClassName('main-container')[0] as HTMLElement;
+
+    prevList.classList.toggle('prev-enlarged');
+
+    mainImage.classList.toggle('main-enlarged')
+
+    imgContainer.classList.toggle('enlarged');
   }
 
   @HostListener('window:keydown.arrowleft', ['$event'])

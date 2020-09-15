@@ -3,11 +3,11 @@
         <h1>{{ devItem.title }}</h1>
         <h3>
             <span class="git"><a [href]="devItem.github">GitHub</a></span>
+            <span *ngIf="devItem.title==='Sekai Chan Art'" class="wip">[WIP]</span>
             <span *ngFor="let tag of devItem.tags" class="tag">{{ tag }}</span>
         </h3>
         <p>{{ devItem.description }}</p>
-        <p [ngClass]="{'toggle-active': toggleViewMore==true}" class="toggle" *ngIf="devItem.preview" (click)="toggleViewMore = (toggleViewMore === true) ? false : true">
-            <!-- <img src="../../assets/arrow.svg"/> -->
+        <!-- <p [ngClass]="{'toggle-active': toggleViewMore==true}" class="toggle" *ngIf="devItem.preview" (click)="toggleViewMore = (toggleViewMore === true) ? false : true">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 321.878 186.071"
                 enable-background="new 0 0 321.878 186.071" xml:space="preserve">
@@ -25,7 +25,7 @@
                 </g>
             </svg>
             <span>View more</span>
-        </p>
+        </p> -->
         <div *ngIf="toggleViewMore===true" [@slideInOut]="toggleViewMore" class="prev-container">
             <app-lightbox [previews]="devItem.preview"></app-lightbox>
         </div>
