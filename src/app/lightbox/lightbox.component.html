@@ -1,12 +1,20 @@
-<div class="container">
+<div class="container" *ngIf="!thumbnail">
     <div *ngFor="let prevImage of previews; index as i; let last = last" class="preview" [ngClass]="{'last-child': title=='Sekai Chan Art' && last}">
         <img [src]="prevImage" (click)="openGallery(prevImage, i)"/>
     </div>
 </div>
 
+<div class="creative-container" *ngIf="thumbnail">
+    <div class="creative-img" (click)="openGallery(previews[0])">
+        <img [src]="creaItem.image" draggable="false" />
+        <div class="subtitle">
+            <p>{{ creaItem.title }}</p>
+        </div>
+    </div>
+</div>
+
 <div *ngIf="snackbarToggle && galleryToggle" @animateDestroy id="snackbar">
     <p>Double click image to enter/exit fullscreen mode.</p>
-
 </div>
 
 <div *ngIf="galleryToggle" id="gallery" (click)="closeGallery()"

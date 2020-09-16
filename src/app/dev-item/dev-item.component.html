@@ -27,7 +27,7 @@
             <span>View more</span>
         </p> -->
         <div *ngIf="toggleViewMore===true" [@slideInOut]="toggleViewMore" class="prev-container">
-            <app-lightbox [title]="devItem.title" [previews]="devItem.preview"></app-lightbox>
+            <app-lightbox [thumbnail]="false" [title]="devItem.title" [previews]="devItem.preview"></app-lightbox>
         </div>
     </div>
     <div fxFlex="20" class="dev-img"><img [src]="devItem.image" draggable="false" /></div>

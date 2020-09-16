@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ElementRef, HostListener } from '@angular/core';
 import { trigger, state, transition, animate, style } from '@angular/animations';
+import { CreaItem } from '../item.service';
 
 @Component({
   selector: 'app-lightbox',
@@ -16,6 +17,9 @@ export class LightboxComponent implements OnInit {
 
   @Input() previews: string[];
   @Input() title: string;
+  @Input() thumbnail: boolean;
+  @Input() creaItem?: CreaItem;
+
   galleryToggle: boolean;
   curImageSrc: string;
   curIndex: number;
@@ -34,12 +38,20 @@ export class LightboxComponent implements OnInit {
     this.snackbarToggle = false;
   }
 
-  openGallery(imgSrc: string, index: number): void {
+  openGallery(imgSrc: string, index?: number): void {
     this.galleryToggle = true;
     this.snackbarToggle = true;
     this.curImageSrc = imgSrc;
-    this.curIndex = index;
 
+    if (index) {
+      this.curIndex = index;
+    } else {
+      this.curIndex = 0;
+    }
+
+    console.log(this.creaItem);
+    console.log(this.previews);
+    
     setTimeout(() => {
       this.snackbarToggle = false;
     }, 3000);

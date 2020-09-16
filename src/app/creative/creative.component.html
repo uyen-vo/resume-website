@@ -1,14 +1,16 @@
 <ng-container *ngIf='creaItems$ | async as itemsFromContainer'>
     <div [@listStaggerCreative]="itemsFromContainer.length" class="container">
         <div *ngFor="let creaItem of itemsFromContainer" class="item" [ngClass]="creaItem.title.substring(0,3)">
-            <div class="creative-img">
+            <!-- <div class="creative-img">
                 <img [src]="creaItem.image" draggable="false" />
                 <div class="subtitle">
                     <p>{{ creaItem.title }}</p>
                 </div>
-            
-            </div>
-<!--             
+            </div> -->
+
+            <app-lightbox [creaItem]="creaItem" [thumbnail]="true" [previews]="creaItem.preview"></app-lightbox>
+
+            <!--             
             <div class="name">
                 <p>{{ creaItem.title }}</p>
                 <p style="font-style: italic">{{ creaItem.subtitle }}</p>

@@ -27,7 +27,7 @@ export class CreativeComponent implements OnInit {
   hover(target: HTMLElement): void {
     for (var i = 0; i < this.images.length; i++) {
       const elem = this.images.item(i) as HTMLElement;
-      if (elem != target) {
+      if (elem !== target) {
         elem.style.opacity = ".5";
       }
     }

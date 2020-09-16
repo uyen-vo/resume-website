@@ -24,7 +24,8 @@
         "preview": [
             "/assets/code-lit-1.jpg",
             "/assets/code-lit-2.jpg",
-            "/assets/code-lit-3.jpg"
+            "/assets/code-lit-3.jpg",
+            "/assets/code-lit-4.jpg"
         ]
     },
     {
@@ -59,8 +60,7 @@
         "image": "/assets/c-filament (2).jpg",
         "subtitle": "custom typeface",
         "preview": [
-            "",
-            ""
+            "/assets/filament-1.jpg"
         ]
     },
     {
