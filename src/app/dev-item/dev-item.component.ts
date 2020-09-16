@@ -31,11 +31,4 @@ export class DevItemComponent implements OnInit {
     this.toggleViewMore = true;
   }
 
-  togglePreview(): void {
-    //   <HTMLElement>(this.toggleElem.nativeElement).classList.toggle("toggle-active");
-    //   this.toggleViewMore = this.toggleViewMore === 'true' ? 'false' : 'true';
-    //   console.log(this.toggleViewMore)
-
-    // this.toggleViewMore = true ? false : true
-  }
 }

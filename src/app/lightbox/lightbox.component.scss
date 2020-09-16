@@ -9,19 +9,19 @@
     // border-radius: 50%;
     overflow: hidden;
     margin-right: 5px;
-    background-color: #ff00ff;
+    background-color: black;
     text-align: center;
-    // border: 1px solid fuchsia;
+    border: 1px solid fuchsia;
 
     // position:relative;
 
     img {
         @extend.prevent-img-blur;
         height:50px;
-        max-width:none;
+        // max-width:none;
         width: auto;
         margin:0 -100%;
-        opacity: .6;
+        opacity: .4;
         transition: all .2s ease-in-out;
         cursor: pointer;
 
@@ -29,7 +29,11 @@
             opacity: 1;
         }
     }
+}
 
+.last-child img {
+    width: 50px;
+    height: auto;
 }
 
 
@@ -40,7 +44,7 @@
     top: 0; left: 0;
     background-color: rgba(0, 0, 0, 0.97);
     transition: .3s all ease-in;
-    z-index: 999 !important;
+    z-index: 998 !important;
     // height: 0;
     // overflow: hidden;
 }
@@ -125,7 +129,7 @@ area {
 }
 
 .enlarged, .enlarged * {
-    margin: 0 !important;
+    margin: 0 auto !important;
     height:100% !important;
     max-height: 100% !important;
     max-width: 100% !important;
@@ -156,4 +160,15 @@ area {
 .glow {
     filter:brightness(100%) !important;
     border:1px solid white !important;
+}
+
+#snackbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999 !important;
+    width: 100%;
+    color: white;
+    text-align: center;
+    transition: .3s opacity ease-in;
 }

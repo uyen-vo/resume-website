@@ -1,19 +1,24 @@
 <div class="container">
-    <div *ngFor="let prevImage of previews; index as i" class="preview">
-        <img [src]="prevImage" (click)="openGallery(prevImage, i)" />
+    <div *ngFor="let prevImage of previews; index as i; let last = last" class="preview" [ngClass]="{'last-child': title=='Sekai Chan Art' && last}">
+        <img [src]="prevImage" (click)="openGallery(prevImage, i)"/>
     </div>
+</div>
+
+<div *ngIf="galleryToggle" id="snackbar">
+    <p>Double click image to enter/exit fullscreen mode.</p>
+
 </div>
 
 <div *ngIf="galleryToggle" id="gallery" (click)="closeGallery()"
     fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-    <div fxFlex="70" class="img-container-outer gallery-child" >
+    <div fxFlex="80" class="img-container-outer gallery-child" >
         <div class="img-container"
             fxLayout="row" fxLayoutAlign="space-between center">
             <div *ngIf="!isEnlarged" [ngClass]="{'hide-arr':curIndex===0}"
                 class="arr left"><img (click)="swapCurImage('left', $event)" src="../../assets/arrow.svg"></div>
             <div class="main-container">
                 <img id="main-img" [src]="curImageSrc"
-                    (click)="onMainImageClick($event)" (dblclick)="enlarge($event.target)"/>
+                    (click)="onMainImageClick($event)" (dblclick)="enlarge()"/>
             </div>
             <div *ngIf="!isEnlarged" [ngClass]="{'hide-arr':curIndex===previews.length-1}"
                 class="arr right"><img (click)="swapCurImage('right', $event)" src="../../assets/arrow.svg"></div>

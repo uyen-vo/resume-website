@@ -8,10 +8,12 @@ import { Component, OnInit, Input, ElementRef, HostListener } from '@angular/cor
 export class LightboxComponent implements OnInit {
 
   @Input() previews: string[];
+  @Input() title: string;
   galleryToggle: boolean;
   curImageSrc: string;
   curIndex: number;
   curImage: HTMLImageElement;
+
 
   isEnlarged: boolean;
 
@@ -21,6 +23,8 @@ export class LightboxComponent implements OnInit {
     this.galleryToggle = false;
     this.curImageSrc = '';
     this.isEnlarged = false;
+    this.curIndex = 0;
+
   }
 
   openGallery(imgSrc: string, index: number): void {
@@ -28,12 +32,17 @@ export class LightboxComponent implements OnInit {
     this.curImageSrc = imgSrc;
     this.curIndex = index;
 
-    console.log(index + " " + imgSrc);
-    // this.swapCurImage('');
+    setTimeout(() => {
+      document.getElementById('snackbar').style.opacity = "0";
+    }, 3000);
   }
 
   closeGallery(): void {
     this.galleryToggle = false;
+
+    if (this.isEnlarged) {
+      this.enlarge();
+    }
   }
 
   onMainImageClick(event: MouseEvent): void {
@@ -71,7 +80,6 @@ export class LightboxComponent implements OnInit {
   }
 
   swapCurImage(dir: string, event?: MouseEvent): void {
-
     if (this.curImage) {
       this.curImage.style.filter = 'brightness(30%) grayscale(100%)';
     }
@@ -88,14 +96,14 @@ export class LightboxComponent implements OnInit {
     this.curImage = <HTMLImageElement>document.getElementsByClassName("gallery-preview")[this.curIndex];
     this.curImage.style.filter = 'brightness(100%)';
     this.curImage.style.border = '1px solid white';
-    // this.curImage.style.transform = 'scale(1.2)';
     this.curImageSrc = this.curImage.src;
 
   }
 
-  enlarge(mainImage: HTMLElement): void {
+  enlarge(): void {
     this.isEnlarged = this.isEnlarged === false ? true : false;
     const prevList = document.getElementsByClassName('prev-list')[0] as HTMLElement;
+    const mainImage = document.getElementById('main-img') as HTMLElement;
     const imgContainer = document.getElementsByClassName('img-container-outer')[0] as HTMLElement;
     // const mainContainer = document.getElementsByClassName('main-container')[0] as HTMLElement;
 
