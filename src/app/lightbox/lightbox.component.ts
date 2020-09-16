@@ -1,9 +1,16 @@
 import { Component, OnInit, Input, ElementRef, HostListener } from '@angular/core';
+import { trigger, state, transition, animate, style } from '@angular/animations';
 
 @Component({
   selector: 'app-lightbox',
   templateUrl: './lightbox.component.html',
-  styleUrls: ['./lightbox.component.scss']
+  styleUrls: ['./lightbox.component.scss'],
+  animations: [
+    trigger('animateDestroy', [
+      state('void', style({ top: '-100px' })),
+      transition('* => void', animate('300ms ease-in'))
+    ])
+  ]
 })
 export class LightboxComponent implements OnInit {
 
@@ -13,7 +20,7 @@ export class LightboxComponent implements OnInit {
   curImageSrc: string;
   curIndex: number;
   curImage: HTMLImageElement;
-
+  snackbarToggle: boolean;
 
   isEnlarged: boolean;
 
@@ -24,16 +31,17 @@ export class LightboxComponent implements OnInit {
     this.curImageSrc = '';
     this.isEnlarged = false;
     this.curIndex = 0;
-
+    this.snackbarToggle = false;
   }
 
   openGallery(imgSrc: string, index: number): void {
     this.galleryToggle = true;
+    this.snackbarToggle = true;
     this.curImageSrc = imgSrc;
     this.curIndex = index;
 
     setTimeout(() => {
-      document.getElementById('snackbar').style.opacity = "0";
+      this.snackbarToggle = false;
     }, 3000);
   }
 
