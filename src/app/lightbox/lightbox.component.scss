@@ -97,8 +97,8 @@
         height: 100%;
         display: block;
         filter: brightness(30%) grayscale(100%);
-        border: 1px solid transparent;
-        transition: .2s all ease-in;
+        border: 1px solid black;
+        transition: .2s all ease-in-out;
 
         &:hover {
             filter: brightness(50%);
@@ -160,7 +160,7 @@ area {
 
 .glow {
     filter:brightness(100%) !important;
-    border:1px solid white !important;
+    border:5px solid $darkblue !important;
 }
 
 #snackbar {

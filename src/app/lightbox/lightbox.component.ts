@@ -89,7 +89,9 @@ export class LightboxComponent implements OnInit {
 
   swapCurImage(dir: string, event?: MouseEvent): void {
     if (this.curImage) {
-      this.curImage.style.filter = 'brightness(30%) grayscale(100%)';
+      // this.curImage.style.filter = 'brightness(30%) grayscale(100%)';
+
+      // this.curImage.style.border = '1px solid black';
     }
     if (dir === 'right') {
       this.curIndex++;
@@ -102,8 +104,8 @@ export class LightboxComponent implements OnInit {
     }
 
     this.curImage = <HTMLImageElement>document.getElementsByClassName("gallery-preview")[this.curIndex];
-    this.curImage.style.filter = 'brightness(100%)';
-    this.curImage.style.border = '1px solid white';
+    // this.curImage.style.filter = 'brightness(100%)';
+    // this.curImage.style.border = '10px solid white';
     this.curImageSrc = this.curImage.src;
 
   }
