@@ -155,6 +155,18 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById('mobile-nav').style.top = "60px";
+      } else {
+        document.getElementById('mobile-nav').style.top = "0px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+
+
     this.song = '';
     this.quote = '';
     this.songLink = '';
@@ -218,7 +230,8 @@ export class HomeComponent implements OnInit {
 
   onResized(event: ResizedEvent): void {
     this.pfpWidth = event.newWidth;
-    console.log(this.pfpWidth)
+
+    console.log(this.pfpWidth);
   }
 
   enterSite(): void {

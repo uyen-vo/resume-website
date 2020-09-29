@@ -183,7 +183,7 @@ body {
   }
 }
 
-nav {
+#desk-nav {
   font-size: 30px;
   
   // flex-grow: 2;
@@ -207,7 +207,7 @@ nav {
   }
 }
 
-nav .active {
+#desk-nav .active {
   color: black;
 }
 
@@ -341,6 +341,41 @@ nav .active {
   // width: 300px;
 }
 
+
+#mobile-nav {
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  transition: top 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px -2px #808080;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  background-color: white;
+  // padding-left: 5px;
+  // padding-right:5px;
+  // margin-left
+  a {
+    font-family: 'Reem Kufi', sans-serif;
+    color: #a4a4a4;
+    font-size:24px;
+  }
+
+  a:last-child {
+    margin-right: 10px;
+  }
+
+  a:first-child{
+    margin-left:10px;
+  }
+
+  opacity: 0%;
+  z-index: -1;
+}
+
+
+
+
 /* XS */
 @media only screen and (max-width: 599px) {
 
@@ -378,9 +413,81 @@ nav .active {
 
 
 // /* Extra small devices (phones, 600px and down) */
-// @media only screen and (max-width: 600px) {
+@media screen and (max-width: 599px) {
+  #mobile-nav {
+    opacity: 100%;
+    z-index: 1;
+  }
 
-// }
+  #mobile-logo-container{
+    position: fixed;
+    width: 100vw;
+    padding: 30px 0px;
+    background-color: white;
+    z-index: 100;
+  }
+
+  #mobile-logo {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index:2;
+    // width: 100%;
+    padding: 10.5px 0px 18px 0px;
+
+    #logo-nav {
+      // height: 300px;?
+    }
+  }
+
+  #main {
+    width: 100%;
+  }
+
+  .pfp {
+    // width: 90%;
+    //TODO: change height based on viewport
+    margin: 0 auto;
+
+    img {
+      // position: relative;
+      // top: 50px;
+    }
+  }
+
+  .location {
+    // background-color: red;
+    margin-top: 20px;
+  }
+
+  .profile {
+    margin: 0 20px;
+    // margin-top: 120px;
+    // border-bottom: 1px solid #a4a4a4;
+  }
+
+  .flex-container .flex-child {
+    padding-top: 0;
+    padding: 25px 0px;
+    padding-top: 100px;
+  }
+
+  .flex-container .flex-child:last-child {
+    border-top: 1px solid #a4a4a4;
+    padding-top: 25px;
+  }
+
+  .router-container {
+    // border-top: 1px solid #a4a4a4;
+    padding: 0; margin: 0;
+  }
+}
 
 // /* Small devices (portrait tablets and large phones, 600px and up) */
 // @media only screen and (min-width: 600px) {
@@ -400,3 +507,5 @@ nav .active {
 // @media only screen and (min-width: 1200px) {
 
 // }
+
+

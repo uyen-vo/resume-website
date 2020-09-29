@@ -48,9 +48,6 @@ export class LightboxComponent implements OnInit {
     } else {
       this.curIndex = 0;
     }
-
-    console.log(this.creaItem);
-    console.log(this.previews);
     
     setTimeout(() => {
       this.snackbarToggle = false;

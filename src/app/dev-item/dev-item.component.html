@@ -1,9 +1,9 @@
-<div class="container" fxLayoutAlign="center start" fxLayout="row" fxLayout.sm="column" fxLayoutGap="5%" fxFlexFill>
+<div class="container" fxLayoutAlign="center start" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="5%" fxFlexFill>
     <div class="item" fxFlex>
         <h1>{{ devItem.title }}</h1>
         <h3>
             <span class="git"><a [href]="devItem.github">GitHub</a></span>
-            <span *ngIf="devItem.title==='Sekai Chan Art'" class="wip">[WIP]</span>
+            <!-- <span *ngIf="devItem.title==='Sekai Chan Art'" class="wip">[WIP]</span> -->
             <span *ngFor="let tag of devItem.tags" class="tag">{{ tag }}</span>
         </h3>
         <p>{{ devItem.description }}</p>
