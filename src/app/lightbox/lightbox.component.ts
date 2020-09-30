@@ -14,6 +14,7 @@ import { CreaItem } from '../item.service';
   ]
 })
 export class LightboxComponent implements OnInit {
+  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 
   @Input() previews: string[];
   @Input() title: string;
@@ -48,7 +49,7 @@ export class LightboxComponent implements OnInit {
     } else {
       this.curIndex = 0;
     }
-    
+
     setTimeout(() => {
       this.snackbarToggle = false;
     }, 3000);
@@ -128,9 +129,19 @@ export class LightboxComponent implements OnInit {
 
     prevList.classList.toggle('prev-enlarged');
 
-    mainImage.classList.toggle('main-enlarged')
+    mainImage.classList.toggle('main-enlarged');
 
     imgContainer.classList.toggle('enlarged');
+  }
+
+  swipe(action = this.SWIPE_ACTION.RIGHT): void {
+    console.log( "hi ");
+    if (action === this.SWIPE_ACTION.RIGHT) {
+      this.swapCurImage('right');
+    }
+    if (action === this.SWIPE_ACTION.LEFT) {
+      this.swapCurImage('left');
+    }
   }
 
   @HostListener('window:keydown.arrowleft', ['$event'])
@@ -151,4 +162,13 @@ export class LightboxComponent implements OnInit {
   onKeydownHandler(event: KeyboardEvent) {
     this.closeGallery();
   }
+
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event) {
+  //   let innerWidth = window.innerWidth;
+  //   if (innerWidth <= 599) {
+  //     // this.enlarge();
+  //     this.isEnlarged = true;
+  //   } 
+  // }
 }

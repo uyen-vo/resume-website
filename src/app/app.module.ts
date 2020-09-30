@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -13,6 +13,13 @@ import { DevItemComponent } from './dev-item/dev-item.component';
 
 import { LightboxComponent } from './lightbox/lightbox.component';
 import { AngularResizedEventModule } from 'angular-resize-event';
+
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  overrides = {
+      'swipe': {velocity: 0.4, threshold: 20} // override default settings
+  } as any;
+}
 
 @NgModule({
   declarations: [
@@ -30,8 +37,12 @@ import { AngularResizedEventModule } from 'angular-resize-event';
     FlexLayoutModule,
     HttpClientModule,
     AngularResizedEventModule,
+    HammerModule,
   ],
-  providers: [],
+  providers:    [ { 
+    provide: HAMMER_GESTURE_CONFIG, 
+    useClass: MyHammerConfig 
+  } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

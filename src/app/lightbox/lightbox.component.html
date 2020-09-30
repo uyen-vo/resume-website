@@ -13,22 +13,25 @@
     </div>
 </div>
 
-<div *ngIf="snackbarToggle && galleryToggle" @animateDestroy id="snackbar">
+<div fxHide.xs fxHide.sm *ngIf="snackbarToggle && galleryToggle" @animateDestroy id="snackbar">
     <p>Double click image to enter/exit fullscreen mode.</p>
 </div>
 
 <div *ngIf="galleryToggle" id="gallery" (click)="closeGallery()"
     fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-    <div fxFlex="80" class="img-container-outer gallery-child" >
+    <div fxFlex.gt-xs="80" fxFlex.xs="100" class="img-container-outer gallery-child" >
         <div class="img-container"
+            (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)"
             fxLayout="row" fxLayoutAlign="space-between center">
-            <div *ngIf="!isEnlarged" [ngClass]="{'hide-arr':curIndex===0}"
+            <div fxHide.xs
+                *ngIf="!isEnlarged" [ngClass]="{'hide-arr':curIndex===0}"
                 class="arr left"><img (click)="swapCurImage('left', $event)" src="../../assets/arrow.svg"></div>
-            <div class="main-container">
+            <div class="main-container" fxLayoutAlign="center center">
                 <img id="main-img" [src]="curImageSrc"
                     (click)="onMainImageClick($event)" (dblclick)="enlarge()"/>
             </div>
-            <div *ngIf="!isEnlarged" [ngClass]="{'hide-arr':curIndex===previews.length-1}"
+            <div fxHide.xs
+                *ngIf="!isEnlarged" [ngClass]="{'hide-arr':curIndex===previews.length-1}"
                 class="arr right"><img (click)="swapCurImage('right', $event)" src="../../assets/arrow.svg"></div>
         </div>
         <!-- <map name="prevmap">
@@ -36,7 +39,7 @@
             <area shape="rect" coords="0,0,0,0" (click)="navigate('right')">
         </map> -->
     </div>
-    <div fxFlex="10" class="gallery-child prev-list" >
+    <div fxFlex="10" class="gallery-child prev-list" fxHide.xs fxHide.sm >
         <div class="prev-container"
             fxLayout="row" fxLayoutAlign="center center">
             <!-- <div *ngFor="let prevImage of previews" class="gallery-preview">

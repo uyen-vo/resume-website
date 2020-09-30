@@ -83,17 +83,14 @@
         }
     }
 
-    img {
-        height: 100%;
-        display: block;
-    }
 }
 
 .prev-container {
     // border: 1px solid red;
     height: 100%;
     max-width: 100%;
-    overflow-x: scroll;
+    // overflow-x: scroll;
+    overflow: hidden;
 
     img {
         height: 100%;
@@ -132,40 +129,45 @@ area {
 
 .enlarged, .enlarged * {
     margin: 0 auto !important;
-    height:100% !important;
+    // height:100% !important;
     max-height: 100% !important;
     max-width: 100% !important;
 }
 
 .prev-enlarged {
     display:none !important;
+    margin: 0 auto !important;
 }
 
 .main-enlarged {
-    height: 100% !important;
-    width: 100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
 }
 
 .main-container {
     // width: 60%;
     // height: 90%;
     height: 100%;
-    max-width: 100%;
+    width: 100%;
+    margin: 0 auto !important;
 }
 #main-img {
     // width: 60%;
-    height: 100%;
+    // height: 100%;
     max-width: 100%;
-
+    max-height: 100%;
     display: block;
-    margin: 0 auto;
-    object-fit: scale-down;
+// vertical-align: middle;
+
+    margin:0 auto;
 }
 
 
 .glow {
     filter:brightness(100%) !important;
     border:10px solid $darkblue !important;
+
 }
 
 #snackbar {
@@ -177,7 +179,7 @@ area {
     color: white;
     text-align: center;
     transition: .3s opacity ease-in;
-    background-color: rgb(255, 0, 179);
+    background-color: black;
     // border-bottom: 1px solid white;
 }
 
@@ -272,3 +274,35 @@ area {
       }
   }
   
+
+@media screen and (max-width: 599px) {
+    // .prev-list {
+    //     @extend .prev-enlarged;
+    // }
+
+    // #main-img {
+    //     @extend .main-enlarged;
+    // }
+
+    // .img-container-outer {
+    //     @extend .enlarged;
+    // }
+
+    // .img-container-outer, .img-container-outer * {
+    //     margin: 0 auto !important;
+    //     height:100% !important;
+    //     max-height: 100% !important;
+    //     max-width: 100% !important;
+    // }
+    
+    // .prev-list {
+    //     display:none !important;
+    //     margin: 0 auto !important;
+    // }
+    
+    // #main-img {
+    //     height: 100% !important;
+    //     width: 100% !important;
+    //     margin: 0 auto !important;
+    // }
+}
