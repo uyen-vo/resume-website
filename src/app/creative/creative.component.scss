@@ -75,8 +75,18 @@
 //   }
 // }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
   .item {
-      width: calc(33% - 30px);
+      width: calc(33% - 16px);
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .item {
+      width: calc(50% - 16px);
+  }
+
+  .container {
+    padding: 0px 20px;
   }
 }

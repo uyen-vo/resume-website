@@ -229,8 +229,11 @@ export class HomeComponent implements OnInit {
   }
 
   onResized(event: ResizedEvent): void {
-    this.pfpWidth = event.newWidth;
-
+    if (event.newWidth > 599) {
+      this.pfpWidth = event.newWidth;
+    } else {
+      this.pfpWidth = event.newWidth * .7;
+    }
     console.log(this.pfpWidth);
   }
 

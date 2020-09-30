@@ -57,9 +57,9 @@
         "title": "Mood Network",
         "tags": [
             "Java",
-            "Android Studio",
             "MongoDB",
-            "UI/UX"
+            "UI/UX",
+            "Android Studio"
         ],
         "description": "Android app that monitors the user's mood through use of active and passive data collection. With the user's consent, the app records daily statistics such as location and microphone activity and store it in a MongoDB database for researchers to analyze over time.",
         "image": "/assets/d-mood-network.png",

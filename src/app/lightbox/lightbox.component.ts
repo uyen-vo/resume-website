@@ -135,10 +135,10 @@ export class LightboxComponent implements OnInit {
   }
 
   swipe(action: string): void {
-    if (action === 'swiperight' && this.curIndex !== this.galleryPreview.length-1) {
+    if (action === 'swipeleft' && this.curIndex !== this.galleryPreview.length-1) {
       this.swapCurImage('right');
     }
-    if (action === 'swipeleft' && this.curIndex !== 0) {
+    if (action === 'swiperight' && this.curIndex !== 0) {
       this.swapCurImage('left');
     }
   }
