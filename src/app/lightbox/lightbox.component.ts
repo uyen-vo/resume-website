@@ -14,8 +14,7 @@ import { CreaItem } from '../item.service';
   ]
 })
 export class LightboxComponent implements OnInit {
-  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
-
+  
   @Input() previews: string[];
   @Input() title: string;
   @Input() thumbnail: boolean;
@@ -26,7 +25,7 @@ export class LightboxComponent implements OnInit {
   curIndex: number;
   curImage: HTMLImageElement;
   snackbarToggle: boolean;
-
+  galleryPreview: HTMLCollectionOf<Element>;
   isEnlarged: boolean;
 
   constructor() { }
@@ -37,6 +36,7 @@ export class LightboxComponent implements OnInit {
     this.isEnlarged = false;
     this.curIndex = 0;
     this.snackbarToggle = false;
+    this.galleryPreview = document.getElementsByClassName('gallery-preview');
   }
 
   openGallery(imgSrc: string, index?: number): void {
@@ -113,7 +113,7 @@ export class LightboxComponent implements OnInit {
       event.stopPropagation();
     }
 
-    this.curImage = <HTMLImageElement>document.getElementsByClassName("gallery-preview")[this.curIndex];
+    this.curImage = <HTMLImageElement>this.galleryPreview[this.curIndex];
     // this.curImage.style.filter = 'brightness(100%)';
     // this.curImage.style.border = '10px solid white';
     this.curImageSrc = this.curImage.src;
@@ -134,12 +134,11 @@ export class LightboxComponent implements OnInit {
     imgContainer.classList.toggle('enlarged');
   }
 
-  swipe(action = this.SWIPE_ACTION.RIGHT): void {
-    console.log( "hi ");
-    if (action === this.SWIPE_ACTION.RIGHT) {
+  swipe(action: string): void {
+    if (action === 'swiperight' && this.curIndex !== this.galleryPreview.length-1) {
       this.swapCurImage('right');
     }
-    if (action === this.SWIPE_ACTION.LEFT) {
+    if (action === 'swipeleft' && this.curIndex !== 0) {
       this.swapCurImage('left');
     }
   }
