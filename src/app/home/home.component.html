@@ -54,7 +54,7 @@
       <a href="../../assets/resume.pdf">resume</a>
     </nav>
 
-    <div fxFlex.gt-xs="20" class="profile flex-child" (resized)="onResized($event)">
+    <div fxFlex.gt-xs="20" class="profile flex-child" (resized)="onResized($event)" fxLayout="column">
       <a [routerLink]="['/']"  (click)="loadLandingPage()"fxHide.xs>
         <div id="logo-nav">
           <div><img id="logo" src="../../assets/logo-color.png" draggable="false" /></div>
@@ -62,24 +62,25 @@
         </div>
       </a>
 
-
-      <div class="pfp" [style.height.px]="pfpWidth">
-        <img [ngClass]="{'opaque': currentPage=='creative'}"src="../../assets/temp.jpg" draggable="false" />
-        <img [ngClass]="{'opaque': currentPage=='developer'}" src="../../assets/irl-pfp.jpg" draggable="false" />
+      <div class="pfp-container" >
+        <div class="pfp" [style.height.px]="pfpWidth">
+          <img [ngClass]="{'opaque': currentPage=='creative'}"src="../../assets/temp.jpg" draggable="false" />
+          <img [ngClass]="{'opaque': currentPage=='developer'}" src="../../assets/irl-pfp.jpg" draggable="false" />
+        </div>
+        <p class="location"><img id="loc-img" src='../../assets/location-icon.png' /><span>Dallas, TX</span></p>
+        <p class="desc">Passionate about front end technologies, particularly Angular. Also love to draw and dabble in
+          graphic design. If you're hiring and find me to be a good fit, please let me know. :)</p>
+        <ul id="social">
+          <li><a href="mailto:uyend.vo@gmail.com"><img
+                src='../../assets/social-email.svg' /><span>uyend.vo@gmail.com</span></a></li>
+          <li><a href="https://www.instagram.com/sekaichan.art/"><img
+                src='../../assets/social-insta.svg' /><span>sekaichan.art</span></a></li>
+          <li><a href="https://github.com/uyen-vo"><img src='../../assets/social-git.svg' /><span>uyen-vo</span></a>
+          </li>
+          <li><a href="https://www.linkedin.com/in/uyen-dung-vo"><img src='../../assets/social-linkedin.svg'
+                id="linkedin" /><span>uyen-dung-vo</span></a></li>
+        </ul>
       </div>
-      <p class="location"><img id="loc-img" src='../../assets/location-icon.png' /><span>Dallas, TX</span></p>
-      <p class="desc">Passionate about front end technologies, particularly Angular. Also love to draw and dabble in
-        graphic design. If you're hiring and find me to be a good fit, please let me know. :)</p>
-      <ul id="social">
-        <li><a href="mailto:uyend.vo@gmail.com"><img
-              src='../../assets/social-email.svg' /><span>uyend.vo@gmail.com</span></a></li>
-        <li><a href="https://www.instagram.com/sekaichan.art/"><img
-              src='../../assets/social-insta.svg' /><span>sekaichan.art</span></a></li>
-        <li><a href="https://github.com/uyen-vo"><img src='../../assets/social-git.svg' /><span>uyen-vo</span></a>
-        </li>
-        <li><a href="https://www.linkedin.com/in/uyen-dung-vo"><img src='../../assets/social-linkedin.svg'
-              id="linkedin" /><span>uyen-dung-vo</span></a></li>
-      </ul>
 
     </div>
 

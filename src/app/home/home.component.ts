@@ -229,12 +229,12 @@ export class HomeComponent implements OnInit {
   }
 
   onResized(event: ResizedEvent): void {
-    if (event.newWidth > 599) {
+    if (window.innerWidth > 599) {
       this.pfpWidth = event.newWidth;
     } else {
       this.pfpWidth = event.newWidth * .7;
     }
-    console.log(this.pfpWidth);
+    console.log(event.newWidth + " " + this.pfpWidth);
   }
 
   enterSite(): void {

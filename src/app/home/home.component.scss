@@ -362,11 +362,11 @@ body {
   }
 
   a:last-child {
-    margin-right: 10px;
+    margin-right: 20px;
   }
 
   a:first-child{
-    margin-left:10px;
+    margin-left:20px;
   }
 
   opacity: 0%;
@@ -412,7 +412,7 @@ body {
 }
 
 
-// /* Extra small devices (phones, 600px and down) */
+// mobile portrait
 @media screen and (max-width: 599px) {
   #mobile-nav {
     opacity: 100%;
@@ -489,6 +489,33 @@ body {
     // border-top: 1px solid #a4a4a4;
     padding: 0; margin: 0;
   }
+}
+
+//mobile landscape
+@media only screen and (max-width: 900px) and (max-height: 666px) {
+  .flex-container .flex-child {
+    // overflow: hidden;
+    // overflow-y: auto;
+    padding-top: 10px;
+    height: 100vh;
+  }
+  
+  .pfp {
+    margin-top: 0px;
+  }
+
+  .pfp-container {
+    border: 1px solid red;
+    // flex-grow: 1;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .router-container {
+    margin-top: 10px;
+    // overflow: visible;
+  }
+  
 }
 
 // /* Small devices (portrait tablets and large phones, 600px and up) */
