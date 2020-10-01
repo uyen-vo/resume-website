@@ -35,6 +35,7 @@ body {
 
 .flex-container{
   height: 100vh;
+  margin: 0; padding: 0;
 
   .flex-child {
     padding-top: 60px;
@@ -45,6 +46,8 @@ body {
 .profile {
   // max-width: 283px;
   font-size: 14px;
+  display: flex; 
+  flex-direction: column;
   // border: 1px solid black;
 }
 
@@ -203,7 +206,7 @@ body {
   a:last-child{
     float: right;
     float: clear;
-    margin-right:10px;
+    margin-right:20px;
   }
 }
 
@@ -374,6 +377,11 @@ body {
 }
 
 
+.pfp-container {
+  overflow: hidden;
+  overflow-y: auto;
+  padding-bottom: 70px;
+}
 
 
 /* XS */
@@ -414,6 +422,7 @@ body {
 
 // mobile portrait
 @media screen and (max-width: 599px) {
+  
   #mobile-nav {
     opacity: 100%;
     z-index: 1;
@@ -421,25 +430,26 @@ body {
 
   #mobile-logo-container{
     position: fixed;
-    width: 100vw;
+    width: 100%;
     padding: 30px 0px;
     background-color: white;
     z-index: 100;
   }
 
   #mobile-logo {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 50%;
     left: 50%;
     width: auto;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
+    -webkit-transform: translate(-50%,-47%);
+    -moz-transform: translate(-50%,-47%);
+    -ms-transform: translate(-50%,-47%);
+    -o-transform: translate(-50%,-47%);
+    transform: translate(-50%,-47%);
     z-index:2;
     // width: 100%;
-    padding: 10.5px 0px 18px 0px;
+    // padding: 10.5px 0px 30px 0px;
+    // padding-top: 10px;
 
     #logo-nav {
       // height: 300px;?
@@ -471,6 +481,7 @@ body {
 
   .profile {
     margin: 0 20px;
+    display: inline;
     // margin-top: 120px;
     // border-bottom: 1px solid #a4a4a4;
   }
@@ -478,6 +489,7 @@ body {
   .flex-container {
     .flex-child {
       padding-top: 140px;
+      // border:1px solid red;
     }
     .flex-child:last-child {
       border-top: 1px solid #a4a4a4;
@@ -488,34 +500,66 @@ body {
   .router-container {
     // border-top: 1px solid #a4a4a4;
     padding: 0; margin: 0;
+    overflow: visible;
   }
+
+  // .profile {
+  //   display: inline;
+  // }
 }
 
 //mobile landscape
-@media only screen and (max-width: 900px) and (max-height: 666px) {
+@media only screen and (min-width: 600px) and (max-width: 900px) {
   .flex-container .flex-child {
     // overflow: hidden;
     // overflow-y: auto;
     padding-top: 10px;
-    height: 100vh;
+    // height: 100vh;
   }
   
   .pfp {
-    margin-top: 0px;
+    margin-top: 10px;
   }
 
   .pfp-container {
-    border: 1px solid red;
-    // flex-grow: 1;
-    overflow: hidden;
-    overflow-y: auto;
+    // margin-top: 10px;
   }
 
   .router-container {
     margin-top: 10px;
     // overflow: visible;
   }
+
+  #main {
+    width: 95%;
+  }
   
+  #desk-nav {
+    a {
+      margin-right: 20px;
+    }
+    a:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1300px) {
+  .pfp {
+    margin-top: 25px;
+  }
+
+  .router-container {
+    margin-top: 25px;
+  }
+
+  .flex-container .flex-child {
+    // overflow: hidden;
+    // overflow-y: auto;
+    padding-top: 25px;
+    height: 100vh;
+  }
+
 }
 
 // /* Small devices (portrait tablets and large phones, 600px and up) */

@@ -1,9 +1,9 @@
-<div class="container" fxLayoutAlign="center start" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="5%" fxFlexFill>
+<div class="container" fxLayoutAlign="center start" fxLayout="row" fxLayout.xs="column" fxLayoutGap="5%" fxFlexFill>
     <!-- <div fxHide.gt-xs class="dev-img"><img [src]="devItem.image" draggable="false" /></div> -->
 
     <div class="item" fxFlex>
-        <div fxHide.gt-xs class="dev-img"><img [src]="devItem.image" draggable="false" /> <span> {{ devItem.title }}</span></div>
-        <!-- <h1>{{ devItem.title }}</h1> -->
+        <div class="dev-img mobile"><img [src]="devItem.image" draggable="false" /> <span> {{ devItem.title }}</span></div>
+        <h1>{{ devItem.title }}</h1>
         <h3>
             <span class="git"><a [href]="devItem.github">GitHub</a></span>
             <!-- <span *ngIf="devItem.title==='Sekai Chan Art'" class="wip">[WIP]</span> -->
@@ -33,5 +33,5 @@
             <app-lightbox [thumbnail]="false" [title]="devItem.title" [previews]="devItem.preview"></app-lightbox>
         </div>
     </div>
-    <div fxHide.xs fxFlex="20" class="dev-img"><img [src]="devItem.image" draggable="false" /></div>
+    <div fxFlex="20" class="dev-img desktop"><img [src]="devItem.image" draggable="false" /></div>
 </div>

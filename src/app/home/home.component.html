@@ -54,7 +54,7 @@
       <a href="../../assets/resume.pdf">resume</a>
     </nav>
 
-    <div fxFlex.gt-xs="20" class="profile flex-child" (resized)="onResized($event)" fxLayout="column">
+    <div fxFlex.gt-xs="20" class="profile flex-child" (resized)="onResized($event)" >
       <a [routerLink]="['/']"  (click)="loadLandingPage()"fxHide.xs>
         <div id="logo-nav">
           <div><img id="logo" src="../../assets/logo-color.png" draggable="false" /></div>

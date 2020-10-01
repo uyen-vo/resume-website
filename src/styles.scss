@@ -44,8 +44,10 @@ a {
 body {
   margin: 0;
   padding: 0;
+  overscroll-behavior-y: none;
 }
 
 img, svg {
     @extend .no-select;
 }
+
