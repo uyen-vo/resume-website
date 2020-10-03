@@ -5,16 +5,9 @@
   --gap: 16px;
   display: inline-flex;
   flex-wrap: wrap;
-  
-  // justify-content: space-between;
   margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
-  // width: calc(100% + var(--gap));
-  // background-color: red;
   
   font-size: 16px;
-  // border: 1px solid red;
-  // padding-right: 10px;
-  // padding: 10px;
 }
 
 .container > * {
@@ -22,59 +15,9 @@
 }
 
 .item {
-  // border: 1px solid blue;
-  // position: relative;
-  // border: 1px solid blue;
   width: calc(25% - 16px);
   position: relative;
 }
-
-
-
-// .Wir .creative-img:hover {
-//   img {
-//     transform: scale(1.3);
-//   }
-// }
-
-// .BER .creative-img:hover {
-//   img {
-//     transform: scale(1.2);
-//   }
-// }
-
-// .Cod .creative-img:hover {
-//   img {
-//     transform: scale(1.2);
-//   }
-// }
-
-// .fil .creative-img img {
-//   transform-origin: 50% 40%;
-
-// }
-
-// .The .creative-img img {
-//   transform-origin: 50% 32%;
-// }
-
-// .Neu .creative-img {
-//   img {
-//     transform-origin: left bottom;
-//   }
-
-//   &:hover {
-//     img {
-//       transform: scale(1.5);
-//     }
-//   }
-// }
-
-// .des .creative-img:hover {
-//   img {
-//     transform: scale(1.5);
-//   }
-// }
 
 @media only screen and (min-width: 600px) and (max-width: 1200px) {
   .item {
