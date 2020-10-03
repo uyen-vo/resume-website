@@ -22,8 +22,8 @@
 </div>
 
 <div *ngIf="galleryToggle" id="gallery" (click)="closeGallery()"
-    fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-    <div fxFlex.gt-sm="80" fxFlex.xs="100" fxFlex.sm="100" class="img-container-outer gallery-child" >
+    fxLayout="column" fxLayoutAlign="center center" fxLayoutGap.gt-md="20px" fxLayoutGap.sm-xs="0px">
+    <div fxFlex.gt-md="80" fxFlex.xs="100" fxFlex.sm="100" class="img-container-outer gallery-child" >
         <div class="img-container"
             (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)"
             fxLayout="row" fxLayoutAlign="space-between center">
@@ -42,6 +42,10 @@
             <area shape="rect" coords="0,0,0,0" (click)="navigate('left')">
             <area shape="rect" coords="0,0,0,0" (click)="navigate('right')">
         </map> -->
+    </div>
+    <div fxFlex.gt-md="5" class="subtitle">
+        <p class="count">({{curIndex+1}}/{{galleryPreview.length}})</p>
+        <p class="desc" fxHide>TODO: insert subtitles</p>
     </div>
     <div fxFlex="10" class="gallery-child prev-list" fxHide.xs fxHide.sm >
         <div class="prev-container"

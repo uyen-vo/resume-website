@@ -59,7 +59,7 @@ export class LightboxComponent implements OnInit {
 
     setTimeout(() => {
       this.snackbarToggle = false;
-    }, 3000);
+    }, 2000);
 
     setTimeout(() => {
       this.mobileSnackbarToggle = false;
