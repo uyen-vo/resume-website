@@ -132,7 +132,6 @@ export class HomeComponent implements OnInit {
     '&#9698; &#9700;',
     'woke up and felt the vibe',
     'Too weird to live. To rare to die.',
-    'Lost a part of me, b ut I am still here.',
     'we are one',
     'looking up, there\'s always sky'
   ];
@@ -157,7 +156,7 @@ export class HomeComponent implements OnInit {
     let prevScrollpos = window.pageYOffset;
     window.onscroll = () => {
       const currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
+      if (prevScrollpos > currentScrollPos || window.pageYOffset < 50) {
         document.getElementById('mobile-nav').style.top = '60px';
       } else {
         document.getElementById('mobile-nav').style.top = '0px';

@@ -39,7 +39,6 @@
 
 
 .container {
-  padding-bottom: 70px;
   --gap: 16px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -47,8 +46,8 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
-  
   font-size: 16px;
+  margin-bottom: 40px;
 }
 
 .container > * {
