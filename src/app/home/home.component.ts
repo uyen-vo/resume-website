@@ -128,11 +128,11 @@ export class HomeComponent implements OnInit {
     'Today is the first day of the rest of your life.',
     'Reconsider your self-set limitations.',
     'Slow motion better than no motion.',
-    'Remember...every passing moment is a chance to turn it all around.',
+    'Every passing moment is a chance to turn it all around.',
     '&#9698; &#9700;',
     'woke up and felt the vibe',
     'Too weird to live. To rare to die.',
-    'Lost a part of me, but I am still here.',
+    'Lost a part of me, b ut I am still here.',
     'we are one',
     'looking up, there\'s always sky'
   ];
@@ -143,7 +143,6 @@ export class HomeComponent implements OnInit {
     router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.currentPage = event.url.substring(1);
-        // this.togglePfp();
 
         if (this.currentPage === '') {
           this.loadLandingPage();
@@ -220,9 +219,10 @@ export class HomeComponent implements OnInit {
   getQuote(): void {
     this.quote = this.quotes[this.getRandomNumber(this.quotes.length)];
 
-    if (this.quote === '&#9698;&#9700;') {
+    if (this.quote === '&#9698; &#9700;') {
       const quoElem: HTMLElement = this.quoteElem.nativeElement;
-      quoElem.style.fontSize = '35px'
+      quoElem.style.fontSize = '35px';
+      quoElem.style.wordSpacing = '10px';
       quoElem.innerHTML = this.quote;
       this.quote = '';
     }
