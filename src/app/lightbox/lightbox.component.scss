@@ -6,23 +6,18 @@
 .preview {
     width: 50px;
     height: 50px;
-    // border-radius: 50%;
     overflow: hidden;
     margin-right: 5px;
     background-color: black;
     text-align: center;
     border: 1px solid fuchsia;
 
-    // position:relative;
-
     img {
         @extend.prevent-img-blur;
         height:50px;
-        // max-width:none;
         width: auto;
         margin:0 -100%;
         opacity: .3;
-        // transition: all .2s ease-in-out;
         cursor: pointer;
 
         &:hover{
@@ -45,12 +40,9 @@
     background-color: rgba(0, 0, 0, 0.97);
     transition: .3s all ease-in;
     z-index: 998 !important;
-    // height: 0;
-    // overflow: hidden;
 }
 
 .img-container {
-    // border: 1px solid red;
     height: 100%;
 
     .arr img {
@@ -166,12 +158,9 @@ area {
     @extend.prevent-img-blur;
     width: 100%;
     display: block;
-    // cursor: pointer;
-    // border: 1px solid red;
     transition: .3s all ease-in-out;
     transform-origin: middle;
     border-radius: 50%;
-    // transform: scale(2) translate3d(0, 0, 0);
     
     filter: blur(0px);
     -webkit-filter: blur(0px);
@@ -192,22 +181,15 @@ area {
     transform: translate(-50%, calc(-50%));
     z-index: 99;
     opacity: 0;
-    // color: white;
     font-weight: 700;
     transition: .3s all ease-in;
-    // text-transform: lowercase;
     }
     
     .creative-img{
-    // background-color: fuchsia;
     overflow: hidden;
     transition: .3s all ease-in-out;
     border-radius: 50%;
-    cursor: pointer;
-    // border: 1px solid blue;
-    // background-color: #ef74d7;
-        // border:2px solid white;
-    
+    cursor: pointer;   
 
     p {
         padding: 0; margin: 0;
@@ -231,36 +213,3 @@ area {
     }
     }
 }
-  
-
-// @media screen and (max-width: 599px) {
-//     .prev-list {
-//         @extend .prev-enlarged;
-//     }
-
-//     #main-img {
-//         @extend .main-enlarged;
-//     }
-
-//     .img-container-outer {
-//         @extend .enlarged;
-//     }
-
-//     .img-container-outer, .img-container-outer * {
-//         margin: 0 auto !important;
-//         height:100% !important;
-//         max-height: 100% !important;
-//         max-width: 100% !important;
-//     }
-    
-//     .prev-list {
-//         display:none !important;
-//         margin: 0 auto !important;
-//     }
-    
-//     #main-img {
-//         height: 100% !important;
-//         width: 100% !important;
-//         margin: 0 auto !important;
-//     }
-// }

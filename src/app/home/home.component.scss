@@ -207,7 +207,6 @@ body {
   height: 100vh;
   display: block;
   margin: 0 auto;
-  // border: 1px solid red;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -220,7 +219,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // border: 1px solid black;
 }
 
 #home .date {
@@ -230,7 +228,6 @@ body {
 .top {
   margin-top: 10px;
   height: 300px;
-  // border: 1px solid black;
   position: relative;
 
   p {
@@ -289,15 +286,8 @@ body {
   width: 130px;
 }
 
-
-
-
-
-
 .profile {
-  // flex: 1 1 500px;
   min-width: 200px;
-  // width: 300px;
 }
 
 
@@ -311,9 +301,7 @@ body {
   justify-content: space-between;
   padding: 10px 0px;
   background-color: white;
-  // padding-left: 5px;
-  // padding-right:5px;
-  // margin-left
+
   a {
     font-family: 'Reem Kufi', sans-serif;
     color: #a4a4a4;
@@ -338,43 +326,6 @@ body {
   overflow-y: auto;
   padding-bottom: 70px;
 }
-
-
-/* XS */
-@media only screen and (max-width: 599px) {
-
-}
-
-/* SM */
-@media only screen and (min-width: 600px) and (max-width: 959px) {
-
-}
-
-/* MED */
-@media only screen and (min-width: 960px) and (max-width: 1279px) {
-  #main {
-    // border: 1px solid green;
-  }
-}
-
-/* LG */
-@media only screen and (min-width: 1280px) and (max-width: 1919px) {
-
-}
-
-@media only screen and (max-width: 1500px) {
-  #main {
-    // border: 1px solid blue;
-    // width: 80%;
-  }
-}
-
-@media only screen and (min-width: 1450px) {
-  #main {
-    // border: 1px solid red;
-  }
-}
-
 
 // mobile portrait
 @media screen and (max-width: 599px) {
@@ -403,13 +354,6 @@ body {
     -o-transform: translate(-50%,-47%);
     transform: translate(-50%,-47%);
     z-index:2;
-    // width: 100%;
-    // padding: 10.5px 0px 30px 0px;
-    // padding-top: 10px;
-
-    #logo-nav {
-      // height: 300px;?
-    }
   }
 
   #main {
@@ -417,35 +361,22 @@ body {
   }
 
   .pfp {
-    // width: 90%;
-    //TODO: change height based on viewport
     margin: 0 auto;
-
-    // height: 50% !important;
     width: 70%;
-
-    img {
-      // position: relative;
-      // top: 50px;
-    }
   }
 
   .location {
-    // background-color: red;
     margin-top: 20px;
   }
 
   .profile {
     margin: 0 20px;
     display: inline;
-    // margin-top: 120px;
-    // border-bottom: 1px solid #a4a4a4;
   }
 
   .flex-container {
     .flex-child {
       padding-top: 140px;
-      // border:1px solid red;
     }
     .flex-child:last-child {
       border-top: 1px solid #a4a4a4;
@@ -454,36 +385,23 @@ body {
   }
 
   .router-container {
-    // border-top: 1px solid #a4a4a4;
     padding: 0; margin: 0;
     overflow: visible;
   }
-
-  // .profile {
-  //   display: inline;
-  // }
 }
 
 //mobile landscape
 @media only screen and (min-width: 600px) and (max-width: 900px) {
   .flex-container .flex-child {
-    // overflow: hidden;
-    // overflow-y: auto;
     padding-top: 10px;
-    // height: 100vh;
   }
   
   .pfp {
     margin-top: 10px;
   }
 
-  .pfp-container {
-    // margin-top: 10px;
-  }
-
   .router-container {
     margin-top: 10px;
-    // overflow: visible;
   }
 
   #main {
@@ -510,31 +428,8 @@ body {
   }
 
   .flex-container .flex-child {
-    // overflow: hidden;
-    // overflow-y: auto;
     padding-top: 25px;
     height: 100vh;
   }
 
 }
-
-// /* Small devices (portrait tablets and large phones, 600px and up) */
-// @media only screen and (min-width: 600px) {
-
-// }
-
-// /* Medium devices (landscape tablets, 768px and up) */
-// @media only screen and (min-width: 768px) (
-// }
-
-// /* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {
-
-// }
-
-// /* Extra large devices (large laptops and desktops, 1200px and up) */
-// @media only screen and (min-width: 1200px) {
-
-// }
-
-
