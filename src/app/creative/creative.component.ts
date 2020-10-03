@@ -25,18 +25,18 @@ export class CreativeComponent implements OnInit {
   }
 
   hover(target: HTMLElement): void {
-    for (var i = 0; i < this.images.length; i++) {
+    for (let i = 0; i < this.images.length; i++) {
       const elem = this.images.item(i) as HTMLElement;
       if (elem !== target) {
-        elem.style.opacity = ".5";
+        elem.style.opacity = '.5';
       }
     }
   }
 
   unhover(target: HTMLElement): void {
-    for (var i = 0; i < this.images.length; i++) {
+    for (let i = 0; i < this.images.length; i++) {
       const elem = this.images.item(i) as HTMLElement;
-      elem.style.opacity = "1";
+      elem.style.opacity = '1';
     }
 
   }

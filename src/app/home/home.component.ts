@@ -117,24 +117,24 @@ export class HomeComponent implements OnInit {
     ['Yandhi', 'https://youtu.be/B9IiqCQH9qM?list=FLW3yzOi3Bl2wCJ1dJwnl44A'],
     ['Frank Ocean - Strawberry Swing', 'https://youtu.be/G7wcRZWRDdw'],
     ['', 'https://youtu.be/KvA1cmT2TYc']
-  ]
+  ];
 
   quotes = [
-    "memento mori",
-    "I felt the unconventional.",
-    "Anguish shapes integrity.",
-    "I love myself, always.",
-    "perfect timing",
-    "Today is the first day of the rest of your life.",
-    "Reconsider your self-set limitations.",
-    "Slow motion better than no motion.",
-    "Remember...every passing moment is a chance to turn it all around.",
-    "&#9698;&#9700;",
-    "woke up and felt the vibe",
-    "Too weird to live. To rare to die.",
-    "Lost a part of me, but I am still here.",
-    "we are one",
-    "looking up, there's always sky"
+    'memento mori',
+    'I felt the unconventional.',
+    'Anguish shapes integrity.',
+    'I love myself, always.',
+    'perfect timing',
+    'Today is the first day of the rest of your life.',
+    'Reconsider your self-set limitations.',
+    'Slow motion better than no motion.',
+    'Remember...every passing moment is a chance to turn it all around.',
+    '&#9698; &#9700;',
+    'woke up and felt the vibe',
+    'Too weird to live. To rare to die.',
+    'Lost a part of me, but I am still here.',
+    'we are one',
+    'looking up, there\'s always sky'
   ];
 
   constructor(private router: Router) {
@@ -156,22 +156,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     let prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-      var currentScrollPos = window.pageYOffset;
+    window.onscroll = () => {
+      const currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
-        document.getElementById('mobile-nav').style.top = "60px";
+        document.getElementById('mobile-nav').style.top = '60px';
       } else {
-        document.getElementById('mobile-nav').style.top = "0px";
+        document.getElementById('mobile-nav').style.top = '0px';
       }
       prevScrollpos = currentScrollPos;
-    }
+    };
 
 
     this.song = '';
     this.quote = '';
     this.songLink = '';
 
-    //timer
+    // timer
     setInterval(() => {
       this.date = new Date();
     }, 1000);
@@ -193,16 +193,16 @@ export class HomeComponent implements OnInit {
       this.getQuote();
     }, 200);
 
-    this.bgImg = "../../assets/bg-" + (this.getRandomNumber(3) + 1) + ".jpg";
+    this.bgImg = '../../assets/bg-' + (this.getRandomNumber(3) + 1) + '.jpg';
 
     const randomSong = this.songs[this.getRandomNumber(this.songs.length)];
     this.songLink = '';
 
     if (randomSong instanceof Array) {
-      if (randomSong[0] == '') {
-        this.song = "  " + randomSong[1];
+      if (randomSong[0] === '') {
+        this.song = '  ' + randomSong[1];
       } else {
-        this.song = "  " + randomSong[0];
+        this.song = '  ' + randomSong[0];
       }
 
       this.songLink = randomSong[1];
@@ -222,7 +222,7 @@ export class HomeComponent implements OnInit {
 
     if (this.quote === '&#9698;&#9700;') {
       const quoElem: HTMLElement = this.quoteElem.nativeElement;
-      quoElem.style.fontSize = "35px"
+      quoElem.style.fontSize = '35px'
       quoElem.innerHTML = this.quote;
       this.quote = '';
     }
@@ -234,7 +234,7 @@ export class HomeComponent implements OnInit {
     } else {
       this.pfpWidth = event.newWidth * .7;
     }
-    console.log(event.newWidth + " " + this.pfpWidth);
+    console.log(event.newWidth + ' ' + this.pfpWidth);
   }
 
   enterSite(): void {

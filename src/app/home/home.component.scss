@@ -5,23 +5,6 @@ body {
   min-height: 100vh;
 }
 
-// ::ng-deep {
-//   ng-scrollbar.custom-scroll {
-//     // --scrollbar-size: 8px;
-//     // --scrollbar-thumb-color: #808080;
-//     // --scrollbar-hover-size: 8px;
-//     // --scrollbar-track-color: white;
-//     // --scrollbar-border-radius: 8px;
-//     // margin: 0; padding: 0;
-
-//     // --scrollbar-viewport-margin: 0;
-    
-//     --scrollbar-thumb-transition: height ease-out .3ms, visibility ease-out .3ms;
-//     --scrollbar-track-transition: height ease-out .3ms, width ease-out .3ms;
-//   }
-// }
-
-
 // main page
 #main {
   margin: 0; padding:0;
@@ -39,21 +22,17 @@ body {
 
   .flex-child {
     padding-top: 60px;
-    // height: 100vh;
   }
 }
 
 .profile {
-  // max-width: 283px;
   font-size: 14px;
   display: flex; 
   flex-direction: column;
-  // border: 1px solid black;
 }
 
 .pfp {
   width: 100%;
-  //TODO: change height based on viewport
   margin: 0 auto;
   margin-top:50px;
   position: relative;
@@ -66,19 +45,15 @@ body {
     -moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-    // transform: translateY(-15px);
     opacity:0;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);  
-    
-    // border: 1px solid #808080;
   }
 
   img.opaque {
     opacity:1;
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=1);
-    // transform: translateY(0px);
   }
 }
 
@@ -143,21 +118,9 @@ body {
 }
 
 .router-container{
-  // border: 2px solid blue;
   margin-top:50px;
-  // flex-grow: 1;
-  // height: 500px;
   overflow: hidden;
   overflow-y: auto;
-
-
-
-  //scroll hover appear
-    // &:hover {
-    //   &::-webkit-scrollbar-thumb {
-    //     // background-color: lightgray;
-    //   }
-    // }
 }
 
 #logo {
@@ -168,7 +131,6 @@ body {
 
 #letter-logo {
   height: 35px;
-  // margin-left: 20px;
   margin-top:5px;
   padding-left: 5%;
   width: 95%;
@@ -176,10 +138,8 @@ body {
 
 #logo-nav {
   display: table;
-  // width:100%;
 
   div {
-    // border: 1px solid black;
     display:table-cell;
     text-align:center;
     vertical-align:middle;
@@ -188,16 +148,12 @@ body {
 
 #desk-nav {
   font-size: 30px;
-  
-  // flex-grow: 2;
-  // display: flex;
 
   a {
     font-family: 'Reem Kufi', sans-serif;
     margin-right: 40px;
     color: #a4a4a4;
     transition: .2s color ease-in;
-    // display:inline-flex;
   }
 
   a:hover{

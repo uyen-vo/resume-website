@@ -1,9 +1,5 @@
 @import '../../shared.scss';
 
-.container {
-    // border: 1px solid green;
-}
-
 .item {
     min-width: 0;
 }
@@ -12,9 +8,6 @@
     max-width: 200px;
 }
 img {
-    // width: 200px;
-    // margin-right:35px;
-    // max-width: 200px;
     width: 100%;
 }
 
@@ -29,7 +22,6 @@ h3 {
     padding:0; margin: 0;
     font-weight: 700;
     font-size: 14px;
-    // line-height: 30px;
 
     span a {
         
@@ -88,11 +80,9 @@ p {
         border-bottom: 1.5px solid $darkblue;
         line-height: 15px;
         display: inline-block;
-        // text-decoration: underline;
     }
 
     svg {
-        // fill: red;
         width: 13px;
         padding: 0; margin: 0;
         margin-right: 6px;
@@ -141,10 +131,6 @@ p {
 .mobile {
     display: none;
 }
-
-// .desktop {
-//     display: inline;
-// }
 
 @media only screen and (max-width: 650px) {
     .mobile {
@@ -207,28 +193,5 @@ p {
 
     .desktop, h1 {
         display: none !important;
-    }
-}
-
-@media only screen and (min-width: 960px) and (max-width: 1279px) {
-    img {
-        // width:100%;
-                // border: 1px solid red;
-
-    }
-}
-
-@media only screen and (min-width: 1280px) and (max-width: 1449px) {
-    img {
-        // border: 1px solid red;
-        // width: 100%;
-        // height: auto;
-    }
-}
-
-@media only screen and (min-width: 1450px) {
-    img {
-        // border: 1px solid green;
-        
     }
 }

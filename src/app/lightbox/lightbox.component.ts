@@ -14,7 +14,7 @@ import { CreaItem } from '../item.service';
   ]
 })
 export class LightboxComponent implements OnInit {
-  
+
   @Input() previews: string[];
   @Input() title: string;
   @Input() thumbnail: boolean;
@@ -72,37 +72,13 @@ export class LightboxComponent implements OnInit {
 
     this.curIndex = index;
     this.swapCurImage('');
-
-    // console.log(index)
   }
 
-  // setMapCoords(): void {
-  //   const areas = document.getElementsByTagName('area');
-  //   const w = document.getElementById('main-img').clientWidth;
-  //   const h = document.getElementById('main-img').clientHeight;
-
-  //   areas[0].coords = "0, 0, 40," + h;
-  //   areas[1].coords = (w - 40) + ",0," + w + "," + h;
-  // }
-
-  navigate(dir: string, event: MouseEvent) {
+  navigate(dir: string, event: MouseEvent): void{
     event.stopPropagation();
-
-    // if (dir === 'right') {
-    //   this.curIndex++;
-    // } else {
-    //   this.curIndex--;
-    // }
-
-    // this.swapCurImage();
   }
 
   swapCurImage(dir: string, event?: MouseEvent): void {
-    if (this.curImage) {
-      // this.curImage.style.filter = 'brightness(30%) grayscale(100%)';
-
-      // this.curImage.style.border = '1px solid black';
-    }
     if (dir === 'right') {
       this.curIndex++;
     } else if (dir === 'left') {
@@ -113,7 +89,7 @@ export class LightboxComponent implements OnInit {
       event.stopPropagation();
     }
 
-    this.curImage = <HTMLImageElement>this.galleryPreview[this.curIndex];
+    this.curImage = (this.galleryPreview[this.curIndex] as HTMLImageElement);
     // this.curImage.style.filter = 'brightness(100%)';
     // this.curImage.style.border = '10px solid white';
     this.curImageSrc = this.curImage.src;
@@ -125,7 +101,6 @@ export class LightboxComponent implements OnInit {
     const prevList = document.getElementsByClassName('prev-list')[0] as HTMLElement;
     const mainImage = document.getElementById('main-img') as HTMLElement;
     const imgContainer = document.getElementsByClassName('img-container-outer')[0] as HTMLElement;
-    // const mainContainer = document.getElementsByClassName('main-container')[0] as HTMLElement;
 
     prevList.classList.toggle('prev-enlarged');
 
@@ -135,7 +110,7 @@ export class LightboxComponent implements OnInit {
   }
 
   swipe(action: string): void {
-    if (action === 'swipeleft' && this.curIndex !== this.galleryPreview.length-1) {
+    if (action === 'swipeleft' && this.curIndex !== this.galleryPreview.length - 1) {
       this.swapCurImage('right');
     }
     if (action === 'swiperight' && this.curIndex !== 0) {
@@ -144,30 +119,21 @@ export class LightboxComponent implements OnInit {
   }
 
   @HostListener('window:keydown.arrowleft', ['$event'])
-  handleKeyboardLeft(event: KeyboardEvent) {
-    if (this.curIndex != 0) {
+  handleKeyboardLeft(event: KeyboardEvent): void {
+    if (this.curIndex !== 0) {
       this.swapCurImage('left');
     }
   }
 
   @HostListener('window:keydown.arrowright', ['$event'])
-  handleKeyboardRight(event: KeyboardEvent) {
-    if (this.curIndex != this.previews.length - 1) {
+  handleKeyboardRight(event: KeyboardEvent): void {
+    if (this.curIndex !== this.previews.length - 1) {
       this.swapCurImage('right');
     }
   }
 
   @HostListener('document:keydown.escape', ['$event'])
-  onKeydownHandler(event: KeyboardEvent) {
+  onKeydownHandler(event: KeyboardEvent): void {
     this.closeGallery();
   }
-
-  // @HostListener('window:resize', ['$event'])
-  // onResize(event) {
-  //   let innerWidth = window.innerWidth;
-  //   if (innerWidth <= 599) {
-  //     // this.enlarge();
-  //     this.isEnlarged = true;
-  //   } 
-  // }
 }

@@ -15,17 +15,12 @@ export class DeveloperComponent implements OnInit
 {
 
   devItems$: Observable<DevItem[]>;
-  // itemsLength : number;
 
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void
   {
     this.devItems$ = this.itemService.getDevItems();
-    // this.devItems$.pipe(
-    //   map(data => {
-    //     this.itemsLength = data.length;
-    //   }));
   }
 
 }
