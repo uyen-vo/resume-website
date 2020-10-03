@@ -3,7 +3,6 @@ $darkblue: #23a9e1;
 
 .no-select {
     -webkit-user-select: none;
-    -khtml-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
     -ms-user-select: none;
@@ -17,10 +16,12 @@ $darkblue: #23a9e1;
     -ms-filter: blur(0px);
     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
     image-rendering: crisp-edges;
-    -ms-transform: translateZ(0); /* IE 9 */
-    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
     -webkit-font-smoothing: antialised;
-    backface-visibility: hidden;
-    transform: translateZ(0) scale(1.0, 1.0);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+            transform: translateZ(0) scale(1.0, 1.0);
     -webkit-font-smoothing: subpixel-antialiased;
 }

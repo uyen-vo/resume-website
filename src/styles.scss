@@ -6,6 +6,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
 @import 'shared.scss';
 
+// * {
+//   font-family: 'Roboto Mono', monospace;
+//   scrollbar-width: thin;
+//   scrollbar-color: lightgray transparent;
+  
+//   //soon to be deprecated
+//   &::-webkit-scrollbar {
+//     width: 10px;
+//     display:none;
+//   }
+
+//   &::-webkit-scrollbar-track {
+//     border-radius: 5px;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background: transparent;
+//     transition: all .3s ease-in-out;
+//   }
+// }
+
+// a {
+//   text-decoration: none;
+//    &:visited {
+//      color: inherit;
+//    }
+// }
+
+// body {
+//   margin: 0;
+//   padding: 0;
+//   overscroll-behavior-y: none;
+// }
+
+// img, svg {
+//     @extend .no-select;
+// }
+
+
 * {
   font-family: 'Roboto Mono', monospace;
   scrollbar-width: thin;
@@ -23,6 +62,7 @@
 
   &::-webkit-scrollbar-thumb {
     background: transparent;
+    -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
   }
 }
@@ -43,4 +83,3 @@ body {
 img, svg {
     @extend .no-select;
 }
-
