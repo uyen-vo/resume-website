@@ -221,7 +221,7 @@ export class HomeComponent implements OnInit {
     if (this.quote === '&#9698; &#9700;') {
       const quoElem: HTMLElement = this.quoteElem.nativeElement;
       quoElem.style.fontSize = '35px';
-      quoElem.style.wordSpacing = '10px';
+      quoElem.style.letterSpacing = '-6px';
       quoElem.innerHTML = this.quote;
       this.quote = '';
     }

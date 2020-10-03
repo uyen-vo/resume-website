@@ -445,7 +445,7 @@ body {
   margin: 0; padding: 0;
 
   .flex-child {
-    padding-top: 60px;
+    padding-top: 45px;
   }
 }
 
@@ -463,7 +463,7 @@ body {
 .pfp {
   width: 100%;
   margin: 0 auto;
-  margin-top:50px;
+  margin-top:40px;
   position: relative;
   
   img{
@@ -548,7 +548,7 @@ body {
 }
 
 .router-container{
-  margin-top:50px;
+  margin-top:40px;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -622,7 +622,7 @@ body {
 
 .content {
   max-width: 500px;
-  height: 100vh;
+  height: calc(100vh - calc(100vh - 100%));
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -635,15 +635,17 @@ body {
           flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          justify-content: center;
 }
 
-.bottom {
-  margin-bottom: 10px;
-  height: 300px;
+.bottom, .top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
+}
+.bottom {
+  margin-bottom: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -658,8 +660,9 @@ body {
 }
 
 .top {
-  margin-top: 30px;
-  height: 300px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   position: relative;
 
   p {
@@ -710,7 +713,7 @@ body {
 
 .bg {
   position: relative;
-  margin: 30px 0px;
+  margin: 0;
 }
 
 .logo-white {
@@ -776,7 +779,7 @@ body {
 @media screen and (max-width: 599px) {
   
   #mobile-nav {
-    opacity: 100%;
+    opacity: 1;
     z-index: 1;
   }
 

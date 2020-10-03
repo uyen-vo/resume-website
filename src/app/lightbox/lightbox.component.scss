@@ -441,21 +441,24 @@ area {
             padding: 0; margin: 0;
             text-align: center;
         }
-        &:hover {
-            img {
-            -webkit-transform: scale(1.8);
-                -ms-transform: scale(1.8);
-                    transform: scale(1.8);
-            -webkit-filter: blur(35px);
-            -moz-filter: blur(10px);
-            -o-filter: blur(10px);
-            -ms-filter: blur(10px);
-            filter: blur(10px);            
-            }
-        
-            .subtitle {
-            opacity: 1;
-            cursor: pointer;
+
+        @media only screen and (min-width: 901px) {
+            &:hover {
+                img {
+                -webkit-transform: scale(1.8);
+                    -ms-transform: scale(1.8);
+                        transform: scale(1.8);
+                -webkit-filter: blur(35px);
+                -moz-filter: blur(10px);
+                -o-filter: blur(10px);
+                -ms-filter: blur(10px);
+                filter: blur(10px);            
+                }
+            
+                .subtitle {
+                opacity: 1;
+                cursor: pointer;
+                }
             }
         }
     }

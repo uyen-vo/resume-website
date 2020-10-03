@@ -1,17 +1,15 @@
-moodnetwork screenshots (mac)
+notes
 
-
-responsiveness: grid (flexlayout) + rest
-
-
-add social icons
-
-black text for [c][d] for white pics?
-
+moodnetwork screenshots (edit)
 
 add doubletap/zoom/pan functionality to mobile lightboxing
 
-look into testing and static rendering
+look into ang testing and static rendering
 
 
 npx lite-server --baseDir="dist/uyen-codes-website"
+
+TODO 
+-ADD PICTURES
+-LIGHTBOX SUBTITLE text
+-LIGHTBOX PANNING
