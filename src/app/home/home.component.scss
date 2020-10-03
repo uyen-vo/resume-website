@@ -536,6 +536,8 @@ body {
 
   #linkedin {
     width: 15px;
+    padding-left: 2px;
+    padding-right: 1px;
   }
 }
 
@@ -821,8 +823,13 @@ body {
     }
     .flex-child:last-child {
       border-top: 1px solid #a4a4a4;
-      padding-top: 25px;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
+  }
+
+  .pfp-container {
+    padding-bottom: 40px;
   }
 
   .router-container {

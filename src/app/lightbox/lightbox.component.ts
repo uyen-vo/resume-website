@@ -10,6 +10,10 @@ import { CreaItem } from '../item.service';
     trigger('animateDestroy', [
       state('void', style({ top: '-100px' })),
       transition('* => void', animate('300ms ease-in'))
+    ]),
+    trigger('animateFade', [
+      state('void', style({ opacity: '0', zIndex: '-1' })),
+      transition('* => void', animate('300ms ease-in'))
     ])
   ]
 })
@@ -25,6 +29,7 @@ export class LightboxComponent implements OnInit {
   curIndex: number;
   curImage: HTMLImageElement;
   snackbarToggle: boolean;
+  mobileSnackbarToggle: boolean;
   galleryPreview: HTMLCollectionOf<Element>;
   isEnlarged: boolean;
 
@@ -36,12 +41,14 @@ export class LightboxComponent implements OnInit {
     this.isEnlarged = false;
     this.curIndex = 0;
     this.snackbarToggle = false;
+    this.mobileSnackbarToggle = false;
     this.galleryPreview = document.getElementsByClassName('gallery-preview');
   }
 
   openGallery(imgSrc: string, index?: number): void {
     this.galleryToggle = true;
     this.snackbarToggle = true;
+    this.mobileSnackbarToggle = true;
     this.curImageSrc = imgSrc;
 
     if (index) {
@@ -53,6 +60,10 @@ export class LightboxComponent implements OnInit {
     setTimeout(() => {
       this.snackbarToggle = false;
     }, 3000);
+
+    setTimeout(() => {
+      this.mobileSnackbarToggle = false;
+    }, 1700);
   }
 
   closeGallery(): void {
@@ -64,7 +75,9 @@ export class LightboxComponent implements OnInit {
   }
 
   onMainImageClick(event: MouseEvent): void {
-    event.stopPropagation();
+    if (window.innerWidth > 959) {
+      event.stopPropagation();
+    }
   }
 
   onImageClick(event: MouseEvent, index: number): void {

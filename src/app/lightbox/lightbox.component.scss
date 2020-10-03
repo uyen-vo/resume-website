@@ -383,8 +383,7 @@ area {
     -webkit-transition: .3s opacity ease-in;
     -o-transition: .3s opacity ease-in;
     transition: .3s opacity ease-in;
-    background-color: black;
-    opacity: .7;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .creative-container {
@@ -460,5 +459,35 @@ area {
         cursor: pointer;
         }
     }
+    }
+}
+
+#mobile-snackbar {
+    display: none;
+    z-index: 999 !important;
+    color: white;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    padding: 5px;
+    border-radius: 5%;
+
+    p {
+        margin: 0; padding: 0;
+    }
+
+    @media screen and (max-width: 599px) {
+        display: inline;
+
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 900px) {
+        display: inline;
     }
 }
