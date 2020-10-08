@@ -133,7 +133,9 @@ export class HomeComponent implements OnInit {
     'woke up and felt the vibe',
     'Too weird to live. To rare to die.',
     'we are one',
-    'looking up, there\'s always sky'
+    'looking up, there\'s always sky',
+    "Never a failure. Always a lesson.",
+    "Simplicity is the greatest sophistication."
   ];
 
   constructor(private router: Router) {
@@ -210,6 +212,14 @@ export class HomeComponent implements OnInit {
 
   }
 
+  onSongClick(): void {
+    //{{songLink}}" target="_blank"
+    if (this.songLink === '') {
+      this.router.navigateByUrl('/creative');
+    } else {
+      window.open(this.songLink, '_blank');
+    }
+  }
   // [0, num)
   getRandomNumber(num: number): number {
     return Math.floor(Math.random() * num);
@@ -221,7 +231,7 @@ export class HomeComponent implements OnInit {
     if (this.quote === '&#9698; &#9700;') {
       const quoElem: HTMLElement = this.quoteElem.nativeElement;
       quoElem.style.fontSize = '35px';
-      quoElem.style.letterSpacing = '-6px';
+      quoElem.style.letterSpacing = '-4px';
       quoElem.innerHTML = this.quote;
       this.quote = '';
     }

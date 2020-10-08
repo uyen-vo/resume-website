@@ -653,6 +653,11 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+
+  p a {
+    color: black;
+    cursor: pointer;
+  }
 }
 
 #home .date {
@@ -777,6 +782,9 @@ body {
 
 // mobile portrait
 @media screen and (max-width: 599px) {
+  #home {
+    font-size: 14px;
+  }
   
   #mobile-nav {
     opacity: 1;

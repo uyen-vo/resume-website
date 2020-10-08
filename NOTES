@@ -12,4 +12,6 @@ npx lite-server --baseDir="dist/uyen-codes-website"
 TODO 
 -ADD PICTURES
 -LIGHTBOX SUBTITLE text
--LIGHTBOX PANNING
+-LIGHTBOX PANNING+ZOOMING
+-lightbox arrows warped
+-add preview pic
