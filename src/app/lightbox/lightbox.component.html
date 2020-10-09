@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<div fxHide.xs fxHide.sm *ngIf="snackbarToggle && galleryToggle" @animateDestroy id="snackbar">
+<div fxHide.xs fxHide.sm *ngIf="snackbarToggle && galleryToggle" @animateFade id="snackbar">
     <p>Double click image to enter/exit fullscreen mode.</p>
 </div>
 
@@ -31,8 +31,12 @@
                 *ngIf="!isEnlarged" [ngClass]="{'hide-arr':curIndex===0}"
                 class="arr left"><img (click)="swapCurImage('left', $event)" src="../../assets/arrow.svg"></div>
             <div class="main-container" fxLayoutAlign="center center">
-                <img id="main-img" [src]="curImageSrc"
+                <img *ngIf="!isVideo" id="main-img" [src]="curImageSrc"
                     (click)="onMainImageClick($event)" (dblclick)="enlarge()"/>
+                    <video (click)="onMainImageClick($event)" height="100%" *ngIf="isVideo" controls>
+                        <source [src]="curImageSrc" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
             </div>
             <div fxHide.xs
                 *ngIf="!isEnlarged" [ngClass]="{'hide-arr':curIndex===previews.length-1}"

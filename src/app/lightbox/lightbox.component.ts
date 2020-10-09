@@ -13,7 +13,7 @@ import { CreaItem } from '../item.service';
     ]),
     trigger('animateFade', [
       state('void', style({ opacity: '0', zIndex: '-1' })),
-      transition('* => void', animate('300ms ease-in'))
+      transition('* => void', animate('400ms ease-in'))
     ])
   ]
 })
@@ -32,6 +32,7 @@ export class LightboxComponent implements OnInit {
   mobileSnackbarToggle: boolean;
   galleryPreview: HTMLCollectionOf<Element>;
   isEnlarged: boolean;
+  isVideo: boolean;
 
   constructor() { }
 
@@ -42,6 +43,7 @@ export class LightboxComponent implements OnInit {
     this.curIndex = 0;
     this.snackbarToggle = false;
     this.mobileSnackbarToggle = false;
+    this.isVideo = false;
     this.galleryPreview = document.getElementsByClassName('gallery-preview');
   }
 
@@ -50,6 +52,7 @@ export class LightboxComponent implements OnInit {
     this.snackbarToggle = true;
     this.mobileSnackbarToggle = true;
     this.curImageSrc = imgSrc;
+    this.isVideo = false;
 
     if (index) {
       this.curIndex = index;
@@ -87,7 +90,7 @@ export class LightboxComponent implements OnInit {
     this.swapCurImage('');
   }
 
-  navigate(dir: string, event: MouseEvent): void{
+  navigate(dir: string, event: MouseEvent): void {
     event.stopPropagation();
   }
 
@@ -105,7 +108,14 @@ export class LightboxComponent implements OnInit {
     this.curImage = (this.galleryPreview[this.curIndex] as HTMLImageElement);
     // this.curImage.style.filter = 'brightness(100%)';
     // this.curImage.style.border = '10px solid white';
+
+    if (this.curImage.src.indexOf("mov") !== -1) {
+      this.isVideo = true;
+    } else {
+      this.isVideo = false;
+    }
     this.curImageSrc = this.curImage.src;
+
 
   }
 
