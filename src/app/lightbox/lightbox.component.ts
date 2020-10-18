@@ -22,7 +22,7 @@ export class LightboxComponent implements OnInit {
   @Input() previews: string[];
   @Input() title: string;
   @Input() thumbnail: boolean;
-  @Input() creaItem?: CreaItem;
+  @Input() creaItem?: any;
 
   galleryToggle: boolean;
   curImageSrc: string;
@@ -48,6 +48,9 @@ export class LightboxComponent implements OnInit {
   }
 
   openGallery(imgSrc: string, index?: number): void {
+    if (this.previews.length === 0) {
+      return;
+    }
     this.galleryToggle = true;
     this.snackbarToggle = true;
     this.mobileSnackbarToggle = true;

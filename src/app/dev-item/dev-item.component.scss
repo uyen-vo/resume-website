@@ -266,58 +266,58 @@ p {
     font-size: 17px;
     font-family: 'Reem Kufi', sans-serif;
     line-height: 24px;
-    margin: 0; padding: 7px 0px 15px 0px;
+    margin: 0; padding: 7px 0px 0px 0px;
     display:inline-block;
 }
 
-.toggle {
-    padding: 0; margin: 0;
-    cursor: pointer;
-    @extend .no-select;
+// .toggle {
+//     padding: 0; margin: 0;
+//     cursor: pointer;
+//     @extend .no-select;
     
     
-    span {
-        color: $darkblue;
-        font-family: 'Reem Kufi', sans-serif;
-        font-weight: 700;
-        border-bottom: 1.5px solid $darkblue;
-        line-height: 15px;
-        display: inline-block;
-    }
+//     span {
+//         color: $darkblue;
+//         font-family: 'Reem Kufi', sans-serif;
+//         font-weight: 700;
+//         border-bottom: 1.5px solid $darkblue;
+//         line-height: 15px;
+//         display: inline-block;
+//     }
 
-    svg {
-        width: 13px;
-        padding: 0; margin: 0;
-        margin-right: 6px;
-        -webkit-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-                transform: rotate(-90deg);
-        -webkit-transition: all .2s ease-in-out;
-        -o-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
+//     svg {
+//         width: 13px;
+//         padding: 0; margin: 0;
+//         margin-right: 6px;
+//         -webkit-transform: rotate(-90deg);
+//             -ms-transform: rotate(-90deg);
+//                 transform: rotate(-90deg);
+//         -webkit-transition: all .2s ease-in-out;
+//         -o-transition: all .2s ease-in-out;
+//         transition: all .2s ease-in-out;
 
-        path {
-            fill: $darkblue;
-        }
-    }
+//         path {
+//             fill: $darkblue;
+//         }
+//     }
 
-    &:hover {
-        span {
-            color: #ff00ff;
-            border-color: #ff00ff;
-            -webkit-transition: all .2s ease-in-out;
-            -o-transition: all .2s ease-in-out;
-            transition: all .2s ease-in-out;
-        }
+//     &:hover {
+//         span {
+//             color: #ff00ff;
+//             border-color: #ff00ff;
+//             -webkit-transition: all .2s ease-in-out;
+//             -o-transition: all .2s ease-in-out;
+//             transition: all .2s ease-in-out;
+//         }
 
-        svg path{
-            fill: #ff00ff;
-            -webkit-transition: fill .2s ease-in-out;
-            -o-transition: fill .2s ease-in-out;
-            transition: fill .2s ease-in-out;
-        }
-    }
-}
+//         svg path{
+//             fill: #ff00ff;
+//             -webkit-transition: fill .2s ease-in-out;
+//             -o-transition: fill .2s ease-in-out;
+//             transition: fill .2s ease-in-out;
+//         }
+//     }
+// }
 
 .toggle-active {
     span {
@@ -359,6 +359,7 @@ p {
             margin: 0; padding: 0;
             font-size: 2em;
             letter-spacing: -1px;
+            font-weight: 700 !important;
         }
 
     }
@@ -393,6 +394,7 @@ p {
             margin: 0; padding: 0;
             font-size: 2em;
             letter-spacing: -1px;
+            font-weight: 700 !important;
         }
 
     }

@@ -7,15 +7,13 @@
             "UI/UX",
             "Jamstack"
         ],
-        "description": "eCommerce site to sell my watercolor paintings. Integrating the shopping cart/payment collection via Snipcart and using Scully.io to generate as a static site to best optimize SEO and site performance. Still in development, but you are welcome to check out the final designs. :)",
+        "description": "eCommerce site to sell my watercolor paintings. Integrating the shopping cart/payment collection via Snipcart and using Scully.io to generate as a static site to best optimize SEO and site performance. Working in progress.",
         "image": "/assets/thin-world-01.png",
         "github": "https://github.com/uyen-vo/art-ecommerce-site",
         "preview": [
-            "/assets/sekai-1.jpg",
-            "/assets/sekai-2.jpg",
-            "/assets/sekai-3.jpg",
             "/assets/sekai-4.jpg",
-            "/assets/sekai-5.jpg"
+            "/assets/sekai-1.jpg",
+            "/assets/sekai-3.jpg"
         ]
     },
     {

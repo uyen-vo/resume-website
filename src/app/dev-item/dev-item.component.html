@@ -6,7 +6,7 @@
         <h1>{{ devItem.title }}</h1>
         <h3>
             <span class="git"><a [href]="devItem.github">GitHub</a></span>
-            <!-- <span *ngIf="devItem.title==='Sekai Chan Art'" class="wip">[WIP]</span> -->
+            <span *ngIf="devItem.title==='Sekai Chan Art'" class="wip">[WIP]</span>
             <span *ngFor="let tag of devItem.tags" class="tag">{{ tag }}</span>
         </h3>
         <p>{{ devItem.description }}</p>
@@ -29,9 +29,11 @@
             </svg>
             <span>View more</span>
         </p> -->
-        <div *ngIf="toggleViewMore===true" [@slideInOut]="toggleViewMore" class="prev-container">
+        <div class="prev-container">
             <app-lightbox [thumbnail]="false" [title]="devItem.title" [previews]="devItem.preview"></app-lightbox>
         </div>
     </div>
-    <div fxFlex="20" class="dev-img desktop"><img [src]="devItem.image" draggable="false" /></div>
+    <div fxFlex="20" class="dev-img desktop">
+            <app-lightbox [thumbnail]="true" [creaItem]="devItem" [previews]="devItem.preview"></app-lightbox>
+    </div>
 </div>

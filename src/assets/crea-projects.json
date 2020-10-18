@@ -37,10 +37,10 @@
         "image": "/assets/c-wireframe.jpg",
         "subtitle": "creative process",
         "preview": [
+            "/assets/cc-wireframe-2.jpg",
+            "/assets/cc-wireframe-1.jpg",
             "/assets/gateway-1.png",
             "/assets/gateway-2.png",
-            "/assets/cc-wireframe-1.jpg",
-            "/assets/cc-wireframe-2.jpg",
             "/assets/demo.mov"
         ]
     },
@@ -76,8 +76,6 @@
         "title": "design graveyard",
         "image": "/assets/c-trash.jpg",
         "subtitle": "RIP",
-        "preview": [
-            ""
-        ]
+        "preview": []
     }
 ]
